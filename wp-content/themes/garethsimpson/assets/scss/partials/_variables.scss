@@ -1,0 +1,63 @@
+/*******************************
+CONFIGS
+*******************************/
+$font-defaults:  'futura-pt', sans-serif;
+$font-headings: 'futura-pt', sans-serif;
+$font-alt: 'futura-pt', sans-serif;
+
+/* COLOURS */
+$color-very-light-purple: #876f98;
+$color-light-purple: #412951;
+$color-purple: #371d48;
+$color-blue: #002aa1;
+$color-red: #c10202;
+$color-black: #111;
+$color-grey: #aaa;
+$color-orange: #e18900;
+$color-yellow:#f1b300;
+
+$blue: #0a5c9e;
+$orange: #FA9A00;
+$green: #9CCD31;
+$lightgrey: #F6F6F6;
+$footer_link_color: #a0b4c4;
+
+$primary-color: $blue;
+$secondary-color:$blue;
+$primary-color-bg: $color-grey;
+$primary-color-text: $color-grey;
+$secondary-color-bg: $color-grey;
+$default-heading-color: #333;
+$default-text-color: #666;
+
+/* HEADER */
+$header-bg: #fff;
+
+/* FOOTER */
+$footer-bg: $color-orange;
+
+/* LINKS */
+$link-color: $blue;
+$link-color-hover: $color-black;
+$button-color: $color-orange;
+
+/* NAV */
+$nav-color: #fff;
+$nav-hover: #fff;
+$nav-active: #fff;
+
+$default-border-radius : 30px;
+$default-font-size: 18px;
+$default-line-height: 28px;
+
+$animation-transition-speed: 0.4s;
+$animation-scale: 1.2;
+
+$div-padding-sm: 40px 0;
+$div-padding-md: 60px 0;
+$div-padding-lg: 80px 0;
+$media-xs-min: 768px;
+$media-sm-min: 992px;
+$media-md-min: 1170px;
+$media-lg-min: 1300px;
+$media-xl-min: 1400px;

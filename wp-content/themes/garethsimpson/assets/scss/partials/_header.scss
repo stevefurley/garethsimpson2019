@@ -1,0 +1,40 @@
+#header {
+  background: lightgrey;
+}
+
+
+//fixed header
+#header-menu {
+  ul {
+    padding: 0;
+    margin: 0;
+    display: flex;
+    li {
+      padding: 0;
+      list-style-type: none;
+      display: inline-block;
+      position: relative;
+      flex-shrink: 0;
+      a {
+        display: block;
+        text-decoration: none;
+        padding: 25px 0 25px 0;
+        margin: 0 10px;
+        color: #111;
+        line-height: 26px;
+        font-weight: 600;
+        background: transparent;
+        position: relative;
+        transition: 300ms color ease;
+        &:hover {
+          text-decoration: none;
+          color: #999999;
+          transition: 300ms color ease;
+        }
+      }
+      ul.sub-menu {
+        display: none;
+      }
+    }
+  }
+}

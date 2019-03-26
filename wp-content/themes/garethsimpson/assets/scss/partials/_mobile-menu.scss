@@ -1,0 +1,185 @@
+// ==========================================================================
+// Animations – Selective animations from Animate.css - http://daneden.me/animate
+// ==========================================================================
+
+
+$hamburgerHeight:                               35px;
+$hamburgerWidth:                                35px;
+$hamburgerLineWidth:                            20px;
+$hamburgerSpacing:                              7px;
+$hamburgerColor:                                #2D3048;
+$hamburgerBackground:                           transparent;
+
+$mobileMenuBackground:                          #2D3048;
+$mobileMenuBackgroundCurrent:                          #36B1B3;
+// Header
+
+body {
+  position: relative;
+  overflow-x: hidden;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  background: rgba(000,000,000,0.5);
+  height: 100%;
+  width: 100%;
+  z-index: 2;
+  opacity: 0;
+  left: -100%;
+  transition: opacity 0.5s, left 0.1s;
+}
+
+.overlay.open {
+  left: 0;
+  background: rgba(000,000,000,0.5);
+  transition: opacity 0.5s, left 0.1s;
+  opacity: 1;
+}
+
+
+
+$hamburgerHeight:                               24px;
+$hamburgerWidth:                                32px;
+$hamburgerLineWidth:                            32px;
+$hamburgerSpacing:                              8px;
+$hamburgerColor:                                orange;
+$hamburgerBackground:                           transparent;
+
+//menu hamburger animation
+//@extend-elements
+//original selectors
+//.hamburger span, .hamburger span:after, .hamburger span:before
+%burgerSettings {
+  width: $hamburgerWidth;
+  height: 3px;
+  background-color: $hamburgerColor;
+  display: block;
+}
+
+.hamburger-wrapper {
+z-index: 9;
+position: relative;
+}
+.hamburger {
+  width: 34px;
+  height: 34px;
+  cursor: pointer;
+  background: transparent;
+  padding: 9px 5px 5px 5px;
+  z-index: 10;
+  display: block;
+  margin-left: 20px;
+  span {
+    transition-duration: 0s;
+    margin: 0 auto;
+    position: relative;
+    top: $hamburgerSpacing;
+    @extend %burgerSettings;
+    width: $hamburgerLineWidth;
+    border-radius: 2px;
+    &:before {
+      transition-property: margin, transform;
+      transition-duration: 0.2s;
+      margin-top: -$hamburgerSpacing;
+      position: absolute;
+      content: '';
+      @extend %burgerSettings;
+      width: $hamburgerLineWidth;
+    }
+    &:after {
+      transition-property: margin, transform;
+      transition-duration: 0.2s;
+      margin-top: $hamburgerSpacing;
+      position: absolute;
+      content: '';
+      @extend %burgerSettings;
+      width: $hamburgerLineWidth;
+    }
+  }
+  &.is-active {
+    span {
+      background-color: $hamburgerBackground;
+      &:before {
+        margin-top: 0;
+        transform: rotate(45deg);
+        background-color: lightgrey;
+      }
+      &:after {
+        margin-top: 0;
+        transform: rotate(-45deg);
+        background-color: lightgrey;
+      }
+    }
+  }
+  // &.hamburger2 {
+  //   position: relative;
+  //   right: auto;
+  //   top: auto;
+  //   span,
+  //   span:after,
+  //   span:before {
+  //     background-color: $hamburgerColor;
+  //   }
+  //   &.open span {
+  //     background-color: transparent;
+  //   }
+  // }
+}
+
+
+
+.move {
+  transform: translate(0, 0);
+  transition: 300ms transform ease;
+  &.open {
+    transform: translate(-300px, 0);
+    transition: 300ms transform ease;
+  }
+}
+
+
+#mobile-menu {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 300px;
+  height: 100%;
+  background: orange;
+  z-index: 12;
+  transform: translate(300px, 0);
+  transition: 300ms transform ease;
+
+  &.open {
+    transform: translate(0, 0);
+    transition: 300ms transform ease;
+  }
+  ul {
+    margin: 0;
+    padding: 15px;
+    li {
+      list-style-type: none;
+      a {
+        display: block;
+        padding: 15px;
+        font-size: 17px;
+        border-bottom: solid 1px white;
+        color: white;
+        &:hover {
+          text-decoration: none;
+        }
+      }
+      &.current_page_item {
+        a {
+          background: white;
+          color: orange;
+        }
+      }
+    }
+    ul {
+      padding: 0;
+      margin: 0;
+    }
+  }
+}

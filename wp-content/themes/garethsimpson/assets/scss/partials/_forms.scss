@@ -1,0 +1,27 @@
+select {
+  background: #FFFFFF;
+  border: 1px solid #EEEEEE;
+  height: 48px;
+  border-radius: 5px;
+  padding-left: 25px;
+  padding-right: 25px;
+  width: 100%;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  text-indent: 1px;
+  -o-text-overflow: '';
+     text-overflow: '';
+  option.first {
+    color: #999999;
+  }
+}
+
+input {
+  background: #FFFFFF;
+  border: 1px solid #EEEEEE;
+  height: 48px;
+  border-radius: 5px;
+  padding-left: 25px;
+  padding-right: 25px;
+  width: 100%;
+}

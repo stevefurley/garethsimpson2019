@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1915px" height="662px" viewBox="0 0 1915 662" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 53.2 (72643) - https://sketchapp.com -->
+    <title>Group 9</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="96.2289511%" y1="88.5766689%" x2="7.14770042%" y2="88.5766689%" id="linearGradient-1">
+            <stop stop-color="#D8D8D8" offset="0%"></stop>
+            <stop stop-color="#EEEEEE" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="96.2289511%" y1="88.5766689%" x2="7.14770042%" y2="88.5766689%" id="linearGradient-2">
+            <stop stop-color="#EEEEEE" offset="0%"></stop>
+            <stop stop-color="#D8D8D8" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Layouts" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Home-v2" transform="translate(-5.000000, -2462.000000)">
+            <g id="Group-4" transform="translate(5.000000, 1911.000000)">
+                <g id="Group-9" transform="translate(-125.000000, 380.000000)">
+                    <g id="Group-24" opacity="0.763253348" style="mix-blend-mode: normal;" stroke="#979797">
+                        <polygon id="Path-2" fill="url(#linearGradient-1)" opacity="0.329775856" style="mix-blend-mode: normal;" points="431.842299 649.087663 697.59284 705.294464 879.560264 531.924193 1027.91315 633.943563 1264.51489 406.337818 1616.76911 649.087663 1819.36344 514.743316 2057.16582 228 2076 842.249061 135 846.998932"></polygon>
+                        <polygon id="Path-8" fill="url(#linearGradient-2)" opacity="0.247674851" style="mix-blend-mode: normal;" points="244.539566 609.635607 493.404986 609.635607 826.909866 370.796161 1238.98945 564.85735 1737.51253 377.65625 2294 -9.82972428e-15 2260.52526 837.093306 0 847"></polygon>
+                    </g>
+                    <g id="Group-11" transform="translate(229.000000, 354.000000)" fill="#6B3660" opacity="0.776460193" stroke="#441E3C" stroke-width="4">
+                        <circle id="Oval-7" cx="12" cy="253" r="10"></circle>
+                        <path d="M599,27.8005395 C605.7968,24.6191352 609,21.291577 609,18 C609,12.4771525 604.522847,8 599,8 C593.477153,8 589,12.4771525 589,18 C589,21.291577 592.2032,24.6191352 599,27.8005395 Z" id="Oval-7"></path>
+                        <path d="M1507,26.7225794 C1513.70719,20.4480621 1517,15.4543359 1517,12 C1517,6.4771525 1512.52285,2 1507,2 C1501.47715,2 1497,6.4771525 1497,12 C1497,15.4543359 1500.29281,20.4480621 1507,26.7225794 Z" id="Oval-7"></path>
+                        <circle id="Oval-7" cx="1033" cy="58" r="10"></circle>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
