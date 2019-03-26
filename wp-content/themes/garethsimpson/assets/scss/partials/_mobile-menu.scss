@@ -15,8 +15,8 @@ $mobileMenuBackgroundCurrent:                          #36B1B3;
 // Header
 
 body {
-  position: relative;
-  overflow-x: hidden;
+  // position: relative;
+  // overflow-x: hidden;
 }
 
 .overlay {
@@ -44,7 +44,7 @@ $hamburgerHeight:                               24px;
 $hamburgerWidth:                                32px;
 $hamburgerLineWidth:                            32px;
 $hamburgerSpacing:                              8px;
-$hamburgerColor:                                orange;
+$hamburgerColor:                                $orange;
 $hamburgerBackground:                           transparent;
 
 //menu hamburger animation
@@ -59,18 +59,16 @@ $hamburgerBackground:                           transparent;
 }
 
 .hamburger-wrapper {
-z-index: 9;
-position: relative;
+  z-index: 9;
+  position: relative;
 }
 .hamburger {
-  width: 34px;
-  height: 34px;
+  width: 32px;
+  height: 20px;
   cursor: pointer;
-  background: transparent;
-  padding: 9px 5px 5px 5px;
+  padding: 0;
   z-index: 10;
   display: block;
-  margin-left: 20px;
   span {
     transition-duration: 0s;
     margin: 0 auto;

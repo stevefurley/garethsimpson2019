@@ -38,7 +38,6 @@
 		// }
 
 		$('.hamburger').on('click', function(){
-			console.log('worlingh');
 			$('#mobile-menu').toggleClass('open');
 			$('.hamburger').toggleClass('is-active');
 			$('.hamburger-menu').toggleClass('active');
@@ -61,6 +60,22 @@
 			e.preventDefault();
 			$(this).unbind(e);
 
+		});
+
+
+		$('#slider').slick({
+			slidesToShow: 1,
+			asNavFor: '.slider-nav',
+			arrows: false,
+			fade: true
+		});
+
+		$('.slider-nav').slick({
+			slidesToShow: 5,
+			slidesToScroll: 1,
+			asNavFor: '#slider',
+			dots: false,
+			focusOnSelect: true
 		});
 
 

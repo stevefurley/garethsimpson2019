@@ -1,0 +1,71 @@
+.read-more {
+  font-size: 16px;
+  color: #E35F30;
+  letter-spacing: 4px;
+  text-align: center;
+  white-space: nowrap;
+  position: relative;
+  text-transform: uppercase;
+  padding-right: 40px;
+  padding-bottom: 5px;
+  text-decoration: none;
+  transition: color 300ms ease;
+  &:before {
+    content: "";
+    height: 8px;
+    width: 13px;
+    background: url(/wp-content/themes/garethsimpson/assets/img/button-arrow.svg) no-repeat center center;
+    position: absolute;
+    right: 2px;
+    top: 8px;
+  }
+  &:after {
+    content: "";
+    display: block;
+    width: calc(100% + 44px);
+    left: -2px;
+    height: 3px;
+    background: #e35f30;
+    transition: background 300ms ease;
+    margin: auto;
+    position: relative;
+    top: 5px;
+  }
+  &:hover {
+    text-decoration: none;
+    &.white-hover {
+      color: #fff;
+      transition: color 300ms ease;
+      &:after {
+        // background: #fff;
+        // transition: background 300ms ease;
+      }
+    }
+  }
+}
+
+.read-more-version-2 {
+  font-size: 18px;
+  font-size: 18px;
+  line-height: 25px;
+  color: #E35F30;
+  white-space: nowrap;
+  position: relative;
+  text-decoration: none;
+  transition: color 300ms ease;
+  padding-right: 30px;
+  &:before {
+    content: "";
+    height: 8px;
+    width: 13px;
+    background: url(/wp-content/themes/garethsimpson/assets/img/button-arrow.svg) no-repeat center center;
+    position: absolute;
+    right: 4px;
+    top: 9px;
+  }
+  &:hover {
+    color: #fff;
+    transition: color 300ms ease;
+    text-decoration: none;
+  }
+}

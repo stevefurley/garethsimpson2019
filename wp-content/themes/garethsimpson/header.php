@@ -20,6 +20,14 @@
 </head>
 
 <body <?php body_class(); ?>>
+  <?php
+  $logo = get_field( 'logo', 'option' );
+  $header_background_image = get_field( 'header_background_image' );
+  $header_title = get_field('header_title');
+  $sub_title_header = get_field('sub_title_header');
+  $custom_link = get_field('custom_link');
+  $custom_link_text = get_field('custom_link_text');
+  ?>
 
 
   <nav role="navigation" class='mobile-menu d-block d-md-none' id='mobile-menu' onclick='stopProp(event, this)'>
@@ -28,18 +36,47 @@
   </nav>
   <div class='move'>
 
-    <header class="site-header relative pad-top-15 pad-bottom-15" role="banner" id='header'>
-      <div class='container d-flex  '>
-        <a class='header-logo pad-top-30 pad-bottom-30' href='/'>
-          <img class='img-responsive' src='<?php echo get_template_directory_uri();?>/assets/img/header-logo.svg' />
-        </a>
-        <span class='d-flex flex-grow-1 '></span>
-        <div class="hamburger-wrapper   d-block d-md-none align-self-center">
-          <div id="mobile-menu-button" class="hamburger" ><span></span></div>
-        </div>
-        <div id='header-menu' class='d-md-block d-none align-self-md-center' >
-          <?php wp_nav_menu( array( 'theme_location' => 'header-menu' ) ); ?>
-        </div>
-      </div>
+    <?php if(is_front_page()):?>
+      <header class="homepage-header" role="banner" id='header' style='background: url(<?php echo $header_background_image["url"]; ?>) no-repeat center center / cover;'>
+        <span class='darkgrey-overlay cover'></span>
+      <?php else:?>
+        <header class="standard-header" role="banner" id='header'>
+        <?php endif; ?>
+        <div class='container d-flex relative z-index-2 '>
+          <a class='header-logo ' href='/'>
+            <?php if ( $logo ) { ?>
+              <img class='fluid-img' src="<?php echo $logo['url']; ?>" alt="<?php echo $logo['alt']; ?>" />
+            <?php } ?>
+          </a>
+          <span class='d-flex flex-grow-1 '></span>
+          <div class="hamburger-wrapper   d-block d-md-none align-self-center">
+            <div id="mobile-menu-button" class="hamburger" ><span></span></div>
+          </div>
+          <div class='rightside-header'>
+            <div class='tel-email-wrapper'>
+              <a class='headerphone' href='tel:<?php the_field( 'telephone_number', 'option' ); ?>'><?php the_field( 'telephone_number', 'option' ); ?></a> /
+              <a class='headermeail' href='mailto:<?php the_field( 'email_address', 'option' ); ?>'><?php the_field( 'email_address', 'option' ); ?></a>
 
-    </header>
+            </div>
+            <div id='header-menu' class='d-md-block d-none align-self-md-center' >
+              <?php wp_nav_menu( array( 'theme_location' => 'header-menu' ) ); ?>
+            </div>
+          </div>
+        </div>
+        <?php if(is_front_page()):?>
+          <div class='container homepage-text relative z-index-2 '>
+            <?php if($header_title):?>
+              <h1 class='h1-hero'><?php the_field( 'header_title' ); ?></h1>
+            <?php endif; ?>
+            <?php if($sub_title_header):?>
+              <h2 class='h3'><?php the_field( 'sub_title_header' ); ?></h2>
+            <?php endif;?>
+            <?php if($custom_link && $custom_link_text):?>
+
+              <div class='d-block text-center'>
+                <a class='read-more d-inline-block white-hover' href='<?php echo $custom_link;?>'><?php echo $custom_link_text;?></a>
+              </div>
+            <?php endif;?>
+          </div>
+        <?php endif; ?>
+      </header>

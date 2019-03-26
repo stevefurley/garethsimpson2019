@@ -1,22 +1,35 @@
 
 <div class="clear"></div>
-<div class='overlay-footer overlay'></div>
-
-<footer id="footer" role="contentinfo" class='pad-top-20 pad-bottom-20 margin-top-auto'>
-  <div class='container overflow '>
-    <div id="copyright" class='white-text'>
-      &copy; Copyright <?php echo date('Y'); ?>
-    </div>
-    <div class='margin-left-auto  align-items'>
-      <?php
-      $phone = '012786786867';
-      $email = 'stevefurley@gmail.com';
-      ?>
-      <a class=' white-text no-decoration' href='tel:<?php echo $phone ?  preg_replace("/[^0-9]/", "", $phone) : ""; ?>'><?php echo $phone; ?></a>
-      <span class='white-text pad-left-5 pad-right-5'> | </span> <a class='  white-text no-decoration' href='tel:<?php echo $email ?  preg_replace("/[^0-9]/", "", $email) : ""; ?>'><?php echo $email; ?></a>
+<?php
+$phone = get_field( 'telephone_number', 'option' );
+$email = get_field( 'email_address', 'option' );
+ $footer_background_image = get_field( 'footer_background_image', 'option' );
+?>
+<footer id="footer" role="contentinfo">
+  <div class='main-footer' style='background: url(<?php echo $footer_background_image["url"]; ?>) no-repeat center center / cover;'>
+    <div class='container overflow '>
+      <div class='top-footer-menu'>
+        <?php wp_nav_menu( array( 'theme_location' => 'footer-menu-top' ) ); ?>
+      </div>
+      <a class='footer-email h4' href='tel:<?php echo $email;?>'><?php echo $email; ?></a>
+      <a class='footer-phone h4' href='tel:<?php echo $phone ?  preg_replace("/[^0-9]/", "", $phone) : ""; ?>'><?php echo $phone; ?></a>
+      <?php if ( have_rows( 'social_link', 'option' ) ) : ?>
+        <div class='social-links-footer'>
+          <?php while ( have_rows( 'social_link', 'option' ) ) : the_row(); ?>
+            <?php $icon = get_sub_field('icon');?>
+            <a href='<?php the_sub_field( 'link' ); ?>' target='_blank'><img src='/wp-content/themes/garethsimpson/assets/img/icons/<?php echo $icon;?>.svg' alt='<?php echo $icon; ?>' /></a>
+          <?php endwhile; ?>
+        </div>
+      <?php endif; ?>
     </div>
   </div>
-
+  <div class='footer-bottom'>
+    <div class='container'>
+      <div class='bottom-footer-menu'>
+        <?php wp_nav_menu( array( 'theme_location' => 'footer-menu' ) ); ?>
+      </div>
+    </div>
+  </div>
 </footer>
 </div><!-- closing div from header-->
 

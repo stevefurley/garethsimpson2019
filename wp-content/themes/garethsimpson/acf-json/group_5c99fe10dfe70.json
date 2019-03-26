@@ -67,7 +67,7 @@
         {
             "key": "field_5c99fed10f3b2",
             "label": "Custom link",
-            "name": "custom_link",
+            "name": "custom_links",
             "type": "clone",
             "instructions": "",
             "required": 0,
@@ -95,13 +95,16 @@
             }
         ]
     ],
-    "menu_order": 0,
+    "menu_order": -10,
     "position": "normal",
     "style": "default",
     "label_placement": "top",
     "instruction_placement": "label",
-    "hide_on_screen": "",
+    "hide_on_screen": [
+        "the_content",
+        "featured_image"
+    ],
     "active": 1,
     "description": "",
-    "modified": 1553596201
+    "modified": 1553618229
 }

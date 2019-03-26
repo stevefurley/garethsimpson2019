@@ -1,5 +1,74 @@
-#header {
-  background: lightgrey;
+.homepage-header {
+  position: relative;
+  @include media-breakpoint-up(md) {
+    min-height: 1000px;
+  }
+  .darkgrey-overlay {
+    background: rgba(0,0,0,0.6);
+    z-index: 1;
+  }
+  .tel-email-wrapper {
+    position: relative;
+    margin-top: 16px;
+    margin-bottom: 21px;
+    right: 0;
+    text-align: right;
+    color: #fff;
+    display: none;
+    @include media-breakpoint-up(md) {
+      display: block;
+    }
+    .headermeail {
+      font-size: 18px;
+      color: $orange;
+      line-height: 25px;
+      transition: 300ms color ease;
+      &:hover {
+        color: #fff;
+        transition: 300ms color ease;
+      }
+    }
+    .headerphone {
+      font-size: 18px;
+      color: #FFFFFF;
+      line-height: 25px;
+      &:hover {
+        color: $orange;
+        transition: 300ms color ease;
+      }
+    }
+  }
+  .container {
+    align-items: center;
+    @include media-breakpoint-up(md) {
+      align-items: flex-end;
+    }
+  }
+  .homepage-text {
+    padding-top: 130px;
+    padding-bottom: 130px;
+    @include media-breakpoint-up(md) {
+      padding-top: 221px;
+      padding-bottom: 100px;
+    }
+    h1 {
+      color: #fff;
+      text-align: center;
+      margin: 0 0 20px 0;
+    }
+    h2 {
+      color: #fff;
+      text-align: center;
+      margin: 0 0 30px 0;
+    }
+  }
+}
+
+.header-logo {
+  padding-top: 20px;
+  @include media-breakpoint-up(md) {
+    padding-top: 0;
+  }
 }
 
 
@@ -18,17 +87,18 @@
       a {
         display: block;
         text-decoration: none;
-        padding: 25px 0 25px 0;
-        margin: 0 10px;
-        color: #111;
-        line-height: 26px;
-        font-weight: 600;
+        padding: 0 15px;
+        margin: 0 5px;
+        color: #fff;
+        font-size: 22px;
+        line-height: 30px;
         background: transparent;
         position: relative;
         transition: 300ms color ease;
+        font-weight: normal;
         &:hover {
           text-decoration: none;
-          color: #999999;
+          color: $orange;
           transition: 300ms color ease;
         }
       }

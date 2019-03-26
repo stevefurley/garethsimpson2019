@@ -67,11 +67,10 @@ function loading_custom_scripts(){
 
   // Theme's main CSS file.
   wp_enqueue_script( 'jquery', 'https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js', array(), false, false);
-  wp_enqueue_style( 'OpenSans', '//fonts.googleapis.com/css?family=PT+Sans+Narrow|PT+Sans:400,700' );
+  wp_enqueue_style( 'OpenSans', '//fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800' );
   // if(is_front_page()){
 	// 	wp_enqueue_style( 'owl', get_template_directory_uri() . '/css/owl.carousel.min.css');
-  //
-	// 	wp_enqueue_script( 'owlcarousel', get_stylesheet_directory_uri() . '/js/owl.carousel.min.js', array( 'jquery' ));
+	 	wp_enqueue_script( 'swipejs', get_stylesheet_directory_uri() . '/assets/js/swipe.min.js', array( 'jquery' ));
 	// }
   // wp_enqueue_script( 'scrollreveal', get_template_directory_uri() . '/js/scrollreveal.js', array( 'jquery' ));
   wp_enqueue_style('main.css', get_template_directory_uri() . '/css/main.css');
