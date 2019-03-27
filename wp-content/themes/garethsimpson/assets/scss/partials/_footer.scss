@@ -1,4 +1,120 @@
 #footer {
-  background: red;
-
+  background: #272323;
+  .background-image {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.2;
+  }
+  .main-footer {
+    background: #272323;
+    padding-top: 70px;
+    padding-bottom: 70px;
+    text-align: center;
+    .footer-email {
+      display: block;
+      text-align: center;
+      color: $orange;
+      transition: color 300ms ease;
+      margin-bottom: 25px;
+      text-decoration: none;
+      &:hover {
+        transition: color 300ms ease;
+        color: #fff;
+      }
+    }
+    .footer-phone {
+      display: block;
+      text-align: center;
+      color: #fff;
+      transition: color 300ms ease;
+      margin-bottom: 60px;
+      text-decoration: none;
+      &:hover {
+        text-decoration: none;
+        transition: color 300ms ease;
+        color: $orange;
+      }
+    }
+    .social-links-footer {
+      a {
+        margin: 0 25px;
+        opacity: 1;
+        transition: opacity 300ms ease;
+        &:hover {
+          opacity: 0.5;
+          transition: opacity 300ms ease;
+        }
+      }
+    }
+  }
+  .top-footer-menu {
+    display: block;
+    text-align: center;
+    margin-bottom: 110px;
+    ul {
+      padding: 0;
+      margin: auto;
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      li {
+        list-style-type: none;
+        a {
+          color: #fff;
+          text-align: center;
+          line-height: 37px;
+          font-size: 27px;
+          padding: 10px 50px;
+          transition: color 300ms ease;
+          &:hover {
+            color: $orange;
+            transition: color 300ms ease;
+          }
+        }
+      }
+    }
+  }
+  .bottom-footer-menu {
+    padding-top: 11px;
+    padding-bottom: 11px;
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+    ul {
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      li {
+        list-style-type: none;
+        a {
+          color: #fff;
+          font-size: 11px;
+          line-height: 16px;
+          transition: color 300ms ease;
+          height: 25px;
+          margin: 0 13px;
+          text-decoration: none;
+          &:hover {
+            text-decoration: none;
+            color: $orange;
+            transition: color 300ms ease;
+          }
+        }
+      }
+    }
+    span {
+      color: #fff;
+      font-size: 11px;
+      line-height: 16px;
+      transition: color 300ms ease;
+      margin: 0 13px;
+      height: 25px;
+      display: flex;
+      align-items: center;
+    }
+  }
 }

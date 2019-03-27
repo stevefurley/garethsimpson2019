@@ -6,8 +6,9 @@ $email = get_field( 'email_address', 'option' );
  $footer_background_image = get_field( 'footer_background_image', 'option' );
 ?>
 <footer id="footer" role="contentinfo">
-  <div class='main-footer' style='background: url(<?php echo $footer_background_image["url"]; ?>) no-repeat center center / cover;'>
-    <div class='container overflow '>
+  <div class='main-footer relative'>
+    <span class='background-image' style='background: url(<?php echo $footer_background_image["url"]; ?>) no-repeat center center / cover;'></span>
+    <div class='container overflow relative z-index-3'>
       <div class='top-footer-menu'>
         <?php wp_nav_menu( array( 'theme_location' => 'footer-menu-top' ) ); ?>
       </div>
@@ -27,6 +28,7 @@ $email = get_field( 'email_address', 'option' );
     <div class='container'>
       <div class='bottom-footer-menu'>
         <?php wp_nav_menu( array( 'theme_location' => 'footer-menu' ) ); ?>
+          <span>Copyright <?php the_date('Y'); ?>
       </div>
     </div>
   </div>

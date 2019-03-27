@@ -75,7 +75,29 @@
 			slidesToScroll: 1,
 			asNavFor: '#slider',
 			dots: false,
-			focusOnSelect: true
+			centerMode: true,
+			arrows: false,
+			focusOnSelect: true,
+			centerPadding: '0',
+			responsive: [
+				{
+					breakpoint: 1200,
+					settings: {
+						slidesToShow: 3,
+						centerMode: true,
+						 centerPadding: '0',
+					}
+				},
+				{
+					breakpoint: 767,
+					settings: {
+						slidesToShow: 1,
+						centerMode: true,
+						 centerPadding: '40px',
+						 	dots: true,
+					}
+				}
+			]
 		});
 
 

@@ -211,7 +211,31 @@
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
-                        "width": "",
+                        "width": "50",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "array",
+                    "preview_size": "thumbnail",
+                    "library": "all",
+                    "min_width": "",
+                    "min_height": "",
+                    "min_size": "",
+                    "max_width": "",
+                    "max_height": "",
+                    "max_size": "",
+                    "mime_types": ""
+                },
+                {
+                    "key": "field_5c9b759a72e63",
+                    "label": "Gareth mobile photo",
+                    "name": "gareth_mobile_photo",
+                    "type": "image",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "50",
                         "class": "",
                         "id": ""
                     },
@@ -246,5 +270,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1553597455
+    "modified": 1553692087
 }

@@ -29,6 +29,7 @@
 # ignore everything in the "wp-content" directory, except:
 # mu-plugins, plugins, and themes directories
 wp-content/*
+wp-salt.php
 !wp-content/mu-plugins/
 !wp-content/plugins/
 !wp-content/themes/

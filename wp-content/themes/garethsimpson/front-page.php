@@ -87,21 +87,26 @@
 <?php if ( have_rows( 'trusted_slider' ) ) : ?>
   <section class='trusted_slider'>
     <div class='container'>
-      <div class='col-12 col-md-10 center no-padding'>
+      <div class='col-12 col-lg-10 center no-padding'>
         <?php while ( have_rows( 'trusted_slider' ) ) : the_row(); ?>
           <h2 class='h1'><?php the_sub_field( 'title' ); ?></h2>
           <?php if ( have_rows( 'slider' ) ) : ?>
             <div id="slider">
               <?php while ( have_rows( 'slider' ) ) : the_row(); ?>
                 <div class='inner-slider'>
-                  <img src='/wp-content/themes/garethsimpson/assets/img/stars.svg' alt='stars'  />
+                  <div class='d-block text-center stars'>
+                    <img class='d-inline-block' src='/wp-content/themes/garethsimpson/assets/img/stars.svg' alt='stars'  />
+                  </div>
+
                   <p class='orange-text no-margin h4'>
-                    <?php the_sub_field( 'quote_text' ); ?>
+                    "<?php the_sub_field( 'quote_text' ); ?>..."
                   </p>
                   <div class='quote quote-text'>
-                    <img src='/wp-content/themes/garethsimpson/assets/img/left-quotes.svg' alt='left quote'  />
-                    <?php the_sub_field( 'quote_description' ); ?>
-                    <img src='/wp-content/themes/garethsimpson/assets/img/right-quotes.svg' alt='right quote'  />
+                    <img class='left-quote' src='/wp-content/themes/garethsimpson/assets/img/left-quotes.svg' alt='left quote'  />
+                    <div class='quote-wrapper'>
+                      <?php the_sub_field( 'quote_description' ); ?>
+                    </div>
+                    <img  class='right-quote' src='/wp-content/themes/garethsimpson/assets/img/right-quotes.svg' alt='right quote'  />
                   </div>
                 </div>
               <?php endwhile; ?>
@@ -112,10 +117,13 @@
         <?php $trusted_slider = get_field('trusted_slider');?>
         <div class='slider-nav'>
           <?php foreach($trusted_slider['slider'] as $nav):?>
-            <div>
+            <div class='nav-block'>
               <?php $profile_photo = $nav['profile_photo']; ?>
               <?php if ( $profile_photo ) { ?>
-                <img src="<?php echo $profile_photo['url']; ?>" alt="<?php echo $profile_photo['alt']; ?>" />
+                <div class='d-block text-center image-wrapper'>
+                  <img class='d-inline-block fluid-img' src="<?php echo $profile_photo['url']; ?>" alt="<?php echo $profile_photo['alt']; ?>" />
+                </div>
+
               <?php } ?>
               <p class='h6 profile-name'>
                 <?php echo $nav['profile_name']; ?>
@@ -134,6 +142,10 @@
 <?php if ( have_rows( 'about_me_section' ) ) : ?>
   <section class='about_me_section'>
     <?php while ( have_rows( 'about_me_section' ) ) : the_row(); ?>
+      <?php $gareth_mobile_photo = get_sub_field('gareth_mobile_photo');?>
+      <div class='mobile-photo'>
+        <img src='<?php echo $gareth_mobile_photo["url"]; ?>' alt='<?php echo $gareth_mobile_photo["alt"]; ?>' />
+      </div>
       <div class='container d-flex flex-wrap'>
         <div class='col-12 col-md-5 col-lg-4'>
           <h2 class='h1'><?php the_sub_field( 'title' ); ?></h2>
@@ -141,12 +153,18 @@
           <div class='tiny-text-desc h6'>
             <?php the_sub_field( 'description' ); ?>
           </div>
-          <a href='small read-more' href='<?php the_sub_field( 'custom_link' ); ?>'><?php the_sub_field( 'custom_link_text' ); ?></a>
+          <div class='d-block button-wrapper'>
+            <a class='small read-more d-inline-block' href='<?php the_sub_field( 'custom_link' ); ?>'><?php the_sub_field( 'custom_link_text' ); ?></a>
+          </div>
+
           <?php if ( have_rows( 'social_link', 'option' ) ) : ?>
             <div class='social-links'>
+              <p class='h7 follow-me'>
+                Follow me
+              </p>
               <?php while ( have_rows( 'social_link', 'option' ) ) : the_row(); ?>
                 <?php $icon = get_sub_field('icon');?>
-                <a href='<?php the_sub_field( 'link' ); ?>' taget='_blank'><img src='/wp-content/themes/garethsimpson/assets/img/icons/<?php echo $icon;?>' alt='<?php echo $icon; ?>' /></a>
+                <a href='<?php the_sub_field( 'link' ); ?>' taget='_blank'><img src='/wp-content/themes/garethsimpson/assets/img/icons/<?php echo $icon;?>.svg' alt='<?php echo $icon; ?>' /></a>
               <?php endwhile; ?>
             </div>
           <?php endif; ?>
@@ -156,28 +174,34 @@
             <?php the_sub_field( 'rightside_title' ); ?>
           </p>
           <?php if ( have_rows( 'bold_title_and_text' ) ) : ?>
-            <?php while ( have_rows( 'bold_title_and_text' ) ) : the_row(); ?>
-              <div class=' h6'>
-                <?php echo the_sub_field('bold_text_and_titles'); ?>
-              </div>
-            <?php endwhile; ?>
+            <div class='white-box'>
+              <?php while ( have_rows( 'bold_title_and_text' ) ) : the_row(); ?>
+                <div class='boxes h6'>
+                  <?php echo the_sub_field('bold_text_and_titles'); ?>
+                </div>
+              <?php endwhile; ?>
+            </div>
+
           <?php endif; ?>
         </div>
       </div>
+      <?php $gareth_photo = get_sub_field( 'gareth_photo' ); ?>
+      <?php if ( $gareth_photo ) { ?>
+        <div class='gareth-photo'>
+          <img src="<?php echo $gareth_photo['url']; ?>" alt="<?php echo $gareth_photo['alt']; ?>" />
+        </div>
+      <?php } ?>
       <div class='purple-gareth-section'>
-        <?php $gareth_photo = get_sub_field( 'gareth_photo' ); ?>
-        <?php if ( $gareth_photo ) { ?>
-          <div class='gareth-photo'>
-            <img src="<?php echo $gareth_photo['url']; ?>" alt="<?php echo $gareth_photo['alt']; ?>" />
-          </div>
-        <?php } ?>
-        <div class='container d-flex flex-wrap'>
+
+        <div class='container purple-box-wrapper'>
           <?php if ( have_rows( 'purple_background_blocks' ) ) : ?>
-            <?php while ( have_rows( 'purple_background_blocks' ) ) : the_row(); ?>
-              <div class='purple-block h6'>
-                <?php the_sub_field( 'blocks' ); ?>
-              </div>
-            <?php endwhile; ?>
+            <div class='purple-wrapper'>
+              <?php while ( have_rows( 'purple_background_blocks' ) ) : the_row(); ?>
+                <div class='purple-block h6'>
+                  <img src='/wp-content/themes/garethsimpson/assets/img/star.svg' alt='star'  /><?php the_sub_field( 'blocks' ); ?>
+                </div>
+              <?php endwhile; ?>
+            </div>
           <?php endif; ?>
         </div>
       </div>
@@ -189,18 +213,21 @@
 <?php if ( have_rows( 'combining_technical' ) ) : ?>
   <section class='combining_technical'>
     <?php while ( have_rows( 'combining_technical' ) ) : the_row(); ?>
-      <div class='container d-flex flex-wrap'>
-        <div class='col-12 col-md-5'>
+      <div class='container d-flex flex-wrap align-items-center'>
+        <div class='col-12 col-md-6 col-lg-5 pad-bottom-40 pad-bottom-0-m'>
           <h2 class='h1'><?php the_sub_field( 'title' ); ?></h2>
-          <div class='h6'>
+          <div class='h6 description'>
             <?php the_sub_field( 'description' ); ?>
           </div>
-          <a href='small read-more' href='<?php the_sub_field( 'custom_link' ); ?>'><?php the_sub_field( 'custom_link_text' ); ?></a>
+          <div class='d-block'>
+            <a class='small read-more d-inline-block' href='<?php the_sub_field( 'custom_link' ); ?>'><?php the_sub_field( 'custom_link_text' ); ?></a>
+          </div>
+
         </div>
-        <div class='col-12 col-md-7'>
+        <div class='col-12 col-md-6 col-lg-7 d-block text-center'>
           <?php $rightside_image = get_sub_field( 'rightside_image' ); ?>
           <?php if ( $rightside_image ) { ?>
-            <img class='fluid-img' src="<?php echo $rightside_image['url']; ?>" alt="<?php echo $rightside_image['alt']; ?>" />
+            <img class='fluid-img d-inline-block' src="<?php echo $rightside_image['url']; ?>" alt="<?php echo $rightside_image['alt']; ?>" />
           <?php } ?>
         </div>
       </div>
@@ -212,14 +239,14 @@
   <span class='contact-background'><img src='/wp-content/themes/garethsimpson/assets/img/contact-bg.svg' alt='contact-background' /></span>
   <?php if ( have_rows( 'contact_section' ) ) : ?>
 
-    <div class='container'>
+    <div class='container relative z-index-2'>
       <?php while ( have_rows( 'contact_section' ) ) : the_row(); ?>
-        <h2 class='h1-hero'><?php the_sub_field( 'title' ); ?></h2>
+        <h2 class='h1'><?php the_sub_field( 'title' ); ?></h2>
         <h3 class='h4'><?php the_sub_field( 'sub_title' ); ?></h3>
       <?php endwhile; ?>
     </div>
   <?php endif; ?>
-  <div class='bottom-section'>
+  <div class='bottom-section relative z-index-2'>
     <p class='or'>
       Or
     </p>
