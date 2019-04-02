@@ -49,6 +49,8 @@ $blank_includes = [
 
   'lib/acf/options.php',
 
+  'lib/custom/backend-styling.php',
+
 
 ];
 
@@ -70,6 +72,7 @@ function loading_custom_scripts(){
   wp_enqueue_style( 'OpenSans', '//fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800' );
   // if(is_front_page()){
 	// 	wp_enqueue_style( 'owl', get_template_directory_uri() . '/css/owl.carousel.min.css');
+   	// wp_enqueue_script( 'font', get_stylesheet_directory_uri() . '/assets/js/font.js');
 	 	wp_enqueue_script( 'swipejs', get_stylesheet_directory_uri() . '/assets/js/swipe.min.js', array( 'jquery' ));
 	// }
   // wp_enqueue_script( 'scrollreveal', get_template_directory_uri() . '/js/scrollreveal.js', array( 'jquery' ));

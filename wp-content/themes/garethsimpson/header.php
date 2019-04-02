@@ -16,6 +16,16 @@
   <link rel="mask-icon" href="<?php bloginfo('stylesheet_directory'); ?>/img/favicons/safari-pinned-tab.svg" color="#E35F30">
   <meta name="msapplication-TileColor" content="#E35F30">
   <meta name="theme-color" content="#E35F30">
+  <script type="text/javascript">
+    (function() {
+        var trial = document.createElement('script');
+        trial.type = 'text/javascript';
+        trial.async = true;
+        trial.src = 'https://easy.myfonts.net/v2/js?sid=288420(font-family=Hurme+Geometric+Sans+4+Light)&sid=288422(font-family=Hurme+Geometric+Sans+4+Regular)&sid=288425(font-family=Hurme+Geometric+Sans+4+SemiBold)&sid=288426(font-family=Hurme+Geometric+Sans+4+Thin)&key=D1cvmAS1JH';
+        var head = document.getElementsByTagName("head")[0];
+        head.appendChild(trial);
+    })();
+</script>
   <?php wp_head(); ?>
 </head>
 
@@ -37,10 +47,10 @@
   <div class='move'>
 
     <?php if(is_front_page()):?>
-      <header class="homepage-header" role="banner" id='header' style='background: url(<?php echo $header_background_image["url"]; ?>) no-repeat center center / cover;'>
+      <header class="homepage-header page-header" role="banner" id='header' style='background: url(<?php echo $header_background_image["url"]; ?>) no-repeat center center / cover;'>
         <span class='darkgrey-overlay cover'></span>
       <?php else:?>
-        <header class="standard-header" role="banner" id='header'>
+        <header class="standard-header page-header" role="banner" id='header'>
         <?php endif; ?>
         <div class='container d-flex relative z-index-2 '>
           <a class='header-logo ' href='/'>

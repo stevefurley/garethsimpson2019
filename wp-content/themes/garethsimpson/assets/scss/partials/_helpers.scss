@@ -1,16 +1,17 @@
 
 .font-300 {
   font-weight: 300;
+  font-family: 'Hurme Geometric Sans 4 Light', sans-serif;
 }
 
 .font-400 {
   font-weight: 400;
+  font-family: 'Hurme Geometric Sans 4 Regular', sans-serif;
 }
-.font-500 {
-  font-weight: 500;
-}
+
 .font-600 {
   font-weight: 600;
+  font-family: 'Hurme Geometric Sans 4 SemiBold', sans-serif;
 }
 
 .font-700 {
@@ -111,10 +112,13 @@
 .pad-right-40 {padding-right: 40px;}
 .pad-right-50 {padding-right: 50px;}
 .pad-right-60 {padding-right: 60px;}
+.text-align-center {text-align: center;}
 
 // Tablet Helpers
 @include media-breakpoint-up(md) {
-
+  .text-center-m {text-align: center;}
+  .text-left-m {text-align: left;}
+  .text-right-m {text-align: right;}
   .pad-left-0-m {padding-left: 0;}
   .pad-left-5-m {padding-left: 5px;}
   .pad-left-10-m {padding-left: 10px;}
@@ -287,5 +291,5 @@
 
 
 @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
-/* IE10+ CSS styles go here */
+  /* IE10+ CSS styles go here */
 }

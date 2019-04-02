@@ -23,7 +23,7 @@
     font-weight: 600;
   }
   h4 {
-    font-weight: bold;
+    @extend .font-600;
   }
   .blocks-wrapper {
     padding-bottom: 35px;
@@ -56,7 +56,7 @@
     }
   }
   h4.h5 {
-    font-weight: bold;
+    @extend .font-600;
     text-transform: uppercase;
     display: inline-block;
     @include media-breakpoint-up(md) {
@@ -236,7 +236,7 @@
     padding-bottom: 170px;
   }
   h2 {
-    font-weight: bold;
+    @extend .font-600;
     margin-bottom: 0;
   }
   .stars {
@@ -245,7 +245,7 @@
   .inner-slider {
     .orange-text {
       color: $orange;
-      font-weight: bold;
+      @extend .font-600;
       font-size: 27px;
       line-height: 37px;
       margin-bottom: 18px;
@@ -257,6 +257,7 @@
       color: #333333;
       position: relative;
       margin-bottom: 75px;
+      @extend .font-300;
       .quote-wrapper {
         @include media-breakpoint-up(md) {
           padding: 0 50px;
@@ -376,10 +377,10 @@
   }
   h2 {
     margin-bottom: 22px;
-    font-weight: bold;
+    @extend .font-600;
   }
   h3 {
-    font-weight: bold;
+    @extend .font-600;
     margin-bottom: 13px;
   }
   .mobile-photo {
@@ -398,7 +399,7 @@
   }
   .follow-me {
     text-transform: uppercase;
-    font-weight: bold;
+    @extend .font-600;
     margin-bottom: 25px;
   }
   .social-links {
@@ -576,7 +577,7 @@
     padding-bottom: 130px;
   }
   h2 {
-    font-weight: bold;
+    @extend .font-600;
     margin-bottom: 50px;
   }
   .description {
@@ -594,7 +595,7 @@
     padding-bottom: 50px;
   }
   h2 {
-    font-weight: bold;
+    @extend .font-600;
     margin-bottom: 20px;
   }
   h3 {

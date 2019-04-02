@@ -1,12 +1,5 @@
-.homepage-header {
-  position: relative;
-  @include media-breakpoint-up(md) {
-    min-height: 1000px;
-  }
-  .darkgrey-overlay {
-    background: rgba(0,0,0,0.6);
-    z-index: 1;
-  }
+//sitewide header
+.page-header {
   .tel-email-wrapper {
     position: relative;
     margin-top: 16px;
@@ -44,6 +37,18 @@
       align-items: flex-end;
     }
   }
+}
+
+//homepage header
+.homepage-header {
+  position: relative;
+  @include media-breakpoint-up(md) {
+    min-height: 1000px;
+  }
+  .darkgrey-overlay {
+    background: rgba(0,0,0,0.6);
+    z-index: 1;
+  }
   .homepage-text {
     padding-top: 130px;
     padding-bottom: 130px;
@@ -64,12 +69,21 @@
   }
 }
 
+
+//stanrdard header
+.standard-header {
+  background: #272323;
+  padding-bottom: 34px;
+}
+
 .header-logo {
   padding-top: 20px;
   @include media-breakpoint-up(md) {
     padding-top: 0;
   }
 }
+
+
 
 
 //fixed header
@@ -104,6 +118,12 @@
       }
       ul.sub-menu {
         display: none;
+      }
+      &:last-child {
+        a {
+          padding-right: 0;
+          margin-right: 0;
+        }
       }
     }
   }
