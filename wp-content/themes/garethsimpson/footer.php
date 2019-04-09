@@ -19,7 +19,7 @@
       </div>
       <h4 class='text-center font-600 pad-bottom-40 no-margin'>Ready to do some real SEO with an industry veteran?</h4>
       <div class='custom-form'>
-        <?php echo do_shortcode( '[contact-form-7 id="5" title="Contact form 1"]' ); ?>
+        <?php echo do_shortcode( '[contact-form-7 id="264" title="Contact form 1"]' ); ?>
       </div>
 
     </div>
