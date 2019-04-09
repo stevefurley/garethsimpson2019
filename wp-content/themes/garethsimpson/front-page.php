@@ -3,7 +3,7 @@
 <?php if ( have_rows( 'text_blocks_and_featured_in' ) ) : ?>
   <section class='text_blocks_and_featured_in'>
     <span class='background-circle'><img src='/wp-content/themes/garethsimpson/assets/img/background-image.svg' alt='background-image' /></span>
-    <div class='container blocks-wrapper relative z-index-2'>
+    <div class='container blocks-wrapper relative z-index-2 pad-right-30 pad-left-30'>
       <?php while ( have_rows( 'text_blocks_and_featured_in' ) ) : the_row(); ?>
         <div class='leftside'>
           <h2 class='h1 font-600'><?php the_sub_field( 'leftside_title' ); ?></h2>
@@ -15,7 +15,7 @@
           </div>
         </article>
       </div>
-      <div class='container relative z-index-2'>
+      <div class='container relative z-index-2 pad-right-30 pad-left-30'>
         <div class='d-block text-center text-md-left pad-bottom-20'>
           <h4 class='h5'><?php the_sub_field( 'featured_in_title' ); ?></h4>
         </div>
@@ -224,7 +224,7 @@
           </div>
 
         </div>
-        <div class='col-12 col-md-6 col-lg-6 col-xl-7 d-block text-center'>
+        <div class='col-12 col-md-6 col-lg-8 col-xl-7 d-block text-center'>
           <?php $rightside_image = get_sub_field( 'rightside_image' ); ?>
           <?php if ( $rightside_image ) { ?>
             <img class='fluid-img d-inline-block' src="<?php echo $rightside_image['url']; ?>" alt="<?php echo $rightside_image['alt']; ?>" />

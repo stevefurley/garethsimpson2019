@@ -2,14 +2,14 @@
   <span class='contact-background'><img src='/wp-content/themes/garethsimpson/assets/img/contact-bg.svg' alt='contact-background' /></span>
   <?php if ( have_rows( 'contact_section' ) ) : ?>
 
-    <div class='container relative z-index-2'>
+    <div class='container relative z-index-2 pad-right-30 pad-left-30'>
       <?php while ( have_rows( 'contact_section' ) ) : the_row(); ?>
         <h2 class='h1'><?php the_sub_field( 'title' ); ?></h2>
         <h3 class='h4'><?php the_sub_field( 'sub_title' ); ?></h3>
       <?php endwhile; ?>
     </div>
   <?php endif; ?>
-  <div class='container'>
+  <div class='container pad-right-30 pad-left-30'>
     <div class='step-form'>
       <div class='steps'>
         <span class='dots'></span>

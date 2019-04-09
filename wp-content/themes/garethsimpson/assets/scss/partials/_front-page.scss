@@ -440,7 +440,7 @@
     text-align: left;
     @include media-breakpoint-up(md) {
       padding:   35px 49px 25px 49px;
-      margin-bottom: 0;
+      margin-bottom: 30px;
     }
     @media only screen and (min-width: 885px) {
       padding:   35px 199px 25px 49px;
