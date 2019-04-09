@@ -2,6 +2,7 @@
   position: relative;
   padding-top: 50px;
   padding-bottom: 50px;
+  flex: 1 0 auto;
   @include media-breakpoint-up(md) {
     padding-top: 60px;
     padding-bottom: 73px;
@@ -102,6 +103,7 @@
   background: #512848;
   position: relative;
   padding-top: 109px;
+  flex: 1 0 auto;
   .orange-block {
     position: absolute;
     left: 50%;
