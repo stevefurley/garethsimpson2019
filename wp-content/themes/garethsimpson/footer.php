@@ -1,4 +1,4 @@
-<section class='contact_section'>
+<section class='contact_section' id='contact'>
   <span class='contact-background'><img src='/wp-content/themes/garethsimpson/assets/img/contact-bg.svg' alt='contact-background' /></span>
   <?php if ( have_rows( 'contact_section' ) ) : ?>
 

@@ -42,7 +42,7 @@
 
 
 <?php if ( have_rows( 'purple_section' ) ) : ?>
-  <section class='purple_section'>
+  <section class='purple_section'  id='consultancy'>
     <span class='background-image'><img src='/wp-content/themes/garethsimpson/assets/img/purple-background2.svg' alt='background image' /></span>
     <div class='container'>
       <?php while ( have_rows( 'purple_section' ) ) : the_row(); ?>
@@ -140,7 +140,7 @@
 <?php endif; ?>
 
 <?php if ( have_rows( 'about_me_section' ) ) : ?>
-  <section class='about_me_section'>
+  <section class='about_me_section' id='about'>
     <?php while ( have_rows( 'about_me_section' ) ) : the_row(); ?>
       <?php $gareth_mobile_photo = get_sub_field('gareth_mobile_photo');?>
       <div class='mobile-photo'>
