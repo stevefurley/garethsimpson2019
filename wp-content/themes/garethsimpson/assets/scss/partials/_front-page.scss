@@ -674,11 +674,14 @@
   @include media-breakpoint-up(lg) {
     padding: 60px;
   }
+  h4 {
+    margin-bottom: 32px;
+  }
   .steps {
     display: flex;
     justify-content: space-between;
     position: relative;
-    margin-bottom: 46px;
+    margin-bottom: 32px;
     .dots {
       position: absolute;
       left: 30px;
@@ -761,7 +764,7 @@
       align-items: center;
       justify-content: center;
       transition: background 300ms ease;
-      margin-top: 5px;
+      margin-top: 2px;
       align-self: center;
       @include media-breakpoint-up(md) {
         align-self: flex-end;
