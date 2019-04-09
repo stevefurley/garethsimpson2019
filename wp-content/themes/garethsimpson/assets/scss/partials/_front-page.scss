@@ -646,6 +646,9 @@
   }
   .contact-background {
     position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 100%;
     img {
       max-width: 100%;
       height: auto;
@@ -665,7 +668,7 @@
     padding: 50px;
   }
   @include media-breakpoint-up(lg) {
-    padding: 80px;
+    padding: 60px;
   }
   .steps {
     display: flex;
