@@ -436,16 +436,27 @@
     margin-bottom: 30px;
     text-align: left;
     @include media-breakpoint-up(md) {
-      padding:   35px 129px 25px 49px;
+      padding:   35px 49px 25px 49px;
       margin-bottom: 0;
-      max-width: 432px;
+    }
+    @media only screen and (min-width: 885px) {
+      padding:   35px 199px 25px 49px;
     }
     @include media-breakpoint-up(lg) {
-      padding: 35px 49px;
+      padding: 35px 230px 35px 49px;
+    }
+    @media only screen and (min-width: 1100px) {
+      padding:   35px 60% 25px 49px;
     }
     @media only screen and (min-width: 1400px) {
-      max-width: 592px;
+      max-width: 562px;
+      padding: 35px 26% 25px 49px;
     }
+    @media only screen and (min-width: 1800px) {
+      max-width: 645px;
+      padding:   35px 49px 25px 49px;
+    }
+
     .boxes {
       &:after {
         content: '';
@@ -638,6 +649,201 @@
     img {
       max-width: 100%;
       height: auto;
+    }
+  }
+}
+
+.step-form {
+
+  max-width: 1130px;
+  margin: auto auto 30px auto;
+  box-shadow: 0 2px 40px 0 rgba(0,0,0,0.18);
+  border-radius: 5px;
+  background: #fff;
+  padding: 30px;
+  @include media-breakpoint-up(md) {
+    padding: 50px;
+  }
+  @include media-breakpoint-up(lg) {
+    padding: 80px;
+  }
+  .steps {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    margin-bottom: 46px;
+    .dots {
+      position: absolute;
+      left: 30px;
+      width: 0;
+      display: block;
+      z-index: 1;
+      top: 47px;
+      border-bottom: 2px dashed #9B9B9B;
+      transition: width 500ms ease;
+      &.step-1 {
+        width: calc(53% - 60px);
+        transition: width 500ms ease;
+      }
+      &.step-2 {
+        width: calc(100% - 60px);
+        transition: width 500ms ease;
+      }
+    }
+    .step {
+      position: relative;
+      z-index: 2;
+      &.active {
+        cursor: pointer;
+        .text {
+          color: #333333;
+          transition: color 300ms ease;
+        }
+      }
+      .text {
+        text-align: center;
+        font-size: 22px;
+        color: #9B9B9B;
+        line-height: 30px;
+        display: block;
+        margin-bottom: 5px;
+        transition: color 300ms ease;
+      }
+      .dot {
+        width: 24px;
+        height: 24px;
+        border-radius: 100%;
+        margin: auto;
+        display: block;
+        background: #9B9B9B;
+        transition: background 300ms ease;
+      }
+      &.active {
+        .dot {
+          background: $orange;
+          transition: background 300ms ease;
+        }
+      }
+    }
+  }
+  .custom-form {
+    br {
+      display:none;
+    }
+
+    input {
+      background: #EAEEF2;
+      border-radius: 4px;
+      height: 80px;
+      font-size: 18px;
+      line-height: 25px;
+      padding-left: 29px;
+    }
+    .next {
+      cursor: pointer;
+      background: $orange;
+      border-radius: 25px;
+      font-size: 18px;
+      color: #FFFFFF;
+      text-align: center;
+      line-height: 25px;
+      width: 218px;
+      height: 50px;
+      display: inline-block;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 300ms ease;
+      margin-top: 5px;
+      align-self: center;
+      @include media-breakpoint-up(md) {
+        align-self: flex-end;
+      }
+      &:hover {
+        background: darken($orange, 10%);
+        transition: background 300ms ease;
+      }
+    }
+    .send-button {
+      display: flex;
+      flex-direction: column;
+      flex-shrink: 0;
+      width: 100%;
+      align-items: center;
+      position: relative;
+      .ajax-loader {
+        position: absolute;
+        bottom: -20px;
+        right: 0;
+      }
+      input {
+        display: inline-block;
+        border-radius: 25px;
+        width: 218px;
+        background: $orange;
+        color: #fff;
+        height: 50px;
+        transition: background 300ms ease;
+        &:hover {
+          color: #fff;
+          background: darken($orange, 10%);
+          transition: background 300ms ease;
+        }
+      }
+    }
+    .steps-form-wrapper {
+      display: flex;
+      overflow: hidden;
+      .inner {
+        display: flex;
+        transform: translate(0, 0);
+        transition: transform 500ms ease;
+        width: 100%;
+        &.left1 {
+          transform: translate(-100%, 0);
+          transition: transform 500ms ease;
+        }
+        &.left2 {
+          transform: translate(-200%, 0);
+          transition: transform 500ms ease;
+        }
+        &.left3 {
+          transform: translate(-300%, 0);
+          transition: transform 500ms ease;
+        }
+        &.left4 {
+          transform: translate(-400%, 0);
+          transition: transform 500ms ease;
+        }
+      }
+      .input-step {
+        display: flex;
+        flex-direction: column;
+        flex-shrink: 0;
+        width: 100%;
+        position: relative;
+        .failed {
+          color: $red;
+          text-align: center;
+          margin-top: 5px;
+          opacity: 0;
+          transition: opacity 300ms ease;
+          @include media-breakpoint-up(md) {
+            text-align: left;
+          }
+        }
+        &.failed {
+          .failed {
+            opacity: 1;
+            transition: opacity 300ms ease;
+          }
+        }
+        &.moveLeft {
+          background: purple;
+        }
+      }
+      #step-1 {
+      }
     }
   }
 }

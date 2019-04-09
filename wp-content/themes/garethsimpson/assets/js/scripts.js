@@ -85,7 +85,7 @@
 					settings: {
 						slidesToShow: 3,
 						centerMode: true,
-						 centerPadding: '0',
+						centerPadding: '0',
 					}
 				},
 				{
@@ -93,8 +93,8 @@
 					settings: {
 						slidesToShow: 1,
 						centerMode: true,
-						 centerPadding: '40px',
-						 	dots: true,
+						centerPadding: '40px',
+						dots: true,
 					}
 				}
 			]
@@ -119,6 +119,79 @@
 }
 }
 });*/
+
+$('.steps .step').on('click', function(){
+		var currentStep = $(this).attr('attr-step');
+		console.log(currentStep);
+		if($(this).hasClass('active')){
+			if(currentStep == 'step-1'){
+				$('.steps-form-wrapper .inner').removeClass('left1');
+				$('.steps-form-wrapper .inner').removeClass('left2');
+				$('.steps .dots').removeClass('step-1');
+				$('.steps .dots').removeClass('step-2');
+				$('#step-2, #step-3').removeClass('active');
+			} else if(currentStep == 'step-2'){
+				$('.steps-form-wrapper .inner').addClass('left1').removeClass('left2');
+				$('.steps .dots').addClass('step-1').removeClass('step-2');
+				$('#step-3').removeClass('active');
+			} else if(currentStep == 'step-3'){
+				$('.steps-form-wrapper .inner').addClass('left1 left2');
+				$('.steps-form-wrapper .inner').removeClass('left3');
+				$('.steps .dots').addClass('step-1, step-2');
+				$('#step-3').addClass('active');
+			}
+
+		}
+
+});
+//custom form with validation
+$('.custom-form .next').on('click', function(){
+	//get id of current next button
+	var id = $(this).parent().attr('id');
+	//console.log(id);
+	if(id == 'step-1') {
+		var currentVal = $('#' + id).find('input').val();
+		if(currentVal == '') {
+			$('#' + id).addClass('failed');
+		} else {
+			//add active class to text steps
+			$('.steps .step-2').addClass('active');
+			//extends the dotted line
+			$('.steps .dots').addClass(id);
+			$('#' + id).removeClass('failed');
+			$('.steps-form-wrapper .inner').addClass('left1');
+		}
+	} else if(id == 'step-2') {
+		var currentVal = $('#' + id).find('input').val();
+		if(currentVal == '') {
+			$('#' + id).addClass('failed');
+		} else {
+			//add active class to text steps
+			$('.steps .step-3').addClass('active');
+			//extends the dotted line
+			$('.steps .dots').addClass(id);
+			$('#' + id).removeClass('failed');
+			$('.steps-form-wrapper .inner').addClass('left2');
+		}
+	} else if(id == 'step-3') {
+		var emailaddress = $('#' + id).find('input').val();
+
+		function validateEmail($email) {
+			var emailReg = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
+			return emailReg.test( $email );
+		}
+		if(emailaddress == '') {
+			$('#step-3 .failed').text('Please add an email address');
+			$('#' + id).addClass('failed');
+		}	else if(!validateEmail(emailaddress)) {
+			$('#' + id).addClass('failed');
+			$('#step-3 .failed').text('Please check your email address');
+		} else {
+			$('#' + id).removeClass('failed');
+			$('.steps-form-wrapper .inner').addClass('left3');
+		}
+	}
+});
 });
 
 })(jQuery);

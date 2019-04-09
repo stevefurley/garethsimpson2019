@@ -76,7 +76,7 @@
         <?php if(is_front_page()):?>
           <div class='container homepage-text relative z-index-2 '>
             <?php if($header_title):?>
-              <h1 class='h1-hero'><?php the_field( 'header_title' ); ?></h1>
+              <h1 class='h1-hero font-600'><?php the_field( 'header_title' ); ?></h1>
             <?php endif; ?>
             <?php if($sub_title_header):?>
               <h2 class='h3'><?php the_field( 'sub_title_header' ); ?></h2>

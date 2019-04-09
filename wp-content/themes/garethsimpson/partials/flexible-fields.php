@@ -83,8 +83,8 @@
           <img class='d-inline-block' src='/wp-content/themes/garethsimpson/assets/img/gareth-logo.svg' alt='Gareth Simpson Logo' />
         </div>
         <div class='container text-center relative z-index-2'>
-          <h1> <?php the_sub_field( 'title' ); ?></h1>
-          <h2><?php echo the_sub_field('sub_title'); ?></h2>
+          <h1 class='font-600'> <?php the_sub_field( 'title' ); ?></h1>
+          <h2 class='h3'><?php echo the_sub_field('sub_title'); ?></h2>
         </div>
 
 

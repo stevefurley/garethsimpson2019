@@ -6,7 +6,7 @@
     <div class='container blocks-wrapper relative z-index-2'>
       <?php while ( have_rows( 'text_blocks_and_featured_in' ) ) : the_row(); ?>
         <div class='leftside'>
-          <h2 class='h1'><?php the_sub_field( 'leftside_title' ); ?></h2>
+          <h2 class='h1 font-600'><?php the_sub_field( 'leftside_title' ); ?></h2>
         </div>
         <article class='rightside'>
           <h4><?php the_sub_field( 'rightside_title' ); ?></h4>
@@ -147,7 +147,7 @@
         <img src='<?php echo $gareth_mobile_photo["url"]; ?>' alt='<?php echo $gareth_mobile_photo["alt"]; ?>' />
       </div>
       <div class='container d-flex flex-wrap'>
-        <div class='col-12 col-md-5 col-lg-4'>
+        <div class='col-12 col-md-5 col-lg-5'>
           <h2 class='h1'><?php the_sub_field( 'title' ); ?></h2>
           <h3><?php the_sub_field( 'sub_title' ); ?></h3>
           <div class='tiny-text-desc h6'>
@@ -169,7 +169,7 @@
             </div>
           <?php endif; ?>
         </div>
-        <div class='col-12 col-md-7 col-lg-8'>
+        <div class='col-12 col-md-7 col-lg-7 rightside-block'>
           <p class='rightside-title h5'>
             <?php the_sub_field( 'rightside_title' ); ?>
           </p>
@@ -214,7 +214,7 @@
   <section class='combining_technical'>
     <?php while ( have_rows( 'combining_technical' ) ) : the_row(); ?>
       <div class='container d-flex flex-wrap align-items-center'>
-        <div class='col-12 col-md-6 col-lg-5 pad-bottom-40 pad-bottom-0-m'>
+        <div class='col-12 col-md-6 col-lg-4 col-xl-5 pad-bottom-40 pad-bottom-0-m'>
           <h2 class='h1'><?php the_sub_field( 'title' ); ?></h2>
           <div class='h6 description'>
             <?php the_sub_field( 'description' ); ?>
@@ -224,7 +224,7 @@
           </div>
 
         </div>
-        <div class='col-12 col-md-6 col-lg-7 d-block text-center'>
+        <div class='col-12 col-md-6 col-lg-6 col-xl-7 d-block text-center'>
           <?php $rightside_image = get_sub_field( 'rightside_image' ); ?>
           <?php if ( $rightside_image ) { ?>
             <img class='fluid-img d-inline-block' src="<?php echo $rightside_image['url']; ?>" alt="<?php echo $rightside_image['alt']; ?>" />
@@ -235,25 +235,7 @@
   </section>
 <?php endif; ?>
 
-<section class='contact_section'>
-  <span class='contact-background'><img src='/wp-content/themes/garethsimpson/assets/img/contact-bg.svg' alt='contact-background' /></span>
-  <?php if ( have_rows( 'contact_section' ) ) : ?>
 
-    <div class='container relative z-index-2'>
-      <?php while ( have_rows( 'contact_section' ) ) : the_row(); ?>
-        <h2 class='h1'><?php the_sub_field( 'title' ); ?></h2>
-        <h3 class='h4'><?php the_sub_field( 'sub_title' ); ?></h3>
-      <?php endwhile; ?>
-    </div>
-  <?php endif; ?>
-  <div class='bottom-section relative z-index-2'>
-    <p class='or'>
-      Or
-    </p>
-    <a class='bottom-eail h3' href='mailto:<?php the_field( 'email_address', 'option' ); ?>'><?php the_field( 'email_address', 'option' ); ?></a>
-    <a class='bottom-phone h3' href='tel:<?php the_field( 'telephone_number', 'option' ); ?>'><?php the_field( 'telephone_number', 'option' ); ?></a>
-  </div>
-</section>
 
 
 <?php get_footer(); ?>
