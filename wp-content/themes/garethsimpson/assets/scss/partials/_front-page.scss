@@ -373,6 +373,7 @@
   padding-top: 40px;
   position: relative;
   text-align: center;
+  flex: 1 0 auto;
   @include media-breakpoint-up(md) {
     text-align: left;
     padding-top: 80px;
@@ -603,6 +604,7 @@
   padding-bottom: 40px;
   background: #EAEEF2;
   text-align: center;
+  flex: 1 0 auto;
   @include media-breakpoint-up(md) {
     padding-top: 50px;
     padding-bottom: 50px;
