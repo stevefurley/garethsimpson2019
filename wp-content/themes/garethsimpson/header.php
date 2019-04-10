@@ -17,15 +17,16 @@
   <meta name="msapplication-TileColor" content="#E35F30">
   <meta name="theme-color" content="#E35F30">
   <script type="text/javascript">
-    (function() {
-        var trial = document.createElement('script');
-        trial.type = 'text/javascript';
-        trial.async = true;
-        trial.src = 'https://easy.myfonts.net/v2/js?sid=288420(font-family=Hurme+Geometric+Sans+4+Light)&sid=288422(font-family=Hurme+Geometric+Sans+4+Regular)&sid=288425(font-family=Hurme+Geometric+Sans+4+SemiBold)&sid=288426(font-family=Hurme+Geometric+Sans+4+Thin)&key=D1cvmAS1JH';
-        var head = document.getElementsByTagName("head")[0];
-        head.appendChild(trial);
-    })();
+    // (function() {
+    //     var trial = document.createElement('script');
+    //     trial.type = 'text/javascript';
+    //     trial.async = true;
+    //     trial.src = 'https://easy.myfonts.net/v2/js?sid=288420(font-family=Hurme+Geometric+Sans+4+Light)&sid=288422(font-family=Hurme+Geometric+Sans+4+Regular)&sid=288425(font-family=Hurme+Geometric+Sans+4+SemiBold)&sid=288426(font-family=Hurme+Geometric+Sans+4+Thin)&key=D1cvmAS1JH';
+    //     var head = document.getElementsByTagName("head")[0];
+    //     head.appendChild(trial);
+    // })();
 </script>
+<script type="text/javascript" src="/wp-content/themes/garethsimpson/assets/js/MyFontsWebfontsKit.js"></script>
   <?php wp_head(); ?>
 </head>
 
