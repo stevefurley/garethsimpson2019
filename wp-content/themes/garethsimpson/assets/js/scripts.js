@@ -56,6 +56,7 @@
 			asNavFor: '.slider-nav',
 			arrows: false,
 			fade: true,
+			adaptiveHeight: true
 		});
 
 		$('.slider-nav').slick({
