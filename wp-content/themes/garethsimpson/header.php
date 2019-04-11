@@ -9,12 +9,22 @@
     <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
   <?php endif; ?>
   <!-- using https://realfavicongenerator.net -->
-  <link rel="apple-touch-icon" sizes="152x152" href="<?php bloginfo('stylesheet_directory'); ?>/img/favicons/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="<?php bloginfo('stylesheet_directory'); ?>/img/favicons/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="<?php bloginfo('stylesheet_directory'); ?>/img/favicons/favicon-16x16.png">
-  <link rel="manifest" href="<?php bloginfo('stylesheet_directory'); ?>/img/favicons/site.webmanifest">
-  <link rel="mask-icon" href="<?php bloginfo('stylesheet_directory'); ?>/img/favicons/safari-pinned-tab.svg" color="#E35F30">
+  <link rel="apple-touch-icon" sizes="57x57" href="<?php bloginfo('stylesheet_directory'); ?>/assets/img/favicon/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="<?php bloginfo('stylesheet_directory'); ?>/assets/img/favicon/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="<?php bloginfo('stylesheet_directory'); ?>/assets/img/favicon/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="<?php bloginfo('stylesheet_directory'); ?>/assets/img/favicon/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="<?php bloginfo('stylesheet_directory'); ?>/assets/img/favicon/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="<?php bloginfo('stylesheet_directory'); ?>/assets/img/favicon/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="<?php bloginfo('stylesheet_directory'); ?>/assets/img/favicon/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="<?php bloginfo('stylesheet_directory'); ?>/assets/img/favicon/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192"  href="<?php bloginfo('stylesheet_directory'); ?>/assets/img/favicon/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="<?php bloginfo('stylesheet_directory'); ?>/assets/img/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="<?php bloginfo('stylesheet_directory'); ?>/assets/img/favicon/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="<?php bloginfo('stylesheet_directory'); ?>/assets/img/favicon/favicon-16x16.png">
+  <link rel="manifest" href="<?php bloginfo('stylesheet_directory'); ?>/assets/img/favicon/manifest.json">
   <meta name="msapplication-TileColor" content="#E35F30">
+  <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
   <meta name="theme-color" content="#E35F30">
   <script type="text/javascript">
   // (function() {
@@ -51,46 +61,46 @@
     <?php if(is_front_page()):?>
       <header class="homepage-header page-header" role="banner" id='header' >
         <span class='cover d-none d-md-block' style='background: url(<?php echo $header_background_image["url"]; ?>) no-repeat center center / cover;'></span>
-          <span class='cover d-block d-md-none' style='background: url(<?php echo $header_background_image_mobile["url"]; ?>) no-repeat center center / cover;'></span>
-            <span class='darkgrey-overlay cover z-index-2'></span>
-          <?php else:?>
-            <header class="standard-header page-header" role="banner" id='header'>
-            <?php endif; ?>
-            <div class='container d-flex relative z-index-3 '>
-              <a class='header-logo ' href='/'>
-                <?php if ( $logo ) { ?>
-                  <img class='fluid-img' src="<?php echo $logo['url']; ?>" alt="<?php echo $logo['alt']; ?>" />
-                <?php } ?>
-              </a>
-              <span class='d-flex flex-grow-1 '></span>
-              <div class="hamburger-wrapper   d-block d-md-none align-self-center">
-                <div id="mobile-menu-button" class="hamburger" ><span></span></div>
-              </div>
-              <div class='rightside-header'>
-                <div class='tel-email-wrapper'>
-                  <a class='headerphone' href='tel:<?php the_field( 'telephone_number', 'option' ); ?>'><?php the_field( 'telephone_number', 'option' ); ?></a> /
-                  <a class='headermeail' href='mailto:<?php the_field( 'email_address', 'option' ); ?>'><?php the_field( 'email_address', 'option' ); ?></a>
+        <span class='cover d-block d-md-none' style='background: url(<?php echo $header_background_image_mobile["url"]; ?>) no-repeat center center / cover;'></span>
+        <span class='darkgrey-overlay cover z-index-2'></span>
+      <?php else:?>
+        <header class="standard-header page-header" role="banner" id='header'>
+        <?php endif; ?>
+        <div class='container d-flex relative z-index-3 '>
+          <a class='header-logo ' href='/'>
+            <?php if ( $logo ) { ?>
+              <img class='fluid-img' src="<?php echo $logo['url']; ?>" alt="<?php echo $logo['alt']; ?>" />
+            <?php } ?>
+          </a>
+          <span class='d-flex flex-grow-1 '></span>
+          <div class="hamburger-wrapper   d-block d-md-none align-self-center">
+            <div id="mobile-menu-button" class="hamburger" ><span></span></div>
+          </div>
+          <div class='rightside-header'>
+            <div class='tel-email-wrapper'>
+              <a class='headerphone' href='tel:<?php the_field( 'telephone_number', 'option' ); ?>'><?php the_field( 'telephone_number', 'option' ); ?></a> /
+              <a class='headermeail' href='mailto:<?php the_field( 'email_address', 'option' ); ?>'><?php the_field( 'email_address', 'option' ); ?></a>
 
-                </div>
-                <div id='header-menu' class='d-md-block d-none align-self-md-center' >
-                  <?php wp_nav_menu( array( 'theme_location' => 'header-menu' ) ); ?>
-                </div>
-              </div>
             </div>
-            <?php if(is_front_page()):?>
-              <div class='container homepage-text relative z-index-2 '>
-                <?php if($header_title):?>
-                  <h1 class='h1-hero font-600'><?php the_field( 'header_title' ); ?></h1>
-                <?php endif; ?>
-                <?php if($sub_title_header):?>
-                  <h2 class='h3'><?php the_field( 'sub_title_header' ); ?></h2>
-                <?php endif;?>
-                <?php if($custom_link && $custom_link_text):?>
-
-                  <div class='d-block text-center'>
-                    <a class='read-more d-inline-block white-hover' href='<?php echo $custom_link;?>'><?php echo $custom_link_text;?></a>
-                  </div>
-                <?php endif;?>
-              </div>
+            <div id='header-menu' class='d-md-block d-none align-self-md-center' >
+              <?php wp_nav_menu( array( 'theme_location' => 'header-menu' ) ); ?>
+            </div>
+          </div>
+        </div>
+        <?php if(is_front_page()):?>
+          <div class='container homepage-text relative z-index-2 '>
+            <?php if($header_title):?>
+              <h1 class='h1-hero font-600'><?php the_field( 'header_title' ); ?></h1>
             <?php endif; ?>
-          </header>
+            <?php if($sub_title_header):?>
+              <h2 class='h3'><?php the_field( 'sub_title_header' ); ?></h2>
+            <?php endif;?>
+            <?php if($custom_link && $custom_link_text):?>
+
+              <div class='d-block text-center'>
+                <a class='read-more d-inline-block white-hover' href='<?php echo $custom_link;?>'><?php echo $custom_link_text;?></a>
+              </div>
+            <?php endif;?>
+          </div>
+        <?php endif; ?>
+      </header>
