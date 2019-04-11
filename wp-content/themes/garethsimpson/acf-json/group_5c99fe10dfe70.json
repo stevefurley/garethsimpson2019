@@ -11,7 +11,31 @@
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "33",
+                "width": "15",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "preview_size": "thumbnail",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": ""
+        },
+        {
+            "key": "field_5cae370dc4c0c",
+            "label": "Header background image mobile",
+            "name": "header_background_image_mobile",
+            "type": "image",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "18",
                 "class": "",
                 "id": ""
             },
@@ -106,5 +130,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1553618229
+    "modified": 1554921259
 }

@@ -55,7 +55,7 @@
 			slidesToShow: 1,
 			asNavFor: '.slider-nav',
 			arrows: false,
-			fade: true
+			fade: true,
 		});
 
 		$('.slider-nav').slick({
@@ -67,7 +67,7 @@
 			arrows: false,
 			focusOnSelect: true,
 			centerPadding: '0',
-			autoplay: true,
+			autoplay: false,
 			autoplaySpeed: 2000,
 			responsive: [
 				{

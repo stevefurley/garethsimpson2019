@@ -38,10 +38,12 @@
 $phone = get_field( 'telephone_number', 'option' );
 $email = get_field( 'email_address', 'option' );
  $footer_background_image = get_field( 'footer_background_image', 'option' );
+ $footer_background_image_mobile = get_field( 'footer_background_image_mobile', 'option' );
 ?>
 <footer id="footer" role="contentinfo">
   <div class='main-footer relative'>
-    <span class='background-image' style='background: url(<?php echo $footer_background_image["url"]; ?>) no-repeat center center / cover;'></span>
+    <span class='background-image d-none d-md-block' style='background: url(<?php echo $footer_background_image["url"]; ?>) no-repeat center center / cover;'></span>
+    <span class='background-image d-block d-md-none' style='background: url(<?php echo $footer_background_image_mobile["url"]; ?>) no-repeat center center / cover;'></span>
     <div class='container overflow relative z-index-3'>
       <div class='top-footer-menu'>
         <?php wp_nav_menu( array( 'theme_location' => 'footer-menu-top' ) ); ?>

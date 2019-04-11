@@ -258,7 +258,10 @@
       font-style: italic;
       color: #333333;
       position: relative;
-      margin-bottom: 75px;
+      margin-bottom: 25px;
+      @include media-breakpoint-up(md) {
+        margin-bottom: 75px;
+      }
       @extend .font-300;
       .quote-wrapper {
         @include media-breakpoint-up(md) {
