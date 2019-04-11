@@ -25,6 +25,13 @@
 		// 	ScrollReveal().reveal('.reveal');
 		// }
 
+		$('#mobile-menu a').on('click', function(){
+			$('#mobile-menu').toggleClass('open');
+			$('.hamburger').toggleClass('is-active');
+			$('.hamburger-menu').toggleClass('active');
+			$('.move').toggleClass('open');
+		});
+
 		$('.hamburger').on('click', function(){
 			$('#mobile-menu').toggleClass('open');
 			$('.hamburger').toggleClass('is-active');
