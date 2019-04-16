@@ -48,7 +48,7 @@ $email = get_field( 'email_address', 'option' );
       <div class='top-footer-menu'>
         <?php wp_nav_menu( array( 'theme_location' => 'footer-menu-top' ) ); ?>
       </div>
-      <a class='footer-email h4' href='tel:<?php echo $email;?>'><?php echo $email; ?></a>
+      <a class='footer-email h4' href='mailto:<?php echo $email;?>'><?php echo $email; ?></a>
       <a class='footer-phone h4' href='tel:<?php echo $phone ?  preg_replace("/[^0-9]/", "", $phone) : ""; ?>'><?php echo $phone; ?></a>
       <?php if ( have_rows( 'social_link', 'option' ) ) : ?>
         <div class='social-links-footer'>
