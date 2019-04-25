@@ -1,3 +1,5 @@
+<?php $display_footer_3_step_contact_form = get_field('display_footer_3_step_contact_form'); ?>
+<?php if($display_footer_3_step_contact_form == 'yes'):?>
 <section class='contact_section' id='contact'>
   <span class='contact-background'><img src='/wp-content/themes/garethsimpson/assets/img/contact-bg.svg' alt='contact-background' /></span>
   <?php if ( have_rows( 'contact_section' ) ) : ?>
@@ -33,6 +35,7 @@
     <a class='bottom-phone h3' href='tel:<?php the_field( 'telephone_number', 'option' ); ?>'><?php the_field( 'telephone_number', 'option' ); ?></a>
   </div>
 </section>
+<?php endif;?>
 <div class="clear"></div>
 <?php
 $phone = get_field( 'telephone_number', 'option' );
