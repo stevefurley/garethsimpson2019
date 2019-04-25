@@ -86,11 +86,19 @@
           <h1 class='font-600'> <?php the_sub_field( 'title' ); ?></h1>
           <h2 class='h3'><?php echo the_sub_field('sub_title'); ?></h2>
         </div>
-
-
-
       </section>
 
+    <?php elseif ( get_row_layout() == 'add_testimonial' ) : ?>
+      <?php $include_testimonials = get_sub_field( 'include_testimonials' ); ?>
+      <?php if($include_testimonials):?>
+        <?php include(locate_template('/partials/trusted_slider.php')); ?>
+      <?php endif;?>
+    <?php elseif ( get_row_layout() == 'add_featured_in_section_from_homepage' ) : ?>
+
+      <?php $add_featured_in = get_sub_field( 'add_featured_in' ); ?>
+      <?php if($add_featured_in):?>
+        <?php include(locate_template('/partials/featured_in.php')); ?>
+      <?php endif; ?>
     <?php endif; ?>
   <?php endwhile; ?>
 <?php endif; ?>

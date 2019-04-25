@@ -1,45 +1,5 @@
 <?php get_header(); ?>
-
-<?php if ( have_rows( 'text_blocks_and_featured_in' ) ) : ?>
-  <section class='text_blocks_and_featured_in'>
-    <span class='background-circle'><img src='/wp-content/themes/garethsimpson/assets/img/background-image.svg' alt='background-image' /></span>
-    <div class='container blocks-wrapper relative z-index-2 pad-right-30 pad-left-30'>
-      <?php while ( have_rows( 'text_blocks_and_featured_in' ) ) : the_row(); ?>
-        <div class='leftside'>
-          <h2 class='h1 font-600'><?php the_sub_field( 'leftside_title' ); ?></h2>
-        </div>
-        <article class='rightside'>
-          <h4><?php the_sub_field( 'rightside_title' ); ?></h4>
-          <div class='h6'>
-            <?php the_sub_field( 'description' ); ?>
-          </div>
-        </article>
-      </div>
-      <div class='container relative z-index-2 pad-right-30 pad-left-30'>
-        <div class='d-block text-center text-md-left pad-bottom-20'>
-          <h4 class='h5'><?php the_sub_field( 'featured_in_title' ); ?></h4>
-        </div>
-        <div class='d-flex featured-logos '>
-          <?php if ( have_rows( 'featured_in_logos' ) ) : ?>
-            <?php while ( have_rows( 'featured_in_logos' ) ) : the_row(); ?>
-              <?php $logos = get_sub_field( 'logos' ); ?>
-              <?php if ( $logos ) { ?>
-                <div class='image-wrapper'>
-                  <img src="<?php echo $logos['url']; ?>" alt="<?php echo $logos['alt']; ?>" />
-                </div>
-              <?php } ?>
-            <?php endwhile; ?>
-          <?php endif; ?>
-        </div>
-        <p class='h7 text-md-right text-center d-block pad-top-15'>
-          Plus manymore
-        </p>
-      </div>
-    <?php endwhile; ?>
-  </section>
-<?php endif; ?>
-
-
+<?php include(locate_template('/partials/featured_in.php')); ?>
 
 <?php if ( have_rows( 'purple_section' ) ) : ?>
   <section class='purple_section'  id='consultancy'>
@@ -83,61 +43,7 @@
   </section>
 <?php endif; ?>
 
-
-<?php if ( have_rows( 'trusted_slider' ) ) : ?>
-  <section class='trusted_slider'>
-    <div class='container'>
-      <div class='col-12 col-lg-10 center no-padding'>
-        <?php while ( have_rows( 'trusted_slider' ) ) : the_row(); ?>
-          <h2 class='h1'><?php the_sub_field( 'title' ); ?></h2>
-          <?php if ( have_rows( 'slider' ) ) : ?>
-            <div id="slider">
-              <?php while ( have_rows( 'slider' ) ) : the_row(); ?>
-                <div class='inner-slider'>
-                  <div class='d-block text-center stars'>
-                    <img class='d-inline-block' src='/wp-content/themes/garethsimpson/assets/img/stars.svg' alt='stars'  />
-                  </div>
-
-                  <p class='orange-text no-margin h4'>
-                    "<?php the_sub_field( 'quote_text' ); ?>..."
-                  </p>
-                  <div class='quote quote-text'>
-                    <img class='left-quote' src='/wp-content/themes/garethsimpson/assets/img/left-quotes.svg' alt='left quote'  />
-                    <div class='quote-wrapper'>
-                      <?php the_sub_field( 'quote_description' ); ?>
-                    </div>
-                    <img  class='right-quote' src='/wp-content/themes/garethsimpson/assets/img/right-quotes.svg' alt='right quote'  />
-                  </div>
-                </div>
-              <?php endwhile; ?>
-            </div>
-          <?php endif; ?>
-        <?php endwhile; ?>
-
-        <?php $trusted_slider = get_field('trusted_slider');?>
-        <div class='slider-nav'>
-          <?php foreach($trusted_slider['slider'] as $nav):?>
-            <div class='nav-block'>
-              <?php $profile_photo = $nav['profile_photo']; ?>
-              <?php if ( $profile_photo ) { ?>
-                <div class='d-block text-center image-wrapper'>
-                  <img class='d-inline-block fluid-img' src="<?php echo $profile_photo['url']; ?>" alt="<?php echo $profile_photo['alt']; ?>" />
-                </div>
-
-              <?php } ?>
-              <p class='h6 profile-name'>
-                <?php echo $nav['profile_name']; ?>
-              </p>
-              <p class='h6 company-name'>
-                <?php echo $nav['profile_and_company']; ?>
-              </p>
-            </div>
-          <?php endforeach; ?>
-        </div>
-      </div>
-    </div>
-  </section>
-<?php endif; ?>
+<?php include(locate_template('/partials/trusted_slider.php')); ?>
 
 <?php if ( have_rows( 'about_me_section' ) ) : ?>
   <section class='about_me_section' id='about'>
