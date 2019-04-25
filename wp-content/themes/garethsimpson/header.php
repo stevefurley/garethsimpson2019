@@ -9,30 +9,55 @@
     <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
   <?php endif; ?>
   <!-- using https://realfavicongenerator.net -->
-  <link rel="apple-touch-icon" sizes="152x152" href="<?php bloginfo('stylesheet_directory'); ?>/img/favicons/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="<?php bloginfo('stylesheet_directory'); ?>/img/favicons/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="<?php bloginfo('stylesheet_directory'); ?>/img/favicons/favicon-16x16.png">
-  <link rel="manifest" href="<?php bloginfo('stylesheet_directory'); ?>/img/favicons/site.webmanifest">
-  <link rel="mask-icon" href="<?php bloginfo('stylesheet_directory'); ?>/img/favicons/safari-pinned-tab.svg" color="#E35F30">
+  <link rel="apple-touch-icon" sizes="57x57" href="<?php bloginfo('stylesheet_directory'); ?>/assets/img/favicon/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="<?php bloginfo('stylesheet_directory'); ?>/assets/img/favicon/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="<?php bloginfo('stylesheet_directory'); ?>/assets/img/favicon/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="<?php bloginfo('stylesheet_directory'); ?>/assets/img/favicon/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="<?php bloginfo('stylesheet_directory'); ?>/assets/img/favicon/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="<?php bloginfo('stylesheet_directory'); ?>/assets/img/favicon/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="<?php bloginfo('stylesheet_directory'); ?>/assets/img/favicon/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="<?php bloginfo('stylesheet_directory'); ?>/assets/img/favicon/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192"  href="<?php bloginfo('stylesheet_directory'); ?>/assets/img/favicon/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="<?php bloginfo('stylesheet_directory'); ?>/assets/img/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="<?php bloginfo('stylesheet_directory'); ?>/assets/img/favicon/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="<?php bloginfo('stylesheet_directory'); ?>/assets/img/favicon/favicon-16x16.png">
+  <link rel="manifest" href="<?php bloginfo('stylesheet_directory'); ?>/assets/img/favicon/manifest.json">
   <meta name="msapplication-TileColor" content="#E35F30">
+  <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
   <meta name="theme-color" content="#E35F30">
   <script type="text/javascript">
-    (function() {
-        var trial = document.createElement('script');
-        trial.type = 'text/javascript';
-        trial.async = true;
-        trial.src = 'https://easy.myfonts.net/v2/js?sid=288420(font-family=Hurme+Geometric+Sans+4+Light)&sid=288422(font-family=Hurme+Geometric+Sans+4+Regular)&sid=288425(font-family=Hurme+Geometric+Sans+4+SemiBold)&sid=288426(font-family=Hurme+Geometric+Sans+4+Thin)&key=D1cvmAS1JH';
-        var head = document.getElementsByTagName("head")[0];
-        head.appendChild(trial);
-    })();
+  // (function() {
+  //     var trial = document.createElement('script');
+  //     trial.type = 'text/javascript';
+  //     trial.async = true;
+  //     trial.src = 'https://easy.myfonts.net/v2/js?sid=288420(font-family=Hurme+Geometric+Sans+4+Light)&sid=288422(font-family=Hurme+Geometric+Sans+4+Regular)&sid=288425(font-family=Hurme+Geometric+Sans+4+SemiBold)&sid=288426(font-family=Hurme+Geometric+Sans+4+Thin)&key=D1cvmAS1JH';
+  //     var head = document.getElementsByTagName("head")[0];
+  //     head.appendChild(trial);
+  // })();
 </script>
-  <?php wp_head(); ?>
+<!-- Google Analytics -->
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-75603045-1', 'auto');
+ga('send', 'pageview');
+</script>
+<!-- End Google Analytics -->
+
+
+<script type="text/javascript" src="/wp-content/themes/garethsimpson/assets/js/MyFontsWebfontsKit.js"></script>
+<?php wp_head(); ?>
 </head>
 
 <body <?php body_class(); ?>>
   <?php
   $logo = get_field( 'logo', 'option' );
   $header_background_image = get_field( 'header_background_image' );
+  $header_background_image_mobile = get_field( 'header_background_image_mobile' );
   $header_title = get_field('header_title');
   $sub_title_header = get_field('sub_title_header');
   $custom_link = get_field('custom_link');
@@ -47,12 +72,14 @@
   <div class='move'>
 
     <?php if(is_front_page()):?>
-      <header class="homepage-header page-header" role="banner" id='header' style='background: url(<?php echo $header_background_image["url"]; ?>) no-repeat center center / cover;'>
-        <span class='darkgrey-overlay cover'></span>
+      <header class="homepage-header page-header" role="banner" id='header' >
+        <span class='cover d-none d-md-block' style='background: url(<?php echo $header_background_image["url"]; ?>) no-repeat center center / cover;'></span>
+        <span class='cover d-block d-md-none' style='background: url(<?php echo $header_background_image_mobile["url"]; ?>) no-repeat center center / cover;'></span>
+        <span class='darkgrey-overlay cover z-index-2'></span>
       <?php else:?>
         <header class="standard-header page-header" role="banner" id='header'>
         <?php endif; ?>
-        <div class='container d-flex relative z-index-2 '>
+        <div class='container d-flex relative z-index-3 '>
           <a class='header-logo ' href='/'>
             <?php if ( $logo ) { ?>
               <img class='fluid-img' src="<?php echo $logo['url']; ?>" alt="<?php echo $logo['alt']; ?>" />

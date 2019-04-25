@@ -40,9 +40,12 @@
     }
     .social-links-footer {
       a {
-        margin: 0 25px;
+        margin: 0 10px;
         opacity: 1;
         transition: opacity 300ms ease;
+        @include media-breakpoint-up(md) {
+          margin: 0 25px;
+        }
         &:hover {
           opacity: 0.5;
           transition: opacity 300ms ease;
@@ -53,13 +56,20 @@
   .top-footer-menu {
     display: block;
     text-align: center;
-    margin-bottom: 110px;
+    margin-bottom: 60px;
+    @include media-breakpoint-up(md) {
+      margin-bottom: 90px;
+    }
     ul {
       padding: 0;
       margin: auto;
       text-align: center;
       display: flex;
       justify-content: center;
+      flex-direction: column;
+      @include media-breakpoint-up(md) {
+        flex-direction: row;
+      }
       li {
         list-style-type: none;
         a {
@@ -67,8 +77,12 @@
           text-align: center;
           line-height: 37px;
           font-size: 27px;
-          padding: 10px 50px;
+          padding: 10px 50px 10px 50px;
+          display: block;
           transition: color 300ms ease;
+          @include media-breakpoint-up(md) {
+            padding: 10px 50px;
+          }
           &:hover {
             color: $orange;
             transition: color 300ms ease;

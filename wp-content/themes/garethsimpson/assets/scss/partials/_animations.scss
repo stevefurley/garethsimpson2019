@@ -1,0 +1,85 @@
+@keyframes animteColourLeft {
+  0%   {
+    transform: scaleX(0);
+    transform-origin: left;
+  }
+  50% {
+    transform: scaleX(1);
+    transform-origin: left;
+  }
+  51% {
+    transform-origin: right;
+  }
+  100% {
+    transform-origin: right;
+    transform: scaleX(0);
+  }
+}
+
+@keyframes animteColourRight {
+  0%   {
+    transform: scaleX(0);
+    transform-origin: right;
+  }
+  50% {
+    transform: scaleX(1);
+    transform-origin: right;
+  }
+  51% {
+    transform-origin: left;
+  }
+  100% {
+    transform-origin: left;
+    transform: scaleX(0);
+  }
+}
+
+@keyframes textAnimate {
+  0%   {
+    display: none;
+  }
+  50% {
+    display: none;
+  }
+  51% {
+    visibility: visible;
+    display: block;
+  }
+  100% {
+    visibility: visible;
+    display: block;
+  }
+}
+
+.animate {
+  position: relative;
+  visibility: hidden;
+  &:after {
+    content: "";
+    position: relative;
+    background: $orange;
+    height: 100%;
+    transform: scaleX(0);
+    width: 100%;
+    display: inherit;
+    position: absolute;
+    top: 0;
+    visibility: visible;
+  }
+  &.leftanimate {
+    animation: textAnimate 500ms linear 2.25s;
+    animation-fill-mode: forwards;
+    &:after {
+      animation: animteColourLeft 500ms linear 2s;
+      animation-fill-mode: forwards;
+    }
+  }
+  &.rightanimate {
+    animation: textAnimate 500ms linear 2.25s;
+    animation-fill-mode: forwards;
+    &:after {
+      animation: animteColourRight 500ms linear 2s;
+      animation-fill-mode: forwards;
+    }
+  }
+}

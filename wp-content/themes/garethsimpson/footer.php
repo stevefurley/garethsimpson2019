@@ -1,3 +1,5 @@
+<?php $display_footer_3_step_contact_form = get_field('display_footer_3_step_contact_form'); ?>
+<?php if($display_footer_3_step_contact_form == 'yes'):?>
 <section class='contact_section' id='contact'>
   <span class='contact-background'><img src='/wp-content/themes/garethsimpson/assets/img/contact-bg.svg' alt='contact-background' /></span>
   <?php if ( have_rows( 'contact_section' ) ) : ?>
@@ -33,20 +35,23 @@
     <a class='bottom-phone h3' href='tel:<?php the_field( 'telephone_number', 'option' ); ?>'><?php the_field( 'telephone_number', 'option' ); ?></a>
   </div>
 </section>
+<?php endif;?>
 <div class="clear"></div>
 <?php
 $phone = get_field( 'telephone_number', 'option' );
 $email = get_field( 'email_address', 'option' );
  $footer_background_image = get_field( 'footer_background_image', 'option' );
+ $footer_background_image_mobile = get_field( 'footer_background_image_mobile', 'option' );
 ?>
 <footer id="footer" role="contentinfo">
   <div class='main-footer relative'>
-    <span class='background-image' style='background: url(<?php echo $footer_background_image["url"]; ?>) no-repeat center center / cover;'></span>
+    <span class='background-image d-none d-md-block' style='background: url(<?php echo $footer_background_image["url"]; ?>) no-repeat center center / cover;'></span>
+    <span class='background-image d-block d-md-none' style='background: url(<?php echo $footer_background_image_mobile["url"]; ?>) no-repeat center center / cover;'></span>
     <div class='container overflow relative z-index-3'>
       <div class='top-footer-menu'>
         <?php wp_nav_menu( array( 'theme_location' => 'footer-menu-top' ) ); ?>
       </div>
-      <a class='footer-email h4' href='tel:<?php echo $email;?>'><?php echo $email; ?></a>
+      <a class='footer-email h4' href='mailto:<?php echo $email;?>'><?php echo $email; ?></a>
       <a class='footer-phone h4' href='tel:<?php echo $phone ?  preg_replace("/[^0-9]/", "", $phone) : ""; ?>'><?php echo $phone; ?></a>
       <?php if ( have_rows( 'social_link', 'option' ) ) : ?>
         <div class='social-links-footer'>

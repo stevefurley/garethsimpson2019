@@ -870,6 +870,76 @@
                     ],
                     "min": "",
                     "max": ""
+                },
+                "layout_5cc201e437505": {
+                    "key": "layout_5cc201e437505",
+                    "name": "add_testimonial",
+                    "label": "Add testimonial slider",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_5cc201f037506",
+                            "label": "Include Testimonials",
+                            "name": "include_testimonials",
+                            "type": "select",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "choices": {
+                                "yes": "Yes",
+                                "no": "No"
+                            },
+                            "default_value": [],
+                            "allow_null": 0,
+                            "multiple": 0,
+                            "ui": 0,
+                            "return_format": "value",
+                            "ajax": 0,
+                            "placeholder": ""
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                "layout_5cc202411111f": {
+                    "key": "layout_5cc202411111f",
+                    "name": "add_featured_in_section_from_homepage",
+                    "label": "Add featured in section from homepage",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_5cc2025311120",
+                            "label": "Add featured in",
+                            "name": "add_featured_in",
+                            "type": "select",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "choices": {
+                                "yes": "Yes",
+                                "no": "No"
+                            },
+                            "default_value": [],
+                            "allow_null": 0,
+                            "multiple": 0,
+                            "ui": 0,
+                            "return_format": "value",
+                            "ajax": 0,
+                            "placeholder": ""
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
                 }
             },
             "button_label": "Add custom block",
@@ -897,5 +967,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1554223291
+    "modified": 1556218485
 }

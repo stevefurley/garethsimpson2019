@@ -25,6 +25,13 @@
 		// 	ScrollReveal().reveal('.reveal');
 		// }
 
+		$('#mobile-menu a').on('click', function(){
+			$('#mobile-menu').toggleClass('open');
+			$('.hamburger').toggleClass('is-active');
+			$('.hamburger-menu').toggleClass('active');
+			$('.move').toggleClass('open');
+		});
+
 		$('.hamburger').on('click', function(){
 			$('#mobile-menu').toggleClass('open');
 			$('.hamburger').toggleClass('is-active');
@@ -55,7 +62,8 @@
 			slidesToShow: 1,
 			asNavFor: '.slider-nav',
 			arrows: false,
-			fade: true
+			fade: true,
+			adaptiveHeight: true
 		});
 
 		$('.slider-nav').slick({
@@ -67,7 +75,7 @@
 			arrows: false,
 			focusOnSelect: true,
 			centerPadding: '0',
-			autoplay: true,
+			autoplay: false,
 			autoplaySpeed: 2000,
 			responsive: [
 				{
