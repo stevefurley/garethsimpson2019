@@ -99,3 +99,9 @@ add_filter( 'acf_icon_path_suffix', 'acf_icon_path_suffix' );
 function acf_icon_path_suffix( $path_suffix ) {
   return 'assets/img/icons/';
 }
+
+if (strpos($_SERVER['SERVER_NAME'], "local") !== false || strpos($_SERVER['SERVER_NAME'], "cloudwaysapps") !== false) {
+  update_option('blog_public', '0');
+} else {
+  update_option('blog_public', '1');
+}
