@@ -12,6 +12,7 @@ function garethsimpson_setup(){
 
   add_image_size('square_desktop', 180, 180, true);
   add_image_size('square_mobile', 500, 500, true);
+  add_image_size('blog_archive', 500, 362, true);
 
   add_image_size('slider_desktop', 1368, 581, true);
   add_image_size('slider_tablet', 747, 417, true);

@@ -30,7 +30,7 @@ function site_query_controller($query) {
 
             // Conditionalise for a CPT archive
 
-          
+
 
 
             // Conditionalise for a CPT Tax/term archive
