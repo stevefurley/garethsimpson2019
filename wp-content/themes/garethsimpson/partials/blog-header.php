@@ -24,11 +24,13 @@
         <section class='flexible-header single-post-orange-header relative'>
         <?php endif;?>
         <div class='container text-center relative z-index-2'>
-          <h1 class='font-600'><?php echo $title ? $title : the_title();?></h1>
+          <h1 ><?php echo $title ? $title : the_title();?></h1>
           <?php if($sub_title):?>
             <h2 class='h3'><?php echo the_sub_field('sub_title'); ?></h2>
           <?php endif; ?>
+          <?php if(!is_home()):?>
           <span class="date"><?php the_date('d F y'); ?></span>
+        <?php endif; ?>
         </div>
       </section>
     <?php endwhile; ?>

@@ -122,7 +122,8 @@ h6,
   }
 }
 
-b {
+b,
+strong {
   @extend .font-600;
 }
 
