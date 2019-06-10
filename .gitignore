@@ -33,6 +33,7 @@ wp-salt.php
 !wp-content/mu-plugins/
 !wp-content/plugins/
 !wp-content/themes/
+package-lock.json
 
 # ignore all mu-plugins, plugins, and themes
 # unless explicitly whitelisted at the end of this file
