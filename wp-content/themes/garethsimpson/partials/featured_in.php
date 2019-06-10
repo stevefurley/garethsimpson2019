@@ -33,7 +33,7 @@
           <?php endif; ?>
         </div>
         <p class='h7 text-md-right text-center d-block pad-top-15'>
-          Plus manymore
+          Plus many more
         </p>
       </div>
     <?php endwhile; ?>
