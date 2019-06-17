@@ -1,7 +1,11 @@
-
-
+<?php
+// sets fonts size on email and number fields
+$a++;
+$b++;
+?>
 
 <?php if($item['acf_fc_layout'] == 'title_item'):?>
+  <!--title_item-->
   <?php
   $font_size = $item['font_size'];
   $title = $item['title'];
@@ -14,10 +18,11 @@
 <?php endif; ?>
 
 
-<!--add_padding_to_bottom-->
+
 
 
 <?php if($item['acf_fc_layout'] == 'add_padding_to_bottom'):?>
+  <!--add_padding_to_bottom-->
   <?php
   $select_padding_bottom = $item['select_padding_bottom'];
   ?>
@@ -25,21 +30,47 @@
 <?php endif; ?>
 
 
-<!--add_padding_to_bottom-->
+
 
 
 <?php if($item['acf_fc_layout'] == 'contact_number_item'):?>
+  <!--add_padding_to_bottom-->
   <?php
   $contact_number = $item['contact_number'];
+  if(isset($item['font_size_desktop'])) {
+    $font_size_desktop = $item['font_size_desktop'];
+  } else {
+    $font_size_desktop = '18px';
+  }
+  if(isset($item['font_size_desktop'])) {
+    $font_size_mobile = $item['font_size_mobile'];
+  } else {
+    $font_size_mobile = '18px';
+  }
+  $name = '.custom-phone-set-' . $b;
+  $otherName = 'custom-phone-set-' . $b;
   ?>
-  <a class='tel d-block' href='tel:<?php echo $contact_number ?  preg_replace("/[^0-9]/", "", $contact_number) : ""; ?>'><?php echo $contact_number;?></a>
+  <style>
+  body <?php echo $name; ?>{
+    font-size: <?php echo $font_size_mobile; ?>;
+    line-height: <?php echo $font_size_mobile; ?>;
+  }
+  @media only screen and (min-width: 768px) {
+    body <?php echo $name; ?> {
+      font-size: <?php echo $font_size_desktop; ?>;
+      line-height: <?php echo $font_size_desktop; ?>;
+    }
+  }
+  </style>
+  <a class='tel d-block <?php echo $otherName; ?>' href='tel:<?php echo $contact_number ?  preg_replace("/[^0-9]/", "", $contact_number) : ""; ?>'><?php echo $contact_number;?></a>
 <?php endif; ?>
 
 
-<!--contact_form_Item-->
+
 
 
 <?php if($item['acf_fc_layout'] == 'contact_form_Item'):?>
+  <!--contact_form_Item-->
   <?php
   $contact_form = $item['contact_form'];
   ?>
@@ -50,10 +81,11 @@
 <?php endif; ?>
 
 
-<!--description_item-->
+
 
 
 <?php if($item['acf_fc_layout'] == 'description_item'):?>
+  <!--description_item-->
   <?php
   $description = $item['description'];
   ?>
@@ -65,10 +97,11 @@
 <?php endif; ?>
 
 
-<!--link_item-->
+
 
 
 <?php if($item['acf_fc_layout'] == 'link_item'):?>
+  <!--link_item-->
   <?php
   $link_text = $item['link_text'];
   $link_url = $item['link_url'];
@@ -79,10 +112,11 @@
 <?php endif; ?>
 
 
-<!--list_items-->
+
 
 
 <?php if($item['acf_fc_layout'] == 'list_items'):?>
+  <!--list_items-->
   <?php
 
   $select_bullet_types = $item['select_bullet_types'];
@@ -100,10 +134,11 @@
 <?php endif; ?>
 
 
-<!--image_item-->
+
 
 
 <?php if($item['acf_fc_layout'] == 'image_item'):?>
+  <!--image_item-->
   <?php
   $image = $item['image'];
   ?>
@@ -112,13 +147,38 @@
 <?php endif; ?>
 
 
-<!--email_address_item-->
+
 
 
 <?php if($item['acf_fc_layout'] == 'email_address_item'):?>
+  <!--email_address_item-->
   <?php
   $email_address = $item['email_address'];
+  if(isset($item['font_size_desktop'])) {
+    $font_size_desktop = $item['font_size_desktop'];
+  } else {
+    $font_size_desktop = '18px';
+  }
+  if(isset($item['font_size_desktop'])) {
+    $font_size_mobile = $item['font_size_mobile'];
+  } else {
+    $font_size_mobile = '18px';
+  }
+  $name = '.custom-email-set-' . $a;
+  $otherName = 'custom-email-set-' . $a;
   ?>
-  <a class='d-block email' href='mailto:<?php echo $email_address; ?>'><?php echo $email_address; ?></a>
+  <style>
+  body <?php echo $name; ?>{
+    font-size: <?php echo $font_size_mobile; ?>;
+    line-height: <?php echo $font_size_mobile; ?>;
+  }
+  @media only screen and (min-width: 768px) {
+    body <?php echo $name; ?> {
+      font-size: <?php echo $font_size_desktop; ?>;
+      line-height: <?php echo $font_size_desktop; ?>;
+    }
+  }
+  </style>
+  <a class='d-block email <?php echo $otherName; ?>' href='mailto:<?php echo $email_address; ?>'><?php echo $email_address; ?></a>
 
 <?php endif; ?>

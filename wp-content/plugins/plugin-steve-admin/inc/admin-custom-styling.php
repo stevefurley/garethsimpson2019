@@ -32,7 +32,7 @@ Changing the alt text on the logo to show your site name
 function sf_login_title() {
   return get_option( 'blogname' );
 }
-add_filter( 'login_headertitle', 'sf_login_title' );
+add_filter( 'login_headertext', 'sf_login_title' );
 
 /*------------------------------------
 Alter details when logged in

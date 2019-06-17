@@ -35,6 +35,8 @@
               $desktop_width = $block['desktop_width'];
               $tablet_width = $block['tablet_width'];
               $text_align = $block['text_align'];
+              $a = 0;
+              $b = 0;
               ?>
               <div class=' pad-bottom-40  pad-bottom-0-m d-block block-padding mobile-100 text-align-center <?php echo $text_align; ?>-m tablet-<?php echo $tablet_width;?> desktop-<?php echo $desktop_width;?>'>
                 <?php foreach($block['choose_block_item'] as $item):?>
@@ -49,6 +51,8 @@
               $desktop_width = $block['block']['desktop_width'];
               $tablet_width1 = $block['block']['tablet_width'];
               $text_align = $block['block']['text_align'];
+              $a = 100;
+              $b = 100;
               ?>
               <div class=' pad-bottom-30 pad-bottom-0-m d-block block-padding mobile-100 <?php echo $text_align; ?> tablet-<?php echo $tablet_width;?> desktop-<?php echo $desktop_width;?>'>
                 <?php foreach($block['block']['choose_block_item'] as $item):?>
@@ -64,6 +68,8 @@
               $desktop_width = $block['block']['desktop_width'];
               $tablet_width1 = $block['block']['tablet_width'];
               $text_align = $block['block']['text_align'];
+              $a = 1000;
+              $b = 1000;
               ?>
               <div class=' pad-bottom-30 pad-bottom-0-m d-block block-padding mobile-100 <?php echo $text_align; ?> tablet-<?php echo $tablet_width;?> desktop-<?php echo $desktop_width;?>'>
                 <?php foreach($block['block']['choose_block_item'] as $item):?>

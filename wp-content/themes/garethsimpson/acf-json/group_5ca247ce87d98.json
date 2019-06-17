@@ -53,7 +53,8 @@
                                     "choices": {
                                         "white_bg": "White background",
                                         "lightblue_bg": "Lightblue background",
-                                        "orange_bg": "Orange background"
+                                        "orange_bg": "Orange background",
+                                        "purple_bg": "Purple background"
                                     },
                                     "default_value": [],
                                     "allow_null": 0,
@@ -392,7 +393,7 @@
                                                     "required": 0,
                                                     "conditional_logic": 0,
                                                     "wrapper": {
-                                                        "width": "",
+                                                        "width": "60",
                                                         "class": "",
                                                         "id": ""
                                                     },
@@ -401,6 +402,114 @@
                                                     "prepend": "",
                                                     "append": "",
                                                     "maxlength": ""
+                                                },
+                                                {
+                                                    "key": "field_5d0755558f380",
+                                                    "label": "Desktop font size",
+                                                    "name": "font_size_desktop",
+                                                    "type": "select",
+                                                    "instructions": "",
+                                                    "required": 0,
+                                                    "conditional_logic": 0,
+                                                    "wrapper": {
+                                                        "width": "20",
+                                                        "class": "",
+                                                        "id": ""
+                                                    },
+                                                    "choices": {
+                                                        "12px": "12px",
+                                                        "13px": "13px",
+                                                        "14px": "14px",
+                                                        "15px": "15px",
+                                                        "16px": "16px",
+                                                        "17px": "17px",
+                                                        "18px": "18px",
+                                                        "19px": "19px",
+                                                        "20px": "20px",
+                                                        "21px": "21px",
+                                                        "22px": "22px",
+                                                        "23px": "23px",
+                                                        "24px": "24px",
+                                                        "25px": "25px",
+                                                        "26px": "26px",
+                                                        "27px": "27px",
+                                                        "28px": "28px",
+                                                        "29px": "29px",
+                                                        "30px": "30px",
+                                                        "31px": "31px",
+                                                        "32px": "32px",
+                                                        "33px": "33px",
+                                                        "34px": "34px",
+                                                        "35px": "35px",
+                                                        "36px": "36px",
+                                                        "37px": "37px",
+                                                        "38px": "38px",
+                                                        "39px": "39px",
+                                                        "40px": "40px"
+                                                    },
+                                                    "default_value": [
+                                                        "18px"
+                                                    ],
+                                                    "allow_null": 0,
+                                                    "multiple": 0,
+                                                    "ui": 0,
+                                                    "return_format": "value",
+                                                    "ajax": 0,
+                                                    "placeholder": ""
+                                                },
+                                                {
+                                                    "key": "field_5d0756ad8f383",
+                                                    "label": "Mobile font size",
+                                                    "name": "font_size_mobile",
+                                                    "type": "select",
+                                                    "instructions": "",
+                                                    "required": 0,
+                                                    "conditional_logic": 0,
+                                                    "wrapper": {
+                                                        "width": "20",
+                                                        "class": "",
+                                                        "id": ""
+                                                    },
+                                                    "choices": {
+                                                        "12px": "12px",
+                                                        "13px": "13px",
+                                                        "14px": "14px",
+                                                        "15px": "15px",
+                                                        "16px": "16px",
+                                                        "17px": "17px",
+                                                        "18px": "18px",
+                                                        "19px": "19px",
+                                                        "20px": "20px",
+                                                        "21px": "21px",
+                                                        "22px": "22px",
+                                                        "23px": "23px",
+                                                        "24px": "24px",
+                                                        "25px": "25px",
+                                                        "26px": "26px",
+                                                        "27px": "27px",
+                                                        "28px": "28px",
+                                                        "29px": "29px",
+                                                        "30px": "30px",
+                                                        "31px": "31px",
+                                                        "32px": "32px",
+                                                        "33px": "33px",
+                                                        "34px": "34px",
+                                                        "35px": "35px",
+                                                        "36px": "36px",
+                                                        "37px": "37px",
+                                                        "38px": "38px",
+                                                        "39px": "39px",
+                                                        "40px": "40px"
+                                                    },
+                                                    "default_value": [
+                                                        "18px"
+                                                    ],
+                                                    "allow_null": 0,
+                                                    "multiple": 0,
+                                                    "ui": 0,
+                                                    "return_format": "value",
+                                                    "ajax": 0,
+                                                    "placeholder": ""
                                                 }
                                             ],
                                             "min": "",
@@ -421,7 +530,7 @@
                                                     "required": 0,
                                                     "conditional_logic": 0,
                                                     "wrapper": {
-                                                        "width": "",
+                                                        "width": "60",
                                                         "class": "",
                                                         "id": ""
                                                     },
@@ -430,6 +539,114 @@
                                                     "prepend": "",
                                                     "append": "",
                                                     "maxlength": ""
+                                                },
+                                                {
+                                                    "key": "field_5d0755e18f381",
+                                                    "label": "Desktop font size",
+                                                    "name": "font_size_desktop",
+                                                    "type": "select",
+                                                    "instructions": "",
+                                                    "required": 0,
+                                                    "conditional_logic": 0,
+                                                    "wrapper": {
+                                                        "width": "20",
+                                                        "class": "",
+                                                        "id": ""
+                                                    },
+                                                    "choices": {
+                                                        "12px": "12px",
+                                                        "13px": "13px",
+                                                        "14px": "14px",
+                                                        "15px": "15px",
+                                                        "16px": "16px",
+                                                        "17px": "17px",
+                                                        "18px": "18px",
+                                                        "19px": "19px",
+                                                        "20px": "20px",
+                                                        "21px": "21px",
+                                                        "22px": "22px",
+                                                        "23px": "23px",
+                                                        "24px": "24px",
+                                                        "25px": "25px",
+                                                        "26px": "26px",
+                                                        "27px": "27px",
+                                                        "28px": "28px",
+                                                        "29px": "29px",
+                                                        "30px": "30px",
+                                                        "31px": "31px",
+                                                        "32px": "32px",
+                                                        "33px": "33px",
+                                                        "34px": "34px",
+                                                        "35px": "35px",
+                                                        "36px": "36px",
+                                                        "37px": "37px",
+                                                        "38px": "38px",
+                                                        "39px": "39px",
+                                                        "40px": "40px"
+                                                    },
+                                                    "default_value": [
+                                                        "18px"
+                                                    ],
+                                                    "allow_null": 0,
+                                                    "multiple": 0,
+                                                    "ui": 0,
+                                                    "return_format": "value",
+                                                    "ajax": 0,
+                                                    "placeholder": ""
+                                                },
+                                                {
+                                                    "key": "field_5d0756708f382",
+                                                    "label": "Mobile font size",
+                                                    "name": "font_size_mobile",
+                                                    "type": "select",
+                                                    "instructions": "",
+                                                    "required": 0,
+                                                    "conditional_logic": 0,
+                                                    "wrapper": {
+                                                        "width": "20",
+                                                        "class": "",
+                                                        "id": ""
+                                                    },
+                                                    "choices": {
+                                                        "12px": "12px",
+                                                        "13px": "13px",
+                                                        "14px": "14px",
+                                                        "15px": "15px",
+                                                        "16px": "16px",
+                                                        "17px": "17px",
+                                                        "18px": "18px",
+                                                        "19px": "19px",
+                                                        "20px": "20px",
+                                                        "21px": "21px",
+                                                        "22px": "22px",
+                                                        "23px": "23px",
+                                                        "24px": "24px",
+                                                        "25px": "25px",
+                                                        "26px": "26px",
+                                                        "27px": "27px",
+                                                        "28px": "28px",
+                                                        "29px": "29px",
+                                                        "30px": "30px",
+                                                        "31px": "31px",
+                                                        "32px": "32px",
+                                                        "33px": "33px",
+                                                        "34px": "34px",
+                                                        "35px": "35px",
+                                                        "36px": "36px",
+                                                        "37px": "37px",
+                                                        "38px": "38px",
+                                                        "39px": "39px",
+                                                        "40px": "40px"
+                                                    },
+                                                    "default_value": [
+                                                        "18px"
+                                                    ],
+                                                    "allow_null": 0,
+                                                    "multiple": 0,
+                                                    "ui": 0,
+                                                    "return_format": "value",
+                                                    "ajax": 0,
+                                                    "placeholder": ""
                                                 }
                                             ],
                                             "min": "",
@@ -956,7 +1173,7 @@
             }
         ]
     ],
-    "menu_order": -1,
+    "menu_order": 0,
     "position": "normal",
     "style": "default",
     "label_placement": "top",
@@ -967,5 +1184,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1557740483
+    "modified": 1560763606
 }
