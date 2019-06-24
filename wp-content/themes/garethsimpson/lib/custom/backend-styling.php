@@ -69,6 +69,72 @@ border: 0;
   right: -250px;
   top: 0px;
 }
+[data-layout='green_block']:hover:after {
+  background: url(/wp-content/themes/garethsimpson/assets/img/acf-layouts/green_block.png) no-repeat center center / contain;
+  content: '';
+  height: 110px;
+  width: 250px;
+  display: block;
+  position: absolute;
+  right: -250px;
+  top: 0px;
+}
+[data-layout='white_block_with_icons_and_text']:hover:after {
+  background: url(/wp-content/themes/garethsimpson/assets/img/acf-layouts/white_block_with_icons_and_text.png) no-repeat center center / contain;
+  content: '';
+  height: 110px;
+  width: 250px;
+  display: block;
+  position: absolute;
+  right: -250px;
+  top: 0px;
+}
+[data-layout='button']:hover:after {
+  background: url(/wp-content/themes/garethsimpson/assets/img/acf-layouts/button.png) no-repeat center center / contain;
+  content: '';
+  height: 110px;
+  width: 250px;
+  display: block;
+  position: absolute;
+  right: -250px;
+  top: 0px;
+}
+[data-layout='list_items']:hover:after {
+  background: url(/wp-content/themes/garethsimpson/assets/img/acf-layouts/list_items.png) no-repeat center center / contain;
+  content: '';
+  height: 110px;
+  width: 250px;
+  display: block;
+  position: absolute;
+  right: -250px;
+  top: 0px;
+}
+[data-layout='icon_grid_set']:hover:after {
+  background: url(/wp-content/themes/garethsimpson/assets/img/acf-layouts/icon_grid_set.png) no-repeat center center / contain;
+  content: '';
+  height: 110px;
+  width: 250px;
+  display: block;
+  position: absolute;
+  right: -250px;
+  top: 0px;
+}
+[data-layout='two_columns_of_text']:hover:after {
+  background: url(/wp-content/themes/garethsimpson/assets/img/acf-layouts/two_columns_of_text.png) no-repeat center center / contain;
+  content: '';
+  height: 110px;
+  width: 250px;
+  display: block;
+  position: absolute;
+  right: -250px;
+  top: 0px;
+}
+
+
+
+
+
+
 </style>
 <?php
 }

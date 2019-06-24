@@ -175,7 +175,9 @@
 
 // Desktop Helpers
 @include media-breakpoint-up(lg) {
-
+  .text-center-l {text-align: center;}
+  .text-left-l {text-align: left;}
+  .text-right-l {text-align: right;}
   .pad-left-0-l {padding-left: 0;}
   .pad-left-5-l {padding-left: 5px;}
   .pad-left-10-l {padding-left: 10px;}
@@ -291,4 +293,8 @@
 
 @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
   /* IE10+ CSS styles go here */
+}
+
+.green_bg {
+  background: #577C70;
 }

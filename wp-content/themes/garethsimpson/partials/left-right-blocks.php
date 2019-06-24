@@ -17,6 +17,30 @@ $b++;
   <?php endif;?>
 <?php endif; ?>
 
+<?php if($item['acf_fc_layout'] == 'button'):?>
+  <?php
+  $button_text = $item['button_text'];
+  $button_link = $item['button_link'];
+  $align_button = $item['align_button'];
+  $align_button_desktop = $item['align_button_desktop'];
+  $file = $item['file'];
+  if($file){
+    $button_link = $file;
+    $target = "_blank";
+  } else {
+    $button_link = $button_link;
+    $target = "";
+  }
+  ?>
+
+  <div class='d-block text-center <?php echo $align_button; ?> <?php echo $align_button_desktop; ?>' target='<?php echo $target; ?>'>
+    <a class='orange-button' href='<?php echo $button_link; ?>'><?php echo $button_text; ?></a>
+  </div>
+
+
+
+<?php endif; ?>
+
 
 
 
@@ -81,6 +105,66 @@ $b++;
 <?php endif; ?>
 
 
+<?php if($item['acf_fc_layout'] == 'icon_grid_set'):?>
+  <!--contact_form_Item-->
+  <?php
+  $icon_grid = $item['icon_grid'];
+  $b = 0;
+  $total = count($item['icon_grid']);
+  ?>
+  <?php if($icon_grid):?>
+    <div class=' icon-row'>
+      <?php foreach($icon_grid as $block):?>
+        <?php $b++; ?>
+
+        <div class='icon-wrapper text-center'>
+          <div class='d-block text-center pad-bottom-10'>
+            <img class='d-inline-block' src='/wp-content/themes/garethsimpson/assets/img/icons/<?php echo $block['icon']; ?>.svg' alt='icon' />
+          </div>
+          <div class='h6'>
+            <?php echo $block['description']; ?>
+          </div>
+        </div>
+        <?php if($b != 0 && $b != $total):?>
+          <span class='vertical-line'></span>
+        <?php endif; ?>
+      <?php endforeach; ?>
+    </div>
+  <?php endif; ?>
+<?php endif; ?>
+
+
+<?php if($item['acf_fc_layout'] == 'keyline'):?>
+  <?php
+  $tablet_position = $item['tablet_position'];
+  $desktop_position = $item['desktop_position'];
+  $background_colour = $item['background_colour'];
+  $height = $item['height'];
+  $width = $item['width'];
+  ?>
+  <div class='text-align-center keyline-wrapper d-block <?php echo $tablet_position; ?> <?php echo $desktop_position; ?>'>
+    <span class='keyline <?php echo $background_colour; ?>' style='height: <?php echo $height; ?>px; width: <?php echo $width; ?>;'></span>
+  </div>
+<?php endif; ?>
+
+
+<?php if($item['acf_fc_layout'] == 'two_columns_of_text'):?>
+  <?php
+  $column_1 = $item['column_1'];
+  $column_2 = $item['column_2'];
+  ?>
+  <div class='d-flex  flex-column flex-md-row justify-content-between'>
+    <div class=''>
+      <?php echo $column_1; ?>
+    </div>
+    <span class='d-block pad-right-30-m'></span>
+    <div class=''>
+      <?php echo $column_2; ?>
+    </div>
+  </div>
+
+<?php endif; ?>
+
 
 
 
@@ -94,6 +178,52 @@ $b++;
       <?php echo $description; ?>
     </p>
   </div>
+<?php endif; ?>
+
+<?php if($item['acf_fc_layout'] == 'wysiwyg_description'):?>
+  <!--description_item-->
+  <?php
+  $description = $item['wysiwyg_block'];
+  ?>
+  <div class='desc'>
+    <?php echo $description; ?>
+  </div>
+<?php endif; ?>
+
+
+<?php if($item['acf_fc_layout'] == 'white_block_with_icons_and_text'):?>
+  <!--description_item-->
+  <?php
+  $title = $item['title'];
+  $icons_and_text = $item['icons_and_text'];
+  $i = 0;
+  ?>
+
+  <?php if($icons_and_text):?>
+    <div class='white-box-width-icons'>
+      <div class='inner'>
+
+
+        <?php if($title):?>
+          <h5 class='font-600'><?php echo $title; ?></h5>
+        <?php endif; ?>
+
+        <div class='blocks-wrapper '>
+          <?php foreach($icons_and_text as $block):?>
+            <?php $i++; ?>
+            <div class='col-6 col-md-4 text-center  single-block row-<?php echo $i; ?>'>
+              <div class='d-block text-center pad-bottom-10'>
+                <img class='d-inline-block' src='/wp-content/themes/garethsimpson/assets/img/icons/<?php echo $block['icon']; ?>.svg' alt='icon' />
+              </div>
+              <div class='h6'>
+                <?php echo $block['description']; ?>
+              </div>
+            </div>
+          <?php endforeach; ?>
+        </div>
+      </div>
+    </div>
+  <?php endif;?>
 <?php endif; ?>
 
 
