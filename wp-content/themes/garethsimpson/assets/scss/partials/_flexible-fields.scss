@@ -51,16 +51,17 @@
 }
 
 .flexible-section {
-  padding-top: 50px;
-  padding-bottom: 50px;
-  @include media-breakpoint-up(md) {
-    padding-top: 65px;
-    padding-bottom: 65px;
-  }
-  @include media-breakpoint-up(md) {
-    padding-top: 130px;
-    padding-bottom: 130px;
-  }
+  // padding-top: 50px;
+  // padding-bottom: 50px;
+  // @include media-breakpoint-up(md) {
+  //   padding-top: 65px;
+  //   padding-bottom: 65px;
+  // }
+  // @include media-breakpoint-up(md) {
+  //   padding-top: 130px;
+  //   padding-bottom: 130px;
+  // }
+
   &.white_bg {
     background: #fff;
   }
@@ -80,11 +81,6 @@
   &.orange_bg,
   &.green_bg {
     color: #fff;
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
     li,
     p,
     a {
@@ -417,12 +413,6 @@
   &.purple_bg,
   &.orange_bg,
   &.green_bg {
-    color: #fff;
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
     li,
     p,
     a {

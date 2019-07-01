@@ -21,7 +21,18 @@
         <?php endwhile; ?>
       <?php endif; ?>
 
-      <section class='relative flexible-section  <?php echo $block_background_colour; ?> block-number-<?php echo $number_of_blocks; ?> '>
+      <?php if ( have_rows( 'padding_block' ) ) : ?>
+        <?php while ( have_rows( 'padding_block' ) ) : the_row(); ?>
+          <?php $pad_top_mob = get_sub_field( 'pad_top_mob' ); ?>
+          <?php $pad_top_tablet = get_sub_field( 'pad_top_tablet' ); ?>
+          <?php $pad_top_desktop = get_sub_field( 'pad_top_desktop' ); ?>
+          <?php $pad_bottom_mobile = get_sub_field( 'pad_bottom_mobile' ); ?>
+          <?php $pad_bottom_tablet = get_sub_field( 'pad_bottom_tablet' ); ?>
+          <?php $pad_bottom_desktop = get_sub_field( 'pad_bottom_desktop' ); ?>
+        <?php endwhile; ?>
+      <?php endif; ?>
+
+      <section class='relative flexible-section  <?php echo $block_background_colour; ?> block-number-<?php echo $number_of_blocks; ?> pad-top-<?php echo $pad_top_mob; ?> pad-top-<?php echo $pad_top_tablet; ?>-m pad-top-<?php echo $pad_top_desktop; ?>-l pad-bottom-<?php echo $pad_bottom_mobile; ?> pad-bottom-<?php echo $pad_bottom_tablet; ?>-m pad-bottom-<?php echo $pad_bottom_desktop; ?>-l'>
 
         <?php if($background_overlay):?>
           <span class='image-overlay' style="background: url(<?php echo $background_overlay['url']; ?>) no-repeat <?php echo $full_width_background == 'yes' ? 'center left' : 'bottom right'; ?>  / <?php echo $full_width_background == 'yes' ? 'cover' : 'contain'; ?>;"></span>
@@ -60,49 +71,52 @@
 
             <?php
             if($right_block['block']['choose_block_item']):
-              $block = $right_block;
-              $desktop_width = $block['block']['desktop_width'];
-              $tablet_width = $block['block']['tablet_width'];
-              $text_align = $block['block']['text_align'];
-              $text_align_tablet = $block['block']['text_align_tablet'];
-              if($text_align_tablet){
-                $text_align_tablet = $text_align_tablet;
-              }else {
-                $text_align_tablet = $text_align;
-              }
-              $a = 100;
-              $b = 100;
-              ?>
-              <div class=' pad-bottom-30 pad-bottom-0-m d-block block-padding mobile-100 text-align-center <?php echo $text_align_tablet; ?>-m <?php echo $text_align; ?>-l <?php echo $text_align; ?>-l tablet-<?php echo $tablet_width;?> desktop-<?php echo $desktop_width;?>'>
-                <?php foreach($block['block']['choose_block_item'] as $item):?>
-                  <?php include(locate_template('/partials/left-right-blocks.php')); ?>
-                <?php endforeach; ?>
-              </div>
+              if($number_of_blocks == 2 || $number_of_blocks == 3):
+                $block = $right_block;
+                $desktop_width = $block['block']['desktop_width'];
+                $tablet_width = $block['block']['tablet_width'];
+                $text_align = $block['block']['text_align'];
+                $text_align_tablet = $block['block']['text_align_tablet'];
+                if($text_align_tablet){
+                  $text_align_tablet = $text_align_tablet;
+                }else {
+                  $text_align_tablet = $text_align;
+                }
+                $a = 100;
+                $b = 100;
+                ?>
+                <div class=' pad-bottom-30 pad-bottom-0-m d-block block-padding mobile-100 text-align-center <?php echo $text_align_tablet; ?>-m <?php echo $text_align; ?>-l <?php echo $text_align; ?>-l tablet-<?php echo $tablet_width;?> desktop-<?php echo $desktop_width;?>'>
+                  <?php foreach($block['block']['choose_block_item'] as $item):?>
+                    <?php include(locate_template('/partials/left-right-blocks.php')); ?>
+                  <?php endforeach; ?>
+                </div>
+              <?php endif; ?>
             <?php endif; ?>
 
 
 
             <?php
             if($three_blocks['block']['choose_block_item']):
-
-              $block = $three_blocks;
-              $desktop_width = $block['block']['desktop_width'];
-              $tablet_width = $block['block']['tablet_width'];
-              $text_align = $block['block']['text_align'];
-              $text_align_tablet = $block['block']['text_align_tablet'];
-              if($text_align_tablet){
-                $text_align_tablet = $text_align_tablet;
-              }else {
-                $text_align_tablet = $text_align;
-              }
-              $a = 1000;
-              $b = 1000;
-              ?>
-              <div class=' pad-bottom-30 pad-bottom-0-m d-block block-padding mobile-100 text-align-center <?php echo $text_align_tablet; ?>-m <?php echo $text_align; ?>-l tablet-<?php echo $tablet_width;?> desktop-<?php echo $desktop_width;?>'>
-                <?php foreach($block['block']['choose_block_item'] as $item):?>
-                  <?php include(locate_template('/partials/left-right-blocks.php')); ?>
-                <?php endforeach; ?>
-              </div>
+              if($number_of_blocks == 3):
+                $block = $three_blocks;
+                $desktop_width = $block['block']['desktop_width'];
+                $tablet_width = $block['block']['tablet_width'];
+                $text_align = $block['block']['text_align'];
+                $text_align_tablet = $block['block']['text_align_tablet'];
+                if($text_align_tablet){
+                  $text_align_tablet = $text_align_tablet;
+                }else {
+                  $text_align_tablet = $text_align;
+                }
+                $a = 1000;
+                $b = 1000;
+                ?>
+                <div class=' pad-bottom-30 pad-bottom-0-m d-block block-padding mobile-100 text-align-center <?php echo $text_align_tablet; ?>-m <?php echo $text_align; ?>-l tablet-<?php echo $tablet_width;?> desktop-<?php echo $desktop_width;?>'>
+                  <?php foreach($block['block']['choose_block_item'] as $item):?>
+                    <?php include(locate_template('/partials/left-right-blocks.php')); ?>
+                  <?php endforeach; ?>
+                </div>
+              <?php endif; ?>
             <?php endif; ?>
 
           </div>
@@ -133,6 +147,10 @@
       $tablet_tick_blocks_width =  get_sub_field( 'tablet_tick_blocks_width' );
       $desktop_tick_block_width =  get_sub_field( 'desktop_tick_block_width' );
       $background_colour = get_sub_field('background_colour');
+      $title_colour = get_sub_field('title_colour');
+      $sub_title_text = get_sub_field('sub_title_text');
+      $sub_title_size = get_sub_field('sub_title_size');
+      $sub_title_colour = get_sub_field('sub_title_colour');
       ?>
       <section class='green_block <?php echo $background_colour; ?> clear d-block'>
         <div class='container text-center'>
@@ -140,7 +158,10 @@
           <?php if ( $icon ) { ?>
             <img class='pad-bottom-15' src="<?php echo $icon['url']; ?>" alt="<?php echo $icon['alt']; ?>" />
           <?php } ?>
-          <h2 class='pad-bottom-40'><?php the_sub_field( 'title' ); ?></h2>
+          <h2 class='pad-bottom-10 <?php echo $title_colour; ?>'><?php the_sub_field( 'title' ); ?></h2>
+          <?php if($sub_title_text):?>
+            <<?php echo $sub_title_size; ?> class=' pad-bottom-40 <?php echo $sub_title_colour; ?>'><?php echo $sub_title_text; ?></<?php echo $sub_title_size; ?>>
+          <?php endif; ?>
         </div>
 
         <div class='container no-padding d-flex flex-wrap justify-content-center'>

@@ -9,11 +9,12 @@ $b++;
   <?php
   $font_size = $item['font_size'];
   $title = $item['title'];
+  $color = $item['color'];
   ?>
-  <?php if($font_size == 'h1-hero'):?>
-    <h2 class='font-600 <?php echo $font_size; ?>'><?php echo $title;?></h2>
+  <?php if($font_size == 'h1-hero' || $font_size == 'h1'):?>
+    <h2 class='font-600 <?php echo $font_size; ?> <?php echo $color; ?>'><?php echo $title;?></h2>
   <?php else:?>
-    <<?php echo $font_size;?> class='font-600'><?php echo $title;?></<?php echo $font_size;?>>
+      <<?php echo $font_size; ?> class='font-600 <?php echo $font_size;?> <?php echo $color; ?>'><?php echo $title;?></<?php echo $font_size; ?>>
   <?php endif;?>
 <?php endif; ?>
 
@@ -34,7 +35,7 @@ $b++;
   ?>
 
   <div class='d-block text-center <?php echo $align_button; ?> <?php echo $align_button_desktop; ?>' target='<?php echo $target; ?>'>
-    <a class='orange-button' href='<?php echo $button_link; ?>'><?php echo $button_text; ?></a>
+    <a class='orange-button' href='<?php echo $button_link; ?>'><?php echo $button_text; ?><img src='/wp-content/themes/garethsimpson/assets/img/button-arrow-white.svg' alt='small-arrow' /></a>
   </div>
 
 

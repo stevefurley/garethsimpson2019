@@ -1,7 +1,7 @@
 <?php $display_footer_3_step_contact_form = get_field('display_footer_3_step_contact_form'); ?>
 <?php if($display_footer_3_step_contact_form == 'yes'):?>
   <?php if(!is_home()):?>
-<section class='contact_section' id='contact'>
+<section class='contact_section relative' id='contact'>
   <span class='contact-background'><img src='/wp-content/themes/garethsimpson/assets/img/contact-bg.svg' alt='contact-background' /></span>
   <?php if ( have_rows( 'contact_section' ) ) : ?>
 
