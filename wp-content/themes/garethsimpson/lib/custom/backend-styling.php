@@ -139,6 +139,16 @@ border: 0;
   right: -250px;
   top: 0px;
 }
+[data-layout='about_header']:hover:after {
+  background: url(/wp-content/themes/garethsimpson/assets/img/acf-layouts/about_header.png) no-repeat center center / contain;
+  content: '';
+  height: 110px;
+  width: 250px;
+  display: block;
+  position: absolute;
+  right: -250px;
+  top: 0px;
+}
 
 
 
