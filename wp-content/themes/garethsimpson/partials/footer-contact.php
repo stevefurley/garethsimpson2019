@@ -184,7 +184,7 @@
   }
   //echo '<div class="container">' .  $message .'</div>';
 
-  $to = 'stevefurley@gmail.com';
+  $to = 'hello@seeker.digital';
   $subject = 'Questionnaire';
 
   $body = $message;
