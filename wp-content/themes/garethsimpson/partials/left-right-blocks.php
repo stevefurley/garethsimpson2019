@@ -14,7 +14,7 @@ $b++;
   <?php if($font_size == 'h1-hero' || $font_size == 'h1'):?>
     <h2 class='font-600 <?php echo $font_size; ?> <?php echo $color; ?>'><?php echo $title;?></h2>
   <?php else:?>
-      <<?php echo $font_size; ?> class='font-600 <?php echo $font_size;?> <?php echo $color; ?>'><?php echo $title;?></<?php echo $font_size; ?>>
+    <<?php echo $font_size; ?> class='font-600 <?php echo $font_size;?> <?php echo $color; ?>'><?php echo $title;?></<?php echo $font_size; ?>>
   <?php endif;?>
 <?php endif; ?>
 
@@ -42,6 +42,25 @@ $b++;
 
 <?php endif; ?>
 
+
+
+<?php if($item['acf_fc_layout'] == 'add_follow_me_icons'):?>
+  <div class='add_follow_me_icons'>
+    <?php $follow_me_title = $item['follow_me_title']; ?>
+    <?php if($follow_me_title):?>
+      <h7 class='pad-bottom-20 d-block'><?php echo $follow_me_title; ?></h7>
+    <?php endif; ?>
+    <?php if ( have_rows( 'social_link', 'option' ) ) : ?>
+      <div class='social-links'>
+        <?php while ( have_rows( 'social_link', 'option' ) ) : the_row(); ?>
+          <?php $icon = get_sub_field('icon');?>
+          <a href='<?php the_sub_field( 'link' ); ?>' target='_blank'><img src='/wp-content/themes/garethsimpson/assets/img/icons/<?php echo $icon;?>.svg' alt='<?php echo $icon; ?>' /></a>
+        <?php endwhile; ?>
+      </div>
+    <?php endif; ?>
+  </div>
+
+<?php endif; ?>
 
 
 

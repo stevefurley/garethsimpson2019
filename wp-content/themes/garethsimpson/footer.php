@@ -1,41 +1,46 @@
 <?php $display_footer_3_step_contact_form = get_field('display_footer_3_step_contact_form'); ?>
 <?php if($display_footer_3_step_contact_form == 'yes'):?>
   <?php if(!is_home()):?>
-<section class='contact_section relative' id='contact'>
-  <span class='contact-background'><img src='/wp-content/themes/garethsimpson/assets/img/contact-bg.svg' alt='contact-background' /></span>
-  <?php if ( have_rows( 'contact_section' ) ) : ?>
+    <section class='contact_section relative' id='contact'>
+      <span class='contact-background'><img src='/wp-content/themes/garethsimpson/assets/img/contact-bg.svg' alt='contact-background' /></span>
+      <?php
+      $footer_title = get_field('footer_title');
+      $footer_sub_title = get_field('footer_sub_title');
+      ?>
+      <?php if($footer_sub_title || $footer_title):?>
+        <div class='container relative z-index-2 pad-right-30 pad-left-30'>
+          <?php if($footer_title):?>
+            <h2 class='h1'><?php the_field( 'footer_title' ); ?></h2>
+          <?php endif; ?>
+          <?php if($footer_sub_title):?>
+            <h3 class='h4'><?php the_field( 'footer_sub_title' ); ?></h3>
+          <?php endif; ?>
+        </div>
+      <?php endif; ?>
+      <div class='container pad-right-30 pad-left-30'>
 
-    <div class='container relative z-index-2 pad-right-30 pad-left-30'>
-      <?php while ( have_rows( 'contact_section' ) ) : the_row(); ?>
-        <h2 class='h1'><?php the_sub_field( 'title' ); ?></h2>
-        <h3 class='h4'><?php the_sub_field( 'sub_title' ); ?></h3>
-      <?php endwhile; ?>
-    </div>
-  <?php endif; ?>
-  <div class='container pad-right-30 pad-left-30'>
+        <div class='custom-form'>
+          <?php include(locate_template('/partials/footer-contact.php'));?>
+        </div>
 
-      <div class='custom-form'>
-        <?php include(locate_template('/partials/footer-contact.php'));?>
       </div>
 
-  </div>
-
-  <div class='bottom-section relative z-index-2'>
-    <p class='or'>
-      Or
-    </p>
-    <a class='bottom-eail h3' href='mailto:<?php the_field( 'email_address', 'option' ); ?>'><?php the_field( 'email_address', 'option' ); ?></a>
-    <a class='bottom-phone h3' href='tel:<?php the_field( 'telephone_number', 'option' ); ?>'><?php the_field( 'telephone_number', 'option' ); ?></a>
-  </div>
-</section>
-<?php endif; ?>
+      <div class='bottom-section relative z-index-2'>
+        <p class='or'>
+          Or
+        </p>
+        <a class='bottom-eail h3' href='mailto:<?php the_field( 'email_address', 'option' ); ?>'><?php the_field( 'email_address', 'option' ); ?></a>
+        <a class='bottom-phone h3' href='tel:<?php the_field( 'telephone_number', 'option' ); ?>'><?php the_field( 'telephone_number', 'option' ); ?></a>
+      </div>
+    </section>
+  <?php endif; ?>
 <?php endif;?>
 <div class="clear"></div>
 <?php
 $phone = get_field( 'telephone_number', 'option' );
 $email = get_field( 'email_address', 'option' );
- $footer_background_image = get_field( 'footer_background_image', 'option' );
- $footer_background_image_mobile = get_field( 'footer_background_image_mobile', 'option' );
+$footer_background_image = get_field( 'footer_background_image', 'option' );
+$footer_background_image_mobile = get_field( 'footer_background_image_mobile', 'option' );
 ?>
 <footer id="footer" role="contentinfo">
   <div class='main-footer relative'>
@@ -61,11 +66,11 @@ $email = get_field( 'email_address', 'option' );
     <div class='container'>
       <div class='bottom-footer-menu'>
         <?php wp_nav_menu( array( 'theme_location' => 'footer-menu' ) ); ?>
-          <span>Copyright <?php the_date('Y'); ?>
+        <span>Copyright <?php the_date('Y'); ?>
+        </div>
       </div>
     </div>
-  </div>
-</footer>
+  </footer>
 </div><!-- closing div from header-->
 
 

@@ -85,7 +85,7 @@
                 $a = 100;
                 $b = 100;
                 ?>
-                <div class=' pad-bottom-30 pad-bottom-0-m d-block block-padding mobile-100 text-align-center <?php echo $text_align_tablet; ?>-m <?php echo $text_align; ?>-l <?php echo $text_align; ?>-l tablet-<?php echo $tablet_width;?> desktop-<?php echo $desktop_width;?>'>
+                <div class='  d-block block-padding mobile-100 text-align-center <?php echo $text_align_tablet; ?>-m <?php echo $text_align; ?>-l <?php echo $text_align; ?>-l tablet-<?php echo $tablet_width;?> desktop-<?php echo $desktop_width;?>'>
                   <?php foreach($block['block']['choose_block_item'] as $item):?>
                     <?php include(locate_template('/partials/left-right-blocks.php')); ?>
                   <?php endforeach; ?>

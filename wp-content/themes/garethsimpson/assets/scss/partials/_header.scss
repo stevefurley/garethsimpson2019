@@ -45,6 +45,11 @@
   @include media-breakpoint-up(md) {
     min-height: 1000px;
   }
+  &.about-header {
+    @include media-breakpoint-up(md) {
+      min-height: 772px;
+    }
+  }
   .darkgrey-overlay {
     background: rgba(0,0,0,0.6);
     z-index: 1;

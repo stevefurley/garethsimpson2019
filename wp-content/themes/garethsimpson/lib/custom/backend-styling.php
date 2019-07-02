@@ -129,6 +129,16 @@ border: 0;
   right: -250px;
   top: 0px;
 }
+[data-layout='add_follow_me_icons']:hover:after {
+  background: url(/wp-content/themes/garethsimpson/assets/img/acf-layouts/add_follow_me_icons.png) no-repeat center center / contain;
+  content: '';
+  height: 110px;
+  width: 250px;
+  display: block;
+  position: absolute;
+  right: -250px;
+  top: 0px;
+}
 
 
 

@@ -39,8 +39,8 @@
 <!-- Google Analytics -->
 <script>
 (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
 })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
 ga('create', 'UA-75603045-1', 'auto');
@@ -76,44 +76,63 @@ ga('send', 'pageview');
         <span class='cover d-none d-md-block' style='background: url(<?php echo $header_background_image["url"]; ?>) no-repeat center center / cover;'></span>
         <span class='cover d-block d-md-none' style='background: url(<?php echo $header_background_image_mobile["url"]; ?>) no-repeat center center / cover;'></span>
         <span class='darkgrey-overlay cover z-index-2'></span>
-      <?php else:?>
-        <header class="standard-header page-header" role="banner" id='header'>
-        <?php endif; ?>
-        <div class='container d-flex relative z-index-3 '>
-          <a class='header-logo ' href='/'>
-            <?php if ( $logo ) { ?>
-              <img class='fluid-img' src="<?php echo $logo['url']; ?>" alt="<?php echo $logo['alt']; ?>" />
-            <?php } ?>
-          </a>
-          <span class='d-flex flex-grow-1 '></span>
-          <div class="hamburger-wrapper   d-block d-md-none align-self-center">
-            <div id="mobile-menu-button" class="hamburger" ><span></span></div>
-          </div>
-          <div class='rightside-header'>
-            <div class='tel-email-wrapper'>
-              <a class='headerphone' href='tel:<?php the_field( 'telephone_number', 'option' ); ?>'><?php the_field( 'telephone_number', 'option' ); ?></a> /
-              <a class='headermeail' href='mailto:<?php the_field( 'email_address', 'option' ); ?>'><?php the_field( 'email_address', 'option' ); ?></a>
-
-            </div>
-            <div id='header-menu' class='d-md-block d-none align-self-md-center' >
-              <?php wp_nav_menu( array( 'theme_location' => 'header-menu' ) ); ?>
-            </div>
-          </div>
-        </div>
-        <?php if(is_front_page()):?>
-          <div class='container homepage-text relative z-index-2 '>
-            <?php if($header_title):?>
-              <h1 class='h1-hero font-600'><?php the_field( 'header_title' ); ?></h1>
+      <?php elseif ( have_rows( 'flexible_blocks' ) ): ?>
+        <?php while ( have_rows( 'flexible_blocks' ) ) : the_row(); ?>
+          <?php if ( get_row_layout() == 'about_header' ) : ?>
+            <?php $header_background_image = get_sub_field( 'image' ); ?>
+            <header class="homepage-header about-header page-header" role="banner" id='header' >
+              <span class='cover d-block' style='background: url(<?php echo $header_background_image["url"]; ?>) no-repeat center center / cover;'></span>
             <?php endif; ?>
-            <?php if($sub_title_header):?>
-              <h2 class='h3'><?php the_field( 'sub_title_header' ); ?></h2>
-            <?php endif;?>
-            <?php if($custom_link && $custom_link_text):?>
+          <?php endwhile; ?>
+        <?php else:?>
+          <header class="standard-header page-header" role="banner" id='header'>
+          <?php endif; ?>
+          <div class='container d-flex relative z-index-3 '>
+            <a class='header-logo ' href='/'>
+              <?php if ( $logo ) { ?>
+                <img class='fluid-img' src="<?php echo $logo['url']; ?>" alt="<?php echo $logo['alt']; ?>" />
+              <?php } ?>
+            </a>
+            <span class='d-flex flex-grow-1 '></span>
+            <div class="hamburger-wrapper   d-block d-md-none align-self-center">
+              <div id="mobile-menu-button" class="hamburger" ><span></span></div>
+            </div>
+            <div class='rightside-header'>
+              <div class='tel-email-wrapper'>
+                <a class='headerphone' href='tel:<?php the_field( 'telephone_number', 'option' ); ?>'><?php the_field( 'telephone_number', 'option' ); ?></a> /
+                <a class='headermeail' href='mailto:<?php the_field( 'email_address', 'option' ); ?>'><?php the_field( 'email_address', 'option' ); ?></a>
 
-              <div class='d-block text-center'>
-                <a class='read-more d-inline-block white-hover' href='<?php echo $custom_link;?>'><?php echo $custom_link_text;?></a>
               </div>
-            <?php endif;?>
+              <div id='header-menu' class='d-md-block d-none align-self-md-center' >
+                <?php wp_nav_menu( array( 'theme_location' => 'header-menu' ) ); ?>
+              </div>
+            </div>
           </div>
-        <?php endif; ?>
-      </header>
+          <?php if(is_front_page()):?>
+            <div class='container homepage-text relative z-index-2 '>
+              <?php if($header_title):?>
+                <h1 class='h1-hero font-600'><?php the_field( 'header_title' ); ?></h1>
+              <?php endif; ?>
+              <?php if($sub_title_header):?>
+                <h2 class='h3'><?php the_field( 'sub_title_header' ); ?></h2>
+              <?php endif;?>
+              <?php if($custom_link && $custom_link_text):?>
+
+                <div class='d-block text-center'>
+                  <a class='read-more d-inline-block white-hover' href='<?php echo $custom_link;?>'><?php echo $custom_link_text;?></a>
+                </div>
+              <?php endif;?>
+            </div>
+          <?php elseif ( have_rows( 'flexible_blocks' ) ): ?>
+            <?php while ( have_rows( 'flexible_blocks' ) ) : the_row(); ?>
+              <?php if ( get_row_layout() == 'about_header' ) : ?>
+                <?php $header_background_image = get_sub_field( 'image' ); ?>
+                  <div class='container homepage-text relative z-index-2 '>
+                      <h1 class='h1-hero font-600'><?php the_sub_field( 'title' ); ?></h1>
+                  </div>
+
+                <?php endif; ?>
+              <?php endwhile; ?>
+            <?php else:?>
+          <?php endif; ?>
+        </header>

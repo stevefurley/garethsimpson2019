@@ -3,8 +3,46 @@
     "title": "Questionnaire Form",
     "fields": [
         {
+            "key": "field_5d1b8d4cd9933",
+            "label": "Footer title",
+            "name": "footer_title",
+            "type": "textarea",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "maxlength": "",
+            "rows": 3,
+            "new_lines": "br"
+        },
+        {
+            "key": "field_5d1b8d71d9934",
+            "label": "Footer sub title",
+            "name": "footer_sub_title",
+            "type": "textarea",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "maxlength": "",
+            "rows": 2,
+            "new_lines": "br"
+        },
+        {
             "key": "field_5cff7a488680c",
-            "label": "Steps",
+            "label": "Footer Steps Contact form",
             "name": "steps",
             "type": "repeater",
             "instructions": "",
@@ -255,7 +293,7 @@
             }
         ]
     ],
-    "menu_order": 0,
+    "menu_order": 100,
     "position": "normal",
     "style": "default",
     "label_placement": "top",
@@ -263,5 +301,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1562073510
+    "modified": 1562086884
 }
