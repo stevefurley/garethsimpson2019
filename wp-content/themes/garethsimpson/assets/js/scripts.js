@@ -192,6 +192,39 @@ $('.custom-form .next').on('click', function(){
 });
 
 
+	$('.main-form .next-button').on('click', function(){
+		var formHeight = $('.questionnaire-form').outerHeight();
+		$('.questionnaire-form').css('height', formHeight);
+
+		var current = $(this).attr("attr-next");
+		$('.block-step-' + current).removeClass('active').addClass('not-active');
+
+		//get current box then add class to line
+		var orig = parseInt(current);
+
+		var newCurrent = parseInt(current) + 1;
+		//line
+		$('.number-block-' + orig + ' .line').addClass('active');
+		//form step
+		$('.block-step-' + newCurrent).addClass('active').removeClass('not-active');
+		//number
+		$('.number-block-' + newCurrent).addClass('active');
+
+	});
+	$('.main-form .prev-button').on('click', function(){
+		var current = $(this).attr("attr-prev");
+		//form
+		$('.block-step-' + current).removeClass('active').addClass('not-active');
+
+		var newCurrent = parseInt(current) - 1;
+		//form step
+		$('.block-step-' + newCurrent).addClass('active').removeClass('not-active');
+		//line
+		$('.number-block-' + newCurrent + ' .line').removeClass('active');
+		//number
+		$('.number-block-' + current).removeClass('active');
+	});
+
 });
 
 })(jQuery);

@@ -13,19 +13,11 @@
     </div>
   <?php endif; ?>
   <div class='container pad-right-30 pad-left-30'>
-    <div class='step-form'>
-      <div class='steps'>
-        <span class='dots'></span>
-        <span class='step step-1 active' attr-step='step-1'><span class='text'>Step 1</span><span class='dot'></span></span>
-        <span class='step step-2' attr-step='step-2'><span class='text'>Step 2</span><span class='dot'></span></span>
-        <span class='step step-3' attr-step='step-3'><span class='text'>Step 3</span><span class='dot'></span></span>
-      </div>
-      <h4 class='text-center font-600 no-margin'>Ready to do some real SEO with an industry veteran?</h4>
+
       <div class='custom-form'>
-        <?php echo do_shortcode( '[contact-form-7 id="264" title="Contact form 1"]' ); ?>
+        <?php include(locate_template('/partials/footer-contact.php'));?>
       </div>
 
-    </div>
   </div>
 
   <div class='bottom-section relative z-index-2'>

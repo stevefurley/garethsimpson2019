@@ -608,6 +608,7 @@
   background: #EAEEF2;
   text-align: center;
   flex: 1 0 auto;
+  overflow: hidden;
   @include media-breakpoint-up(md) {
     padding-top: 50px;
     padding-bottom: 50px;

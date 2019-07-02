@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="16px" height="12px" viewBox="0 0 16 12" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 55.1 (78136) - https://sketchapp.com -->
+    <title>Components/Icon/Arrow</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M12.4735253,5.10685714 L8.70149474,1.26816429 L9.93010526,0.0176142857 L15.8067368,6.00004286 L9.93010526,11.9824286 L8.70149474,10.7318786 L12.4744096,6.89228571 L0.105263158,6.89228571 L0.105263158,5.10685714 L12.4735253,5.10685714 Z" id="path-1"></path>
+    </defs>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Components/Btn/Lrg" transform="translate(-202.000000, -23.000000)">
+            <g id="Components/Icon/Arrow" transform="translate(210.000000, 29.000000) rotate(-180.000000) translate(-210.000000, -29.000000) translate(202.000000, 23.000000)">
+                <mask id="mask-2" fill="white">
+                    <use xlink:href="#path-1"></use>
+                </mask>
+                <use id="Combined-Shape" fill="#FFFFFF" fill-rule="nonzero" xlink:href="#path-1"></use>
+                <g id="Colour/Alert/Green" mask="url(#mask-2)" fill="#fff" fill-rule="evenodd">
+                    <rect id="Colour/Alert/Green/Square" x="0" y="0" width="16" height="12"></rect>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,489 @@
+.question-background {
+  background: url(/wp-content/themes/garethsimpson/assets/img/questionairre-background.png) no-repeat center top /contain;
+  background: url(/wp-content/themes/garethsimpson/assets/img/questionairre-background.svg) no-repeat center top /contain;
+}
+#questionnaire_block {
+  position: relative;
+  max-width: 1130px;
+  margin: auto auto 30px auto;
+  box-shadow: 0 2px 40px 0 rgba(0,0,0,0.18);
+  border-radius: 5px;
+  background: #fff;
+  padding: 20px 10px;
+  transform: scale(1);
+  @include media-breakpoint-up(md) {
+    padding: 50px;
+  }
+  @include media-breakpoint-up(lg) {
+    padding: 60px;
+  }
+  transition: 300ms transform ease;
+  overflow: hidden;
+  &.questionnaire_block {
+    transform: scale(0);
+    transform-origin: top;
+    transition: 300ms transform ease;
+  }
+
+  .numbers-blocks {
+    &.active {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      margin: auto;
+      z-index: 99;
+      left: 0;
+
+      .inner {
+        box-shadow: 0 0 10px rgba(0,0,0,0.5);
+        transition: box-shadow 300ms ease;
+      }
+    }
+    .numbers-wrapper {
+      display: flex;
+      //  align-items: center;
+      width: 100%;
+      justify-content: space-between;
+      max-width: 890px;
+      margin: auto;
+      padding-bottom: 20px;
+      margin-top: 5px;
+      padding-left: 15px;
+      padding-right: 15px;
+      @include media-breakpoint-up(md) {
+        padding-left: 60px;
+        padding-right: 60px;
+      }
+      .number-block {
+        display: flex;
+        flex-grow: 1;
+        align-items: center;
+        &:last-child {
+          flex-grow: 0;
+        }
+        .line {
+          height: 4px;
+          background: #c5cbca;
+          width: 100%;
+          display: block;
+          flex-grow: 1;
+          position: relative;
+          .inner-line {
+            position: absolute;
+            left: 0;
+            height: 100%;
+            width: 0;
+            transition: width 300ms ease;
+            background: #FF6541;
+          }
+          &.active {
+            .inner-line {
+              width: 100%;
+              transition: width 300ms ease;
+            }
+          }
+        }
+        &.active {
+          .number {
+            background: #FF6541;
+            color: #fff;
+            transition: all 300ms ease;
+          }
+        }
+        .number {
+          height: 27px;
+          width: 27px;
+          border-radius: 100%;
+          background: #C5CBCA;
+          font-size: 14px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-weight: bold;
+          transition: all 300ms ease;
+          align-items: center;
+          flex-grow: 0;
+          flex-shrink: 0;
+        }
+      }
+    }
+  }
+  .main-form {
+    position: relative;
+    .question-block {
+      clear: both;
+    }
+    input,
+    textarea {
+      background: #EAEEF2;
+      border-radius: 4px;
+      height: 80px;
+      font-size: 18px;
+      line-height: 25px;
+      padding-left: 29px;
+      width: 100%;
+      border: none;
+      padding-top: 25px;
+      padding-bottom: 20px;
+    }
+    .growing {
+      display: flex;
+      flex-grow: 1;
+    }
+    .form-button-wrapper {
+      display: flex;
+      justify-content: flex-end;
+      width: 100%;
+      margin-top: 30px;
+    }
+    .submit-wrapper {
+      input {
+        cursor: pointer;
+        font-size: 18px;
+        line-height: 27px;
+        border-radius: 28px;
+        background-color: $orange;
+        transition: background 300ms ease;
+        padding: 10px 45px 10px 45px;
+        text-align: center;
+        height: auto;
+        color: #fff;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-width:  130px;
+        @include media-breakpoint-up(md) {
+          min-width:  250px;
+          background-color: $orange;
+        }
+        &:hover {
+          background-color: darken($orange, 7%);
+          transition: background 300ms ease;
+        }
+      }
+    }
+    .prev-button {
+      cursor: pointer;
+      font-size: 18px;
+      line-height: 27px;
+      border-radius: 28px;
+      background:  url("/wp-content/themes/garethsimpson/assets/img/button-arrow-left.svg") no-repeat 19px 18px;
+      background-color: #D3D7D9;
+      transition: background 300ms ease;
+      padding: 10px 45px 10px 45px;
+      text-align: center;
+      color: #fff;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width:  130px;
+      @include media-breakpoint-up(md) {
+        min-width:  250px;
+        padding: 10px 45px 10px 45px;
+        background:  url("/wp-content/themes/garethsimpson/assets/img/button-arrow-left.svg") no-repeat 24px 18px;
+        background-color: #D3D7D9;
+      }
+      &:hover {
+        background-color: darken(#D3D7D9, 7%);
+        transition: background 300ms ease;
+      }
+    }
+    .next-button {
+      cursor: pointer;
+      font-size: 18px;
+      line-height: 27px;
+      border-radius: 28px;
+      background:  url("/wp-content/themes/garethsimpson/assets/img/button-arrow.svg") no-repeat 95px 18px;
+      background-color: $orange;
+      transition: background 300ms ease;
+      padding: 10px 45px 10px 45px;
+      text-align: center;
+      color: #fff;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width:  130px;
+      @include media-breakpoint-up(md) {
+        min-width:  250px;
+        background:  url("/wp-content/themes/garethsimpson/assets/img/button-arrow.svg") no-repeat 210px 18px;
+        background-color: $orange;
+      }
+      &:hover {
+        background-color: lighten($orange, 7%);
+        transition: background 300ms ease;
+      }
+    }
+    h4 {
+      margin-bottom: 15px;
+    }
+    .radio-question-wrapper,
+    .checklist-question-wrapper {
+      display: block;
+      position: relative;
+      label {
+        cursor: pointer;
+      }
+    }
+    .radio-button-wrapper,
+    .checklist-button {
+      display: block;
+      align-items: baseline;
+      position: relative;
+      padding-left: 30px;
+      margin-right: 40px;
+      margin-bottom: 15px;
+      @include media-breakpoint-up(md) {
+        display: inline-block;
+      }
+      input {
+        position: absolute;
+        left: 2px;
+        z-index: 1;
+        top: 6px;
+        opacity: 0;
+        cursor: pointer;
+        &:checked ~ .radio-checkmark {
+          &:after {
+            background: $green;
+            transition: background 200ms ease, transform 200ms ease;
+            transform: scale(1);
+          }
+        }
+        &:checked ~ .checklist-checkmark {
+          &:after {
+            // background: $green;
+            transition: transform 200ms ease;
+            transform: scale(1);
+          }
+        }
+      }
+      label {
+        font-weight: bold;
+      }
+      .radio-checkmark {
+        height: 18px;
+        width: 18px;
+        background: white;
+        border-radius: 10px;
+        display: block;
+        position: absolute;
+        top: 6px;
+        left: 0;
+        border: solid 2px $green;
+        &:after {
+          position: absolute;
+          content: "";
+          height: 8px;
+          width: 8px;
+          border-radius: 100%;
+          top: 3px;
+          display: block;
+          background: transparent;
+          transition:  transform 200ms ease;
+          transform: scale(0);
+          left: 3px;
+        }
+      }
+    }
+    .checklist-checkmark {
+      height: 18px;
+      width: 18px;
+      background: white;
+      //border-radius: 10px;
+      display: block;
+      position: absolute;
+      top: 6px;
+      left: 0;
+      border: solid 2px $green;
+      &:after {
+        position: absolute;
+        content: "\2713";
+        top: 0;
+        height: 100%;
+        display: block;
+        transition: background 200ms ease,transform 200ms ease;
+        transform: scale(0);
+        left: 1px;
+        font-size: 15px;
+        line-height: 15px;
+        color: $green;
+      }
+    }
+  }
+}
+
+
+@keyframes fadingInSmall {
+  0%   {
+    padding: 30px 15px;
+    height: auto;
+    transform: translate(0, 400px);
+    opacity: 0;
+  }
+  25%  {
+    transform: translate(0, 400px);
+    opacity: 0;
+  }
+  50%  {
+    transform: translate(0, 0);
+    opacity: 1;
+  }
+  100% {
+    height: auto;
+    opacity: 1;
+    padding: 30px 15px;
+    transform: translate(0, 0);
+  }
+}
+
+@keyframes fadingOutSmall {
+  0%   {
+    padding: 30px 15px;
+    transform: translate(0, 0);
+    opacity: 1;
+    height: auto;
+  }
+  25%  {
+    opacity: 0;
+    transform: translate(0, 400px);
+    height: auto;
+    padding: 30px 15px;
+  }
+  50%  {
+    padding: 0;
+    height: 0;
+    padding: 0;
+  }
+  100% {
+    padding: 0;
+    height: 0;
+    transform: translate(0, 400px);
+  }
+}
+
+
+@keyframes fadingInMedium {
+  0%   {
+    padding: 30px 60px;
+    height: auto;
+    transform: translate(0, 400px);
+    opacity: 0;
+  }
+  25%  {
+    transform: translate(0, 400px);
+    opacity: 0;
+  }
+  50%  {
+    transform: translate(0, 0);
+    opacity: 1;
+  }
+  100% {
+    height: auto;
+    opacity: 1;
+    padding: 30px 60px;
+    transform: translate(0, 0);
+  }
+}
+
+@keyframes fadingOutMedium {
+  0%   {
+    padding: 30px 60px;
+    transform: translate(0, 0);
+    opacity: 1;
+    height: auto;
+  }
+  25%  {
+    opacity: 0;
+    transform: translate(0, 400px);
+    height: auto;
+    padding: 30px 60px;
+  }
+  50%  {
+    padding: 0;
+    height: 0;
+    padding: 0;
+  }
+  100% {
+    padding: 0;
+    height: 0;
+    transform: translate(0, 400px);
+  }
+}
+
+@keyframes fadingInLarge {
+  0%   {
+    padding: 30px 120px;
+    height: auto;
+    transform: translate(0, 400px);
+    opacity: 0;
+  }
+  25%  {
+    transform: translate(0, 400px);
+    opacity: 0;
+  }
+  50%  {
+    transform: translate(0, 0);
+    opacity: 1;
+  }
+  100% {
+    height: auto;
+    opacity: 1;
+    padding: 30px 120px;
+    transform: translate(0, 0);
+  }
+}
+
+@keyframes fadingOutLarge {
+  0%   {
+    padding: 30px 120px;
+    transform: translate(0, 0);
+    opacity: 1;
+    height: auto;
+  }
+  25%  {
+    opacity: 0;
+    transform: translate(0, 400px);
+    height: auto;
+    padding: 30px 120px;
+  }
+  50%  {
+    padding: 0;
+    height: 0;
+    padding: 0;
+  }
+  100% {
+    padding: 0;
+    height: 0;
+    transform: translate(0, 400px);
+  }
+}
+
+
+.step {
+  width: 100%;
+  opacity: 0;
+  overflow: hidden;
+  &.active {
+    animation-fill-mode: forwards;
+    animation-duration: 1000ms;
+    animation-delay: 300ms;
+    animation-name: fadingInSmall;
+    @include media-breakpoint-up(md) {
+      animation-name: fadingInMedium;
+    }
+    @include media-breakpoint-up(lg) {
+      animation-name: fadingInLarge;
+    }
+  }
+  &.not-active {
+    animation-fill-mode: forwards;
+    animation-duration: 1000ms;
+    animation-name: fadingOutSmall;
+    @include media-breakpoint-up(md) {
+      animation-name: fadingOutMedium;
+    }
+    @include media-breakpoint-up(lg) {
+      animation-name: fadingOutLarge;
+    }
+  }
+}
