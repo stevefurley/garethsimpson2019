@@ -71,21 +71,31 @@ ga('send', 'pageview');
   </nav>
   <div class='move'>
 
+
+
     <?php if(is_front_page()):?>
       <header class="homepage-header page-header" role="banner" id='header' >
         <span class='cover d-none d-md-block' style='background: url(<?php echo $header_background_image["url"]; ?>) no-repeat center center / cover;'></span>
         <span class='cover d-block d-md-none' style='background: url(<?php echo $header_background_image_mobile["url"]; ?>) no-repeat center center / cover;'></span>
         <span class='darkgrey-overlay cover z-index-2'></span>
-      <?php elseif ( have_rows( 'flexible_blocks' ) ): ?>
-        <?php while ( have_rows( 'flexible_blocks' ) ) : the_row(); ?>
-          <?php if ( get_row_layout() == 'about_header' ) : ?>
-            <?php $header_background_image = get_sub_field( 'image' ); ?>
-            <header class="homepage-header about-header page-header" role="banner" id='header' >
-              <span class='cover d-block' style='background: url(<?php echo $header_background_image["url"]; ?>) no-repeat center center / cover;'></span>
+
+      <?php else:?>
+        <?php $f = 0;?>
+        <?php if ( have_rows( 'flexible_blocks' ) ): ?>
+          <?php while ( have_rows( 'flexible_blocks' ) ) : the_row(); ?>
+            <?php if ( get_row_layout() == 'about_header' ) : ?>
+              <?php $header_background_image = get_sub_field( 'image' ); ?>
+              <header class="homepage-header about-header page-header" role="banner" id='header' >
+                <span class='cover d-block' style='background: url(<?php echo $header_background_image["url"]; ?>) no-repeat center center / cover;'></span>
+              <?php else: ?>
+                <?php $f++; ?>
+                <?php if($f == 1):?>
+                  <header class="standard-header page-header" role="banner" id='header'>
+                  <?php endif; ?>
+                <?php endif; ?>
+              <?php endwhile; ?>
             <?php endif; ?>
-          <?php endwhile; ?>
-        <?php else:?>
-          <header class="standard-header page-header" role="banner" id='header'>
+
           <?php endif; ?>
           <div class='container d-flex relative z-index-3 '>
             <a class='header-logo ' href='/'>
@@ -123,16 +133,16 @@ ga('send', 'pageview');
                 </div>
               <?php endif;?>
             </div>
-          <?php elseif ( have_rows( 'flexible_blocks' ) ): ?>
+          <?php endif; ?>
+
+          <?php if ( have_rows( 'flexible_blocks' ) ): ?>
             <?php while ( have_rows( 'flexible_blocks' ) ) : the_row(); ?>
               <?php if ( get_row_layout() == 'about_header' ) : ?>
                 <?php $header_background_image = get_sub_field( 'image' ); ?>
-                  <div class='container homepage-text relative z-index-2 '>
-                      <h1 class='h1-hero font-600'><?php the_sub_field( 'title' ); ?></h1>
-                  </div>
-
-                <?php endif; ?>
-              <?php endwhile; ?>
-            <?php else:?>
+                <div class='container homepage-text relative z-index-2 '>
+                  <h1 class='h1-hero font-600'><?php the_sub_field( 'title' ); ?></h1>
+                </div>
+              <?php endif; ?>
+            <?php endwhile; ?>
           <?php endif; ?>
         </header>

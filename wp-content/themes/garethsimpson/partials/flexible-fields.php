@@ -151,6 +151,7 @@
       $sub_title_text = get_sub_field('sub_title_text');
       $sub_title_size = get_sub_field('sub_title_size');
       $sub_title_colour = get_sub_field('sub_title_colour');
+      $blocks_text_colour = get_sub_field('blocks_text_colour');
       ?>
       <section class='green_block <?php echo $background_colour; ?> clear d-block'>
         <div class='container text-center'>
@@ -164,8 +165,9 @@
           <?php endif; ?>
         </div>
 
-        <div class='container no-padding d-flex flex-wrap justify-content-center'>
+        <div class='container no-padding '>
           <?php if ( have_rows( 'tick_blocks' ) ) : ?>
+            <div class='inner-green-block d-flex flex-wrap justify-content-center'>
             <?php while ( have_rows( 'tick_blocks' ) ) : the_row(); ?>
               <div class='col-12 pad-bottom-40 <?php echo $tablet_tick_blocks_width; ?> <?php echo $desktop_tick_block_width; ?>'>
                 <div class='inner text-center'>
@@ -175,10 +177,13 @@
                       <img class='d-inline-block' src='/wp-content/themes/garethsimpson/assets/img/icons/<?php echo $icon2; ?>.svg' alt='icon' />
                     </div>
                   <?php endif; ?>
+                  <div class='<?php echo $blocks_text_colour; ?>'>
                   <?php the_sub_field( 'block_description' ); ?>
+                </div>
                 </div>
               </div>
             <?php endwhile; ?>
+            </div>
           </div>
         </section>
       <?php endif; ?>
