@@ -80,7 +80,7 @@ ga('send', 'pageview');
         <span class='darkgrey-overlay cover z-index-2'></span>
 
       <?php else:?>
-        <?php $f = 0;?>
+
         <?php if ( have_rows( 'flexible_blocks' ) ): ?>
           <?php while ( have_rows( 'flexible_blocks' ) ) : the_row(); ?>
             <?php if ( get_row_layout() == 'about_header2' ) : ?>
@@ -92,13 +92,11 @@ ga('send', 'pageview');
               ?>
               <header class="homepage-header about-header page-header" role="banner" id='header' >
                 <span class='cover d-block' style='background: url(<?php echo $header_background_image["url"]; ?>) no-repeat <?php echo $image_horizontal_position; ?> <?php echo $vertical_image_position; ?> / cover;'></span>
-              <?php else: ?>
-                <?php $f++; ?>
-                <?php if($f == 1):?>
-                  <header class="standard-header page-header" role="banner" id='header'>
-                  <?php endif; ?>
-                <?php endif; ?>
-              <?php endwhile; ?>
+              <?php endif; ?>
+
+            <?php endwhile; ?>
+          <?php else: ?>
+            <header class="standard-header page-header" role="banner" id='header'>
             <?php endif; ?>
 
           <?php endif; ?>
