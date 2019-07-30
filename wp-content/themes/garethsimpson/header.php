@@ -83,10 +83,15 @@ ga('send', 'pageview');
         <?php $f = 0;?>
         <?php if ( have_rows( 'flexible_blocks' ) ): ?>
           <?php while ( have_rows( 'flexible_blocks' ) ) : the_row(); ?>
-            <?php if ( get_row_layout() == 'about_header' ) : ?>
-              <?php $header_background_image = get_sub_field( 'image' ); ?>
+            <?php if ( get_row_layout() == 'about_header2' ) : ?>
+              <?php
+              $header_background_image = get_sub_field( 'image' );
+              $image_horizontal_position = get_sub_field( 'image_horizontal_position' );
+              $vertical_image_position = get_sub_field( 'vertical_image_position' );
+
+              ?>
               <header class="homepage-header about-header page-header" role="banner" id='header' >
-                <span class='cover d-block' style='background: url(<?php echo $header_background_image["url"]; ?>) no-repeat center center / cover;'></span>
+                <span class='cover d-block' style='background: url(<?php echo $header_background_image["url"]; ?>) no-repeat <?php echo $image_horizontal_position; ?> <?php echo $vertical_image_position; ?> / cover;'></span>
               <?php else: ?>
                 <?php $f++; ?>
                 <?php if($f == 1):?>
@@ -137,10 +142,10 @@ ga('send', 'pageview');
 
           <?php if ( have_rows( 'flexible_blocks' ) ): ?>
             <?php while ( have_rows( 'flexible_blocks' ) ) : the_row(); ?>
-              <?php if ( get_row_layout() == 'about_header' ) : ?>
-                <?php $header_background_image = get_sub_field( 'image' ); ?>
+              <?php if ( get_row_layout() == 'about_header2' ) : ?>
+                <?php $title_colour = get_sub_field( 'title_colour' );?>
                 <div class='container homepage-text relative z-index-2 '>
-                  <h1 class='h1-hero font-600'><?php the_sub_field( 'title' ); ?></h1>
+                  <h1 class='h1-hero font-600 <?php echo $title_colour; ?>'><?php the_sub_field( 'title' ); ?></h1>
                 </div>
               <?php endif; ?>
             <?php endwhile; ?>

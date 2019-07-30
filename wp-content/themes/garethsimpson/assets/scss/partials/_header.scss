@@ -65,6 +65,21 @@
       color: #fff;
       text-align: center;
       margin: 0 0 20px 0;
+      &.white-text {
+        color: #fff;
+      }
+      &.orange-text {
+        color: $orange;
+      }
+      &.purple-text {
+        color: #512848;
+      }
+      &.green-text {
+        color: #577C70;
+      }
+      &.black-text {
+        color: #222;
+      }
     }
     h2 {
       color: #fff;
@@ -83,7 +98,7 @@
 
 .header-logo {
   padding-top: 20px;
-  width: 80%;
+  width: 70%;
   img {
     width: 100%;
   }
