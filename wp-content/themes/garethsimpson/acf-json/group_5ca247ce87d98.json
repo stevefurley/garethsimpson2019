@@ -1509,7 +1509,8 @@
                                                         "small_bullet": "Small Bullet",
                                                         "middle_align": "Center aligned with orange line",
                                                         "green_underline": "Green underline, 2 columns",
-                                                        "orange_tick": "Orange underline and tick"
+                                                        "orange_tick": "Orange underline and tick",
+                                                          "timeline": "Timeline"
                                                     },
                                                     "default_value": [],
                                                     "allow_null": 0,
@@ -2366,6 +2367,59 @@
                     ],
                     "min": "",
                     "max": ""
+                  },
+             "layout_5d1b8fc8c5e40": {
+                 "key": "layout_5d1b8fc8c5e40",
+                 "name": "about_header",
+                 "label": "About header",
+                 "display": "block",
+                 "sub_fields": [
+                     {
+                         "key": "field_5d1b8fcfc5e41",
+                         "label": "Image",
+                         "name": "image",
+                         "type": "image",
+                         "instructions": "",
+                         "required": 0,
+                         "conditional_logic": 0,
+                         "wrapper": {
+                             "width": "50",
+                             "class": "",
+                             "id": ""
+                         },
+                         "return_format": "array",
+                         "preview_size": "thumbnail",
+                         "library": "all",
+                         "min_width": "",
+                         "min_height": "",
+                         "min_size": "",
+                         "max_width": "",
+                         "max_height": "",
+                         "max_size": "",
+                         "mime_types": ""
+                     },
+                     {
+                         "key": "field_5d1b8fe4c5e42",
+                         "label": "Title",
+                         "name": "title",
+                         "type": "text",
+                         "instructions": "",
+                         "required": 0,
+                         "conditional_logic": 0,
+                         "wrapper": {
+                             "width": "50",
+                             "class": "",
+                             "id": ""
+                         },
+                         "default_value": "",
+                         "placeholder": "",
+                         "prepend": "",
+                         "append": "",
+                         "maxlength": ""
+                     }
+                 ],
+                 "min": "",
+                 "max": ""
                 }
             },
             "button_label": "Add custom block",
