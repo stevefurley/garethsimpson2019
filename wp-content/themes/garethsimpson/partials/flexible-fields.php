@@ -138,7 +138,7 @@
     <?php elseif ( get_row_layout() == 'add_testimonial' ) : ?>
       <?php $include_testimonials = get_sub_field( 'include_testimonials' ); ?>
       <?php if($include_testimonials):?>
-        <?php include(locate_template('/partials/trusted_slider.php')); ?>
+        <?php include(locate_template('/partials/trusted_slider2.php')); ?>
       <?php endif;?>
 
 

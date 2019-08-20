@@ -342,6 +342,93 @@
       }
     }
   }
+  &.with_logos {
+    .inner-slider .quote-text {
+      margin-bottom: 30px;
+    }
+    .slider-nav2 {
+      justify-content: space-between;
+      width: 100%;
+      border-bottom: solid 6px #D8D8D8;
+      padding-bottom: 20px;
+      position: relative;
+      margin-bottom: 50px;
+      margin-top: 40px;
+      display: none;
+      @include media-breakpoint-up(md) {
+        display: flex;
+      }
+      .sliding-box {
+        height: 6px;
+        cursor: pointer;
+        display: inline-block;
+        width: 100%;
+        left: 0;
+        height: 6px;
+        position: absolute;
+        bottom: -26px;
+        background: #E35F30;
+        transition: left 300ms ease, width 300ms ease;
+      }
+      .slide-button-block {
+        position: relative;
+        padding-left: 20px;
+        padding-right: 20px;
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        img {
+          transition: saturate 300ms ease, opacity 300ms ease;
+          filter: saturate(0);
+          opacity: 0.6;
+          align-self: center;
+        }
+        &.active {
+          img {
+            opacity: 1;
+            transition: saturate 300ms ease, opacity 300ms ease;
+            filter: saturate(1);
+            align-self: center;
+          }
+        }
+        &:first-child {
+          padding-left: 0;
+        }
+        &:last-child {
+          padding-right: 0;
+        }
+      }
+    }
+    .profile-pics {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      .profile-name {
+        font-size: 22px;
+        color: #E35F30;
+        line-height: 30px;
+        margin-left: 16px;
+        margin-right: 16px;
+        padding-top: 10px;
+      }
+      .company-name {
+        font-size: 18px;
+        color: #272323;
+        line-height: 25px;
+        padding-top: 10px;
+      }
+      .image-wrapper {
+        width: 64px;
+        height: 64px;
+        border: solid 1.5px #E35F30;
+        border-radius: 100%;
+        img {
+          border-radius: 100%;
+          border:  solid 3.5px #fff;
+        }
+      }
+    }
+  }
 }
 
 .slick-dots {
