@@ -3,6 +3,25 @@
     "title": "Questionnaire Form",
     "fields": [
         {
+            "key": "field_5d7a1be6fcc2f",
+            "label": "Email address to send form to",
+            "name": "email_address_to_send_form_to",
+            "type": "text",
+            "instructions": "For example info@garethsimpson.co.uk, hello@garethsimpson.co.uk",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
             "key": "field_5d1b8d4cd9933",
             "label": "Footer title",
             "name": "footer_title",
@@ -301,5 +320,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1562086884
+    "modified": 1568283683
 }

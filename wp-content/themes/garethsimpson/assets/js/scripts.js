@@ -3,17 +3,17 @@
 	$(window).load(function() {
 		//scroll on href click
 		$('a[href*=#]:not([href=#])').click(function() {
-	    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
-	      var target = $(this.hash);
-	      target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
-	      if (target.length) {
-	        $('html,body').animate({
-	          scrollTop: target.offset().top - 80
-	        }, 1000);
-	        return false;
-	      }
-	    }
-	  });
+			if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+				var target = $(this.hash);
+				target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+				if (target.length) {
+					$('html,body').animate({
+						scrollTop: target.offset().top - 80
+					}, 1000);
+					return false;
+				}
+			}
+		});
 
 		// Responsive embeds
 		$('iframe').addClass('embed-responsive-item');
@@ -97,6 +97,72 @@
 				}
 			]
 		});
+
+
+
+		//hompage slider also used on about page
+		$('#slider2').slick({
+			slidesToShow: 1,
+			arrows: false,
+			fade: true,
+			adaptiveHeight: true,
+			dots: true,
+		});
+
+		//sliding function moves and resies orange line
+		function slidingline() {
+			if($('.slide-button-block.active').attr('data-slide') == 1) {
+				var leftPosition = $('.slide-button-block.active')["0"].offsetLeft;
+			} else {
+				var leftPosition = $('.slide-button-block.active')["0"].offsetLeft + 50;
+			}
+			var imageWidth = $('.slide-button-block.active')["0"].childNodes[1].clientWidth;
+			$('.sliding-box').css('left', leftPosition);
+			$('.sliding-box').css('width', imageWidth);
+		}
+
+
+		//when a user swipes with mouse or fingers sorts classes
+		$('#slider2').on('swipe', function(event, slick, direction){
+			var current = $(this).find('.slick-active').children('button').html();
+			$('.slider-nav2 .slide-button-block').removeClass('active');
+			$('.slider-nav2 .slide-button-block[data-slide='+ current + ']').addClass('active');
+			slidingline();
+		});
+
+		//when the dots are clicked
+		$('#slider2 .slick-dots li').on('click', function(){
+			var currentImage = $(this).text();
+			$('.slider-nav2  .nav-block').removeClass('active');
+			$('.slider-nav2  .nav-block[data-slide="' +  currentImage  + '"]').addClass('active');
+			//console.log(currentImage);
+		});
+
+		//when the image blocks are clicked
+		$('.slide-button-block').on('click', function(){
+			$('#slider2').slick(
+				'slickGoTo', $(this).context.dataset.slide
+			);
+			$(this).addClass('active').siblings().removeClass('active');
+			if($(this).context.dataset.slide == 1) {
+				var leftPosition = $(this)["0"].offsetLeft;
+			} else {
+				var leftPosition = $(this)["0"].offsetLeft + 50;
+			}
+			var imageWidth = $(this)["0"].childNodes[1].clientWidth;
+			$('.sliding-box').css('left', leftPosition);
+			$('.sliding-box').css('width', imageWidth);
+		});
+
+		//on window resize
+		if($('.slide-button-block').length > 0){
+			window.onresize = function() {
+				slidingline();
+			}
+		}
+
+
+
 
 
 		// Lightbox
@@ -192,38 +258,38 @@ $('.custom-form .next').on('click', function(){
 });
 
 
-	$('.main-form .next-button').on('click', function(){
-		var formHeight = $('.questionnaire-form').outerHeight();
-		$('.questionnaire-form').css('height', formHeight);
+$('.main-form .next-button').on('click', function(){
+	var formHeight = $('.questionnaire-form').outerHeight();
+	$('.questionnaire-form').css('height', formHeight);
 
-		var current = $(this).attr("attr-next");
-		$('.block-step-' + current).removeClass('active').addClass('not-active');
+	var current = $(this).attr("attr-next");
+	$('.block-step-' + current).removeClass('active').addClass('not-active');
 
-		//get current box then add class to line
-		var orig = parseInt(current);
+	//get current box then add class to line
+	var orig = parseInt(current);
 
-		var newCurrent = parseInt(current) + 1;
-		//line
-		$('.number-block-' + orig + ' .line').addClass('active');
-		//form step
-		$('.block-step-' + newCurrent).addClass('active').removeClass('not-active');
-		//number
-		$('.number-block-' + newCurrent).addClass('active');
+	var newCurrent = parseInt(current) + 1;
+	//line
+	$('.number-block-' + orig + ' .line').addClass('active');
+	//form step
+	$('.block-step-' + newCurrent).addClass('active').removeClass('not-active');
+	//number
+	$('.number-block-' + newCurrent).addClass('active');
 
-	});
-	$('.main-form .prev-button').on('click', function(){
-		var current = $(this).attr("attr-prev");
-		//form
-		$('.block-step-' + current).removeClass('active').addClass('not-active');
+});
+$('.main-form .prev-button').on('click', function(){
+	var current = $(this).attr("attr-prev");
+	//form
+	$('.block-step-' + current).removeClass('active').addClass('not-active');
 
-		var newCurrent = parseInt(current) - 1;
-		//form step
-		$('.block-step-' + newCurrent).addClass('active').removeClass('not-active');
-		//line
-		$('.number-block-' + newCurrent + ' .line').removeClass('active');
-		//number
-		$('.number-block-' + current).removeClass('active');
-	});
+	var newCurrent = parseInt(current) - 1;
+	//form step
+	$('.block-step-' + newCurrent).addClass('active').removeClass('not-active');
+	//line
+	$('.number-block-' + newCurrent + ' .line').removeClass('active');
+	//number
+	$('.number-block-' + current).removeClass('active');
+});
 
 });
 

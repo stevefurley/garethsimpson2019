@@ -43,7 +43,8 @@
   </section>
 <?php endif; ?>
 
-<?php include(locate_template('/partials/trusted_slider.php')); ?>
+<?php //include(locate_template('/partials/trusted_slider.php')); ?>
+<?php include(locate_template('/partials/trusted_slider2.php')); ?>
 
 <?php if ( have_rows( 'about_me_section' ) ) : ?>
   <section class='about_me_section' id='about'>

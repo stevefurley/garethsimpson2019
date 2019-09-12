@@ -1,3 +1,4 @@
+<?php $email_address_to_send_form_to = get_field('email_address_to_send_form_to'); ?>
 <?php if(!$_REQUEST): // check if submitted?>
   <span class='d-block pad-top-40'></span>
   <form name="questionnaire_form" class="questionnaire-form" id="questionnaire_block" method="post">
@@ -184,13 +185,14 @@
   }
   //echo '<div class="container">' .  $message .'</div>';
 
-  $to = 'hello@seeker.digital';
+//  $to = $email_address_to_send_form_to;
+debug($email_address_to_send_form_to);
   $subject = 'Questionnaire';
 
   $body = $message;
   $headers = array('Content-Type: text/html; charset=UTF-8');
 
-  wp_mail( $to, $subject, $body, $headers );
+  wp_mail( 'stevefurley@gmail.com', $subject, $body, $headers );
 
 
   ?>
