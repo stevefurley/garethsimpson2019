@@ -186,12 +186,13 @@
   //echo '<div class="container">' .  $message .'</div>';
 
 //  $to = $email_address_to_send_form_to;
+debug($email_address_to_send_form_to);
   $subject = 'Questionnaire';
 
   $body = $message;
   $headers = array('Content-Type: text/html; charset=UTF-8');
 
-  wp_mail( $email_address_to_send_form_to, $subject, $body, $headers );
+  wp_mail( 'stevefurley@gmail.com', $subject, $body, $headers );
 
 
   ?>
