@@ -192,7 +192,7 @@
   $body = $message;
   $headers = array('Content-Type: text/html; charset=UTF-8');
 
-  wp_mail( 'stevefurley@gmail.com', $subject, $body, $headers );
+  wp_mail( $email_address_to_send_form_to, $subject, $body, $headers );
 
 
   ?>
