@@ -391,6 +391,10 @@
           transform: scale(1);
           position: relative;
           transition: transform 300ms ease;
+          padding-left: 20px;
+          padding-right: 20px;
+        }
+        @include media-breakpoint-up(lg) {
           padding-left: 50px;
           padding-right: 50px;
         }

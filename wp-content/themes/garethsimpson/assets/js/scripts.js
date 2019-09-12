@@ -111,10 +111,11 @@
 
 		//sliding function moves and resies orange line
 		function slidingline() {
+			var  paddingset = $('.slide-button-block[data-slide=3]').css('padding-left').replace(/[^-\d\.]/g, '');
 			if($('.slide-button-block.active').attr('data-slide') == 1) {
 				var leftPosition = $('.slide-button-block.active')["0"].offsetLeft;
 			} else {
-				var leftPosition = $('.slide-button-block.active')["0"].offsetLeft + 50;
+				var leftPosition = $('.slide-button-block.active')["0"].offsetLeft + parseInt(paddingset);
 			}
 			var imageWidth = $('.slide-button-block.active')["0"].childNodes[1].clientWidth;
 			$('.sliding-box').css('left', leftPosition);
@@ -140,7 +141,9 @@
 
 		//when the image blocks are clicked
 		$('.slide-button-block').on('click', function(){
-		
+
+			var  paddingset = $('.slide-button-block[data-slide=3]').css('padding-left').replace(/[^-\d\.]/g, '');
+		//	console.log(paddingset);
 			$('#slider2').slick(
 				'slickGoTo', $(this).attr('data-slide') - 1
 			);
@@ -148,7 +151,7 @@
 			if($(this).context.dataset.slide == 1) {
 				var leftPosition = $(this)["0"].offsetLeft;
 			} else {
-				var leftPosition = $(this)["0"].offsetLeft + 50;
+				var leftPosition = $(this)["0"].offsetLeft + parseInt(paddingset);
 			}
 			var imageWidth = $(this)["0"].childNodes[1].clientWidth;
 			$('.sliding-box').css('left', leftPosition);
@@ -187,7 +190,7 @@
 
 $('.steps .step').on('click', function(){
 	var currentStep = $(this).attr('attr-step');
-	console.log(currentStep);
+//	console.log(currentStep);
 	if($(this).hasClass('active')){
 		if(currentStep == 'step-1'){
 			$('.steps-form-wrapper .inner').removeClass('left1');
