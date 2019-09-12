@@ -140,8 +140,9 @@
 
 		//when the image blocks are clicked
 		$('.slide-button-block').on('click', function(){
+		
 			$('#slider2').slick(
-				'slickGoTo', $(this).context.dataset.slide
+				'slickGoTo', $(this).attr('data-slide') - 1
 			);
 			$(this).addClass('active').siblings().removeClass('active');
 			if($(this).context.dataset.slide == 1) {
