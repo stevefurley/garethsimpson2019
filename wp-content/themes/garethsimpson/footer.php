@@ -29,7 +29,7 @@
         <p class='or'>
           Or
         </p>
-        <a class='bottom-eail h3' href='mailto:<?php the_field( 'email_address', 'option' ); ?>'><?php the_field( 'email_address', 'option' ); ?></a>
+        <a class='bottom-eail h3' href='mailto:<?php the_field( 'email_address_used', 'option' ); ?>'><?php the_field( 'email_address', 'option' ); ?></a>
         <a class='bottom-phone h3' href='tel:<?php the_field( 'telephone_number', 'option' ); ?>'><?php the_field( 'telephone_number', 'option' ); ?></a>
       </div>
     </section>
@@ -39,6 +39,7 @@
 <?php
 $phone = get_field( 'telephone_number', 'option' );
 $email = get_field( 'email_address', 'option' );
+$email_address_used = get_field( 'email_address_used', 'option' );
 $footer_background_image = get_field( 'footer_background_image', 'option' );
 $footer_background_image_mobile = get_field( 'footer_background_image_mobile', 'option' );
 ?>
@@ -50,7 +51,7 @@ $footer_background_image_mobile = get_field( 'footer_background_image_mobile', '
       <div class='top-footer-menu'>
         <?php wp_nav_menu( array( 'theme_location' => 'footer-menu-top' ) ); ?>
       </div>
-      <a class='footer-email h4' href='mailto:<?php echo $email;?>'><?php echo $email; ?></a>
+      <a class='footer-email h4' href='mailto:<?php echo $email_address_used;?>'><?php echo $email; ?></a>
       <a class='footer-phone h4' href='tel:<?php echo $phone ?  preg_replace("/[^0-9]/", "", $phone) : ""; ?>'><?php echo $phone; ?></a>
       <?php if ( have_rows( 'social_link', 'option' ) ) : ?>
         <div class='social-links-footer'>

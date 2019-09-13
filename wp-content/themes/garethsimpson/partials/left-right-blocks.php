@@ -304,6 +304,7 @@ $b++;
   <!--email_address_item-->
   <?php
   $email_address = $item['email_address'];
+  $email_address_used = = $item['email_address_used'];
   if(isset($item['font_size_desktop'])) {
     $font_size_desktop = $item['font_size_desktop'];
   } else {
@@ -329,6 +330,6 @@ $b++;
     }
   }
   </style>
-  <a class='d-block email <?php echo $otherName; ?>' href='mailto:<?php echo $email_address; ?>'><?php echo $email_address; ?></a>
+  <a class='d-block email <?php echo $otherName; ?>' href='mailto:<?php echo $email_address_used ? $email_address_used : "sales@seeker.digital"; ?>'><?php echo $email_address; ?></a>
 
 <?php endif; ?>

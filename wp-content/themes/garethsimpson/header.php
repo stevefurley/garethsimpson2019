@@ -124,7 +124,7 @@ ga('send', 'pageview');
             <div class='rightside-header'>
               <div class='tel-email-wrapper'>
                 <a class='headerphone' href='tel:<?php the_field( 'telephone_number', 'option' ); ?>'><?php the_field( 'telephone_number', 'option' ); ?></a> /
-                <a class='headermeail' href='mailto:<?php the_field( 'email_address', 'option' ); ?>'><?php the_field( 'email_address', 'option' ); ?></a>
+                <a class='headermeail' href='mailto:<?php the_field( 'email_address_used', 'option' ); ?>'><?php the_field( 'email_address', 'option' ); ?></a>
 
               </div>
               <div id='header-menu' class='d-md-block d-none align-self-md-center' >
