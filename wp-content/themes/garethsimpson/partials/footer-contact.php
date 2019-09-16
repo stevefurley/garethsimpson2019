@@ -1,6 +1,6 @@
 <?php
 $email_address_to_send_form_to = get_field('email_address_to_send_form_to');
-$actual_link = "https://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]"; debug($actual_link);
+$actual_link = "https://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
 ?>
 <?php if(!$_REQUEST): // check if submitted?>
   <span class='d-block pad-top-40'></span>
