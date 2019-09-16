@@ -486,4 +486,11 @@
       animation-name: fadingOutLarge;
     }
   }
+  .error {
+    display: none;
+  }
+  &.error .error {
+    display: block;
+    color: red;
+  }
 }

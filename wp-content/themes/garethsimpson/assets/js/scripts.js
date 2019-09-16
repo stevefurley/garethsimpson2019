@@ -143,7 +143,7 @@
 		$('.slide-button-block').on('click', function(){
 
 			var  paddingset = $('.slide-button-block[data-slide=3]').css('padding-left').replace(/[^-\d\.]/g, '');
-		//	console.log(paddingset);
+			//	console.log(paddingset);
 			$('#slider2').slick(
 				'slickGoTo', $(this).attr('data-slide') - 1
 			);
@@ -190,7 +190,7 @@
 
 $('.steps .step').on('click', function(){
 	var currentStep = $(this).attr('attr-step');
-//	console.log(currentStep);
+	//	console.log(currentStep);
 	if($(this).hasClass('active')){
 		if(currentStep == 'step-1'){
 			$('.steps-form-wrapper .inner').removeClass('left1');
@@ -262,23 +262,39 @@ $('.custom-form .next').on('click', function(){
 });
 
 
+
 $('.main-form .next-button').on('click', function(){
+
 	var formHeight = $('.questionnaire-form').outerHeight();
 	$('.questionnaire-form').css('height', formHeight);
 
 	var current = $(this).attr("attr-next");
-	$('.block-step-' + current).removeClass('active').addClass('not-active');
+	//console.log($('.block-step-' + current).find('textarea').val());
+	if($('.block-step-' + current).find('textarea').val().length > 1){
 
-	//get current box then add class to line
-	var orig = parseInt(current);
+		$('.block-step-' + current).removeClass('error');
+		$('.block-step-' + current).removeClass('active').addClass('not-active');
 
-	var newCurrent = parseInt(current) + 1;
-	//line
-	$('.number-block-' + orig + ' .line').addClass('active');
-	//form step
-	$('.block-step-' + newCurrent).addClass('active').removeClass('not-active');
-	//number
-	$('.number-block-' + newCurrent).addClass('active');
+		//get current box then add class to line
+		var orig = parseInt(current);
+
+		var newCurrent = parseInt(current) + 1;
+		//line
+		$('.number-block-' + orig + ' .line').addClass('active');
+		//form step
+		$('.block-step-' + newCurrent).addClass('active').removeClass('not-active');
+		//number
+		$('.number-block-' + newCurrent).addClass('active');
+	//	console.log($('.main-form  #first_name1').val().length);
+		if($('.main-form  #first_name1').val().length > 1) {
+			$('.main-form .submit-wrapper').hide();
+		} else {
+			$('.main-form .submit-wrapper').show();
+		}
+	} else {
+		//	console.log('less then 1');
+		$('.block-step-' + current).addClass('error');
+	}
 
 });
 $('.main-form .prev-button').on('click', function(){

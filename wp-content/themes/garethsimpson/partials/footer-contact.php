@@ -20,7 +20,7 @@
 
           <section class=' numbers-blocks '>
             <div class='inner'>
-                  <h4 class='no-margin pad-bottom-30'><b><?php the_sub_field( 'section_title' ); ?></b></h4>
+              <h4 class='no-margin pad-bottom-30'><b><?php the_sub_field( 'section_title' ); ?></b></h4>
 
 
 
@@ -43,7 +43,7 @@
           <?php if ( have_rows( 'add_a_step_of_questions' ) ) : ?>
             <?php while ( have_rows( 'add_a_step_of_questions' ) ) : the_row(); ?>
               <?php if ( have_rows( 'questions' ) ): ?>
-
+                  <input class="ohnohoney" autocomplete="off" type="text" id="first_name1" name="first_name1" placeholder="Your name here">
                 <?php while ( have_rows( 'questions' ) ) : the_row(); ?>
                   <?php $i++; ?>
                   <div class='step block-step-<?php echo $i; ?> <?php echo $i == 1 ? "active" : "not-active"; ?>' >
@@ -53,15 +53,16 @@
                       $question = get_sub_field( 'question' );
                       $form_name = preg_replace('#[^a-zA-Z0-9 ]#', '', $question);
                       $form_name = str_replace(' ', '_', $form_name);
-                        if(wp_is_mobile()){
-                          $placeholder = 'Your answer';
-                        } else {
-                          $placeholder = $question;
-                        }
+                      if(wp_is_mobile()){
+                        $placeholder = 'Your answer';
+                      } else {
+                        $placeholder = $question;
+                      }
                       ?>
                       <div class='question-block textarea-question' >
                         <h4 class='d-block d-md-none'><?php echo $question; ?></h4>
-                        <textarea name="<?php echo $form_name; ?>" rows="3" placeholder='<?php echo $placeholder; ?>'></textarea>
+                        <textarea name="<?php echo $form_name; ?>" rows="3" placeholder='<?php echo $placeholder; ?>' required></textarea>
+                        <span class='error'>Please fill in the <?php echo $placeholder; ?> before clicking next</span>
                       </div>
 
 
@@ -74,6 +75,7 @@
                       <div class='question-block radio-question'>
 
                         <h4><?php echo $question; ?></h4>
+
                         <div class='radio-question-wrapper'>
                           <?php if ( have_rows( 'radio_buttons' ) ) : ?>
                             <?php while ( have_rows( 'radio_buttons' ) ) : the_row(); ?>
@@ -120,28 +122,31 @@
                       </div>
 
                     <?php endif; ?>
+
+
+
                     <!-- end of questions -->
 
-                  <div class='form-button-wrapper'>
-                    <?php if($i == $total_questions):?>
+                    <div class='form-button-wrapper'>
+                      <?php if($i == $total_questions):?>
 
-                      <span class='prev-button' attr-prev='<?php echo $i;?>'>Previous</span>
-                      <span class='growing'></span>
-                      <div class='submit-wrapper'>
-                        <input type="submit" value="Submit">
-                      </div>
-
-
-                    <?php else:?>
-                      <?php if($i != 1):?>
                         <span class='prev-button' attr-prev='<?php echo $i;?>'>Previous</span>
                         <span class='growing'></span>
+                        <div class='submit-wrapper'>
+                          <input type="submit" value="Submit">
+                        </div>
+
+
+                      <?php else:?>
+                        <?php if($i != 1):?>
+                          <span class='prev-button' attr-prev='<?php echo $i;?>'>Previous</span>
+                          <span class='growing'></span>
+                        <?php endif; ?>
+                        <span class='growing'></span>
+                        <span class='next-button' attr-next='<?php echo $i;?>'>Next</span>
                       <?php endif; ?>
-                      <span class='growing'></span>
-                      <span class='next-button' attr-next='<?php echo $i;?>'>Next</span>
-                    <?php endif; ?>
-                  </div>
                     </div>
+                  </div>
                 <?php endwhile; ?>
               <?php endif; ?>
 
@@ -163,14 +168,14 @@
   (function($){
     $("#questionnaire_block").addClass('hide-now');
     var positionform = $('#contact').position();
-    console.log(positionform);
+    //console.log(positionform);
     $(window).scrollTop(positionform.top);
   })(jQuery);
   </script>
   <?php
   //custom email
   $message = '';
-  $message .= '<h2 style="margin-top: 50px;">Questionairre</h2>';
+  $message .= '<h2 style="margin-top: 50px;">Gareths site submitted in the footer from ' . site_url() . '</h2>';
   //debug($_REQUEST);
   foreach ($_REQUEST as $question => $answer) {
     if(is_array ($answer)){
@@ -185,9 +190,9 @@
   }
   //echo '<div class="container">' .  $message .'</div>';
 
-//  $to = $email_address_to_send_form_to;
+  //  $to = $email_address_to_send_form_to;
 
-  $subject = 'Questionnaire';
+  $subject = 'Gareths site submitted from ' . site_url();
 
   $body = $message;
   $headers = array('Content-Type: text/html; charset=UTF-8');
