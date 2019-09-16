@@ -1,4 +1,7 @@
-<?php $email_address_to_send_form_to = get_field('email_address_to_send_form_to'); ?>
+<?php
+$email_address_to_send_form_to = get_field('email_address_to_send_form_to');
+$actual_link = "https://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]"; debug($actual_link);
+?>
 <?php if(!$_REQUEST): // check if submitted?>
   <span class='d-block pad-top-40'></span>
   <form name="questionnaire_form" class="questionnaire-form" id="questionnaire_block" method="post">
@@ -175,7 +178,7 @@
   <?php
   //custom email
   $message = '';
-  $message .= '<h2 style="margin-top: 50px;">Gareths site submitted in the footer from ' . site_url() . '</h2>';
+  $message .= '<h2 style="margin-top: 50px;">Gareths site submitted in the footer from ' . $actual_link . '</h2>';
   //debug($_REQUEST);
   foreach ($_REQUEST as $question => $answer) {
     if(is_array ($answer)){
@@ -192,7 +195,7 @@
 
   //  $to = $email_address_to_send_form_to;
 
-  $subject = 'Gareths site submitted from ' . site_url();
+  $subject = 'Gareths site submitted from ' . $actual_link;
 
   $body = $message;
   $headers = array('Content-Type: text/html; charset=UTF-8');
