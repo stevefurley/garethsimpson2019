@@ -285,12 +285,7 @@ $('.main-form .next-button').on('click', function(){
 		$('.block-step-' + newCurrent).addClass('active').removeClass('not-active');
 		//number
 		$('.number-block-' + newCurrent).addClass('active');
-	//	console.log($('.main-form  #first_name1').val().length);
-		if($('.main-form  #first_name1').val().length > 1) {
-			$('.main-form .submit-wrapper').hide();
-		} else {
-			$('.main-form .submit-wrapper').show();
-		}
+
 	} else {
 		//	console.log('less then 1');
 		$('.block-step-' + current).addClass('error');
@@ -309,6 +304,15 @@ $('.main-form .prev-button').on('click', function(){
 	$('.number-block-' + newCurrent + ' .line').removeClass('active');
 	//number
 	$('.number-block-' + current).removeClass('active');
+});
+
+$( ".questionnaire-form" ).submit(function( event ) {
+	if($('.main-form  #first_name1').val().length > 1) {
+		event.preventDefault();
+	} else {
+		$( ".questionnaire-form" ).unbind('submit').submit()
+	}
+
 });
 
 });
