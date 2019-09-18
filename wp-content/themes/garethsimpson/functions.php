@@ -106,3 +106,20 @@ if (strpos($_SERVER['SERVER_NAME'], "local") !== false || strpos($_SERVER['SERVE
 } else {
   update_option('blog_public', '1');
 }
+
+
+/*fixes issue with missing email link*/
+// adding support for html emails
+add_filter( 'wp_mail_content_type','mycustom_set_content_type' );
+function mycustom_set_content_type() {
+  return "text/html";
+}
+
+// also filter the password reset email for compatibility with the HTML format
+add_filter( 'retrieve_password_message', 'mycustom_retrieve_password_message', 10, 1 );
+function mycustom_retrieve_password_message( $message ) {
+  $message = str_replace('<','',$message);
+  $message = str_replace('>','',$message);
+  $message = str_replace("\n",'<br>',$message);
+  return $message;
+}
