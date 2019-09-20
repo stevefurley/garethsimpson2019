@@ -26,6 +26,7 @@
   <meta name="msapplication-TileColor" content="#E35F30">
   <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
   <meta name="theme-color" content="#E35F30">
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
   <script type="text/javascript">
   // (function() {
   //     var trial = document.createElement('script');

@@ -138,6 +138,7 @@
     }
     .submit-wrapper {
       input {
+        height: 47px;
         cursor: pointer;
         font-size: 18px;
         line-height: 27px;
@@ -177,6 +178,7 @@
       align-items: center;
       justify-content: center;
       min-width:  130px;
+      height: 47px;
       @include media-breakpoint-up(md) {
         min-width:  250px;
         padding: 10px 45px 10px 45px;
@@ -189,6 +191,7 @@
       }
     }
     .next-button {
+      height: 47px;
       cursor: pointer;
       font-size: 18px;
       line-height: 27px;
@@ -461,30 +464,15 @@
 
 .step {
   width: 100%;
-  opacity: 0;
+  //opacity: 0;
   overflow: hidden;
+  padding: 30px 120px;
+  flex-shrink: 0;
   &.active {
-    animation-fill-mode: forwards;
-    animation-duration: 1000ms;
-    animation-delay: 300ms;
-    animation-name: fadingInSmall;
-    @include media-breakpoint-up(md) {
-      animation-name: fadingInMedium;
-    }
-    @include media-breakpoint-up(lg) {
-      animation-name: fadingInLarge;
-    }
+    display: block;
   }
   &.not-active {
-    animation-fill-mode: forwards;
-    animation-duration: 1000ms;
-    animation-name: fadingOutSmall;
-    @include media-breakpoint-up(md) {
-      animation-name: fadingOutMedium;
-    }
-    @include media-breakpoint-up(lg) {
-      animation-name: fadingOutLarge;
-    }
+    display: none;
   }
   .error {
     display: none;

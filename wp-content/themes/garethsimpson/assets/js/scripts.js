@@ -265,11 +265,20 @@ $('.custom-form .next').on('click', function(){
 
 $('.main-form .next-button').on('click', function(){
 
-	var formHeight = $('.questionnaire-form').outerHeight();
-	$('.questionnaire-form').css('height', formHeight);
+	// function formHeightSet() {
+	// 	var formHeight = $('.questionnaire-form').outerHeight();
+	// 	$('.questionnaire-form').css('min-height', formHeight);
+	// 	console.log('runinih');
+	// }
+
+	//formHeightSet();
+
+	//setTimeout(formHeightSet, 1000);
 
 	var current = $(this).attr("attr-next");
 	//console.log($('.block-step-' + current).find('textarea').val());
+
+
 	if($('.block-step-' + current).find('textarea').val().length > 1){
 
 		$('.block-step-' + current).removeClass('error');
