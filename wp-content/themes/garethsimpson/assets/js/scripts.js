@@ -281,17 +281,29 @@ $('.main-form .next-button').on('click', function(){
 
 	if($('.block-step-' + current).find('textarea').val().length > 1){
 
-		$('.block-step-' + current).removeClass('error');
-		$('.block-step-' + current).removeClass('active').addClass('not-active');
-
 		//get current box then add class to line
 		var orig = parseInt(current);
 
 		var newCurrent = parseInt(current) + 1;
+
+		$('.block-step-' + current).removeClass('error');
+		//animate down
+		$('.block-step-' + current).addClass('hide-box').removeClass('show-box');
+
+		function explode(){
+			$('.block-step-' + current).addClass('not-active').removeClass('active');
+			$('.block-step-' + newCurrent).addClass('active').removeClass('not-active').removeClass('hide-box');
+		}
+		setTimeout(explode, 300);
+
+		function explode2(){
+			$('.block-step-' + newCurrent).addClass('show-box');
+		}
+		setTimeout(explode2, 600);
+
 		//line
 		$('.number-block-' + orig + ' .line').addClass('active');
 		//form step
-		$('.block-step-' + newCurrent).addClass('active').removeClass('not-active');
 		//number
 		$('.number-block-' + newCurrent).addClass('active');
 
@@ -304,11 +316,24 @@ $('.main-form .next-button').on('click', function(){
 $('.main-form .prev-button').on('click', function(){
 	var current = $(this).attr("attr-prev");
 	//form
-	$('.block-step-' + current).removeClass('active').addClass('not-active');
-
 	var newCurrent = parseInt(current) - 1;
-	//form step
-	$('.block-step-' + newCurrent).addClass('active').removeClass('not-active');
+
+
+	$('.block-step-' + current).removeClass('error');
+	//animate down
+	$('.block-step-' + current).addClass('hide-box').removeClass('show-box');
+
+	function explode(){
+		$('.block-step-' + current).addClass('not-active').removeClass('active');
+		$('.block-step-' + newCurrent).addClass('active').removeClass('not-active').removeClass('hide-box');
+	}
+	setTimeout(explode, 300);
+
+	function explode2(){
+		$('.block-step-' + newCurrent).addClass('show-box');
+	}
+	setTimeout(explode2, 600);
+
 	//line
 	$('.number-block-' + newCurrent + ' .line').removeClass('active');
 	//number

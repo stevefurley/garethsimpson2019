@@ -464,15 +464,29 @@
 
 .step {
   width: 100%;
-  //opacity: 0;
+  transform: scale(0);
+  transform-origin: left;
   overflow: hidden;
   padding: 30px 120px;
   flex-shrink: 0;
-  &.active {
-    display: block;
+  transition: 300ms transform ease;
+  &.hide-box {
+    transition: 300ms transform ease;
+    //opacity: 0;
+    transform: scale(0);
+    transform-origin: center;
   }
   &.not-active {
     display: none;
+  }
+  &.show-box {
+    //display: block;
+    transform: scale(1);
+    transform-origin: center;
+    transition: 300ms transform ease;
+  }
+  &.active {
+    display: block;
   }
   .error {
     display: none;
