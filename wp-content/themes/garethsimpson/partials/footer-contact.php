@@ -134,8 +134,13 @@ $actual_link = "https://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
 
 
                         <!-- end of questions -->
+                        <?php if($i == $total_questions):?>
+                          <div class='google-safe pad-top-25'>
+                            <div class="g-recaptcha" data-sitekey="6LdAhrkUAAAAABKowcHTwxfuZFql5e0TX9FDOZcW"></div>
+                          </div>
+                        <?php endif; ?>
 
-                        <div class='form-button-wrapper'>
+                        <div class='form-button-wrapper wrap-<?php echo $i; ?>'>
                           <?php if($i == $total_questions):?>
 
                             <span class='prev-button' attr-prev='<?php echo $i;?>'>Previous</span>
@@ -143,7 +148,7 @@ $actual_link = "https://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
 
 
                             <div class='submit-wrapper'>
-                              <div class="g-recaptcha" data-sitekey="6LdAhrkUAAAAABKowcHTwxfuZFql5e0TX9FDOZcW"></div>
+
                               <input type="submit" value="Submit">
                             </div>
 

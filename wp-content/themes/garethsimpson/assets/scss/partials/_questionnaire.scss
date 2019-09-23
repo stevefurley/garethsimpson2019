@@ -154,6 +154,9 @@
         justify-content: center;
         min-width:  130px;
         @include media-breakpoint-up(md) {
+          min-width:  200px;
+        }
+        @include media-breakpoint-up(lg) {
           min-width:  250px;
           background-color: $orange;
         }
@@ -165,10 +168,9 @@
     }
     .prev-button {
       cursor: pointer;
-      font-size: 18px;
       line-height: 27px;
       border-radius: 28px;
-      background:  url("/wp-content/themes/garethsimpson/assets/img/button-arrow-left.svg") no-repeat 19px 18px;
+      background:  url("/wp-content/themes/garethsimpson/assets/img/button-arrow-left.svg") no-repeat center center;
       background-color: #D3D7D9;
       transition: background 300ms ease;
       padding: 10px 45px 10px 45px;
@@ -177,9 +179,17 @@
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      min-width:  130px;
       height: 47px;
+      font-size: 0;
+      min-width: 60px;
+      padding-right: 0;
       @include media-breakpoint-up(md) {
+        background-position: 19px 18px;
+        min-width:  200px;
+        padding: 10px 45px 10px 45px;
+        font-size: 18px;
+      }
+      @include media-breakpoint-up(lg) {
         min-width:  250px;
         padding: 10px 45px 10px 45px;
         background:  url("/wp-content/themes/garethsimpson/assets/img/button-arrow-left.svg") no-repeat 24px 18px;
@@ -193,10 +203,9 @@
     .next-button {
       height: 47px;
       cursor: pointer;
-      font-size: 18px;
       line-height: 27px;
       border-radius: 28px;
-      background:  url("/wp-content/themes/garethsimpson/assets/img/button-arrow.svg") no-repeat 95px 18px;
+      background:  url("/wp-content/themes/garethsimpson/assets/img/button-arrow.svg") no-repeat center center;
       background-color: $orange;
       transition: background 300ms ease;
       padding: 10px 45px 10px 45px;
@@ -205,8 +214,16 @@
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      min-width:  130px;
+      font-size: 0;
+      min-width: 60px;
+      padding-right: 0;
       @include media-breakpoint-up(md) {
+        background-position: 95px 18px;
+        min-width:  200px;
+        padding: 10px 45px 10px 45px;
+        font-size: 18px;
+      }
+      @include media-breakpoint-up(lg) {
         min-width:  250px;
         background:  url("/wp-content/themes/garethsimpson/assets/img/button-arrow.svg") no-repeat 210px 18px;
         background-color: $orange;
@@ -467,9 +484,15 @@
   transform: scale(0);
   transform-origin: left;
   overflow: hidden;
-  padding: 30px 120px;
+  padding: 30px 15px;
   flex-shrink: 0;
   transition: 300ms transform ease;
+  @include media-breakpoint-up(md) {
+    padding: 30px 30px;
+  }
+  @include media-breakpoint-up(lg) {
+    padding: 30px 120px;
+  }
   &.hide-box {
     transition: 300ms transform ease;
     //opacity: 0;

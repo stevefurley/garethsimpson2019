@@ -17,7 +17,7 @@
           <?php endif; ?>
         </div>
       <?php endif; ?>
-      <div class='container pad-right-30 pad-left-30'>
+      <div class='container pad-right-30-m pad-left-30-m pad-right-15 pad-left-15'>
 
         <div class='custom-form'>
           <?php include(locate_template('/partials/footer-contact.php'));?>
