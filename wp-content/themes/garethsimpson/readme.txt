@@ -8,9 +8,7 @@ garethsimpson theme info
 GRUNT
 to use grunt
 cd wp-content/themes/garethsimpson/assets/
-grunt dev
+npm install
+grunt dev - whilst developing
+grunt build - when ready to go live this uses post-css for webkit prefixes
 
-
-the sites images and assets are stored at route under distribution
-in this folder you will find a folder named json
-When saving a viewing a page a version will be saved in here then pulled through using 
